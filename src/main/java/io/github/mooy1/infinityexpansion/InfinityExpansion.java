@@ -63,7 +63,7 @@ public final class InfinityExpansion extends AbstractAddon {
     @Nonnull
     @Override
     protected String getGithubPath() {
-        return "ybw0014/InfinityExpansion/master";
+        return "ybw0014/InfinityExpansion-CN/master";
     }
 
     @Nonnull
