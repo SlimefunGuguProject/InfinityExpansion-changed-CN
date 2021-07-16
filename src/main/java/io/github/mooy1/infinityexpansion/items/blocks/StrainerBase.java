@@ -129,7 +129,7 @@ public final class StrainerBase extends AbstractTickingContainer implements Reci
     @Nonnull
     @Override
     public String getRecipeSectionLabel(@Nonnull Player p) {
-        return "&7需要收集:";
+        return "&7可收集:";
     }
 
     @Override

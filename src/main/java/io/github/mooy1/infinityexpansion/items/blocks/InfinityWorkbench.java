@@ -84,7 +84,7 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
         for (int i : STATUS_BORDER) {
             blockMenuPreset.addItem(i, MenuPreset.STATUS_ITEM, ChestMenuUtils.getEmptyClickHandler());
         }
-        blockMenuPreset.addItem(RECIPE_SLOT, new CustomItem(Material.BOOK, "&6Recipes"), ChestMenuUtils.getEmptyClickHandler());
+        blockMenuPreset.addItem(RECIPE_SLOT, new CustomItem(Material.BOOK, "&6配方"), ChestMenuUtils.getEmptyClickHandler());
         blockMenuPreset.addItem(STATUS_SLOT, MenuPreset.INVALID_INPUT, ChestMenuUtils.getEmptyClickHandler());
     }
     
