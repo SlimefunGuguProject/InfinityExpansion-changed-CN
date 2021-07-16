@@ -20,7 +20,6 @@ import io.github.mooy1.infinityexpansion.items.Blocks;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractEnergyCrafter;
 import io.github.mooy1.infinityexpansion.utils.Util;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.recipes.RecipeMap;
 import io.github.mooy1.infinitylib.recipes.RecipeOutput;
 import io.github.mooy1.infinitylib.recipes.ShapedRecipe;
@@ -32,6 +31,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * A 6x6 crafting table O.o
@@ -63,7 +64,7 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
         RECIPES.put(stacks, item);
         ITEMS.put(item.getItemId(), new Pair<>(item, stacks));
         IDS.add(item.getItemId());
-    }, "", "&cUse the infinity recipes category to see the correct recipe!");
+    }, "", "&c请放入正确的无尽配方!");
     
     public InfinityWorkbench(Category category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
         super(category, item, type, recipe, energy, STATUS_SLOT);
@@ -104,8 +105,8 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
          
         if (charge < this.energy) { //not enough energy
             p.sendMessage( new String[] {
-                    ChatColor.RED + "Not enough energy!",
-                    ChatColor.GREEN + "Charge: " + ChatColor.RED + charge + ChatColor.GREEN + "/" + this.energy + " J"
+                    ChatColor.RED + "电力不足!",
+                    ChatColor.GREEN + "当前电力: " + ChatColor.RED + charge + ChatColor.GREEN + "/" + this.energy + " J"
             });
             return;
         }
@@ -113,17 +114,17 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
         RecipeOutput<SlimefunItemStack> output = RECIPES.get(StackUtils.arrayFrom(inv, INPUT_SLOTS));
         
         if (output == null) { //invalid
-            p.sendMessage( ChatColor.RED + "Invalid Recipe!");
+            p.sendMessage( ChatColor.RED + "无效配方!");
             return;
         }
             
         if (!inv.fits(output.getOutput(), OUTPUT_SLOTS)) { //not enough room
-            p.sendMessage( ChatColor.GOLD + "Not enough room!");
+            p.sendMessage( ChatColor.GOLD + "空间不足!");
             return;
         }
 
         output.consumeInput();
-        p.sendMessage( ChatColor.GREEN + "Successfully crafted: " + ChatColor.WHITE + output.getOutput().getDisplayName());
+        p.sendMessage( ChatColor.GREEN + "成功合成: " + ChatColor.WHITE + output.getOutput().getDisplayName());
 
         inv.pushItem(output.getOutput().clone(), OUTPUT_SLOTS);
         setCharge(b.getLocation(), 0);

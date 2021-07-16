@@ -14,7 +14,6 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetProvider;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
@@ -29,6 +28,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * A reactor that generates huge power but costs infinity ingots and void ingots
@@ -70,11 +71,11 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
         }
         for (int i : MenuPreset.OUTPUT_BORDER) {
             blockMenuPreset.addItem(i, new CustomItem(
-                    Material.BLACK_STAINED_GLASS_PANE, "&8Void Ingot Input"), ChestMenuUtils.getEmptyClickHandler());
+                    Material.BLACK_STAINED_GLASS_PANE, "&8放入虚空锭"), ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : MenuPreset.INPUT_BORDER) {
             blockMenuPreset.addItem(i, new CustomItem(
-                    Material.WHITE_STAINED_GLASS_PANE, "&fInfinity Ingot Input"), ChestMenuUtils.getEmptyClickHandler());
+                    Material.WHITE_STAINED_GLASS_PANE, "&f放入无尽锭"), ChestMenuUtils.getEmptyClickHandler());
         }
         blockMenuPreset.addItem(STATUS_SLOT, MenuPreset.LOADING, ChestMenuUtils.getEmptyClickHandler());
     }
@@ -107,7 +108,7 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
             if (infinityInput == null || !Materials.INFINITE_INGOT.getItemId().equals(StackUtils.getID(infinityInput))) { //wrong input
 
                 if (inv.hasViewer()) {
-                    inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&cInput more &fInfinity Ingots"));
+                    inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&c放入更多 &f无尽锭"));
                 }
                 return 0;
 
@@ -116,7 +117,7 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
             if (voidInput == null || !Materials.VOID_INGOT.getItemId().equals(StackUtils.getID(voidInput))) { //wrong input
 
                 if (inv.hasViewer()) {
-                    inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&cInput more &8Void Ingots"));
+                    inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&c放入更多 &8虚空锭"));
                 }
                 return 0;
 
@@ -125,9 +126,9 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
             //correct input
             if (inv.hasViewer()) {
                 inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE,
-                                "&aStarting Generation",
-                                "&aTime until infinity ingot needed: " + INFINITY_INTERVAL,
-                                "&aTime until void ingot needed: " + VOID_INTERVAL
+                                "&a开始发电",
+                                "&a无尽锭可支撑的发电时长: " + INFINITY_INTERVAL,
+                                "&a虚空锭可支撑的发电时长: " + VOID_INTERVAL
                         ));
             }
             inv.consumeItem(INPUT_SLOTS[0]);
@@ -140,7 +141,7 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
         if (progress >= INFINITY_INTERVAL) { //done
 
             if (inv.hasViewer()) {
-                inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aFinished Generation"));
+                inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a发电完成"));
             }
             BlockStorage.addBlockInfo(l, "progress", "0");
             return this.gen;
@@ -152,7 +153,7 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
             if (voidInput == null || !Materials.VOID_INGOT.getItemId().equals(StackUtils.getID(voidInput))) { //wrong input
 
                 if (inv.hasViewer()) {
-                    inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&cInput more &8Void Ingots"));
+                    inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&c放入更多 &8虚空锭"));
                 }
                 return 0;
 
@@ -161,9 +162,9 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
             //right input
             if (inv.hasViewer()) {
                 inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE,
-                                "&aGenerating...",
-                                "&aTime until infinity ingot needed: " + (INFINITY_INTERVAL - progress),
-                                "&aTime until void ingot needed: " + (VOID_INTERVAL - Math.floorMod(progress, VOID_INTERVAL))
+                                "&a发电中...",
+                                "&a无尽锭可支撑的发电时长: " + (INFINITY_INTERVAL - progress),
+                                "&a虚空锭可支撑的发电时长: " + (VOID_INTERVAL - Math.floorMod(progress, VOID_INTERVAL))
                         ));
             }
             BlockStorage.addBlockInfo(l, "progress", String.valueOf(progress + 1));
@@ -176,9 +177,9 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
 
         if (inv.hasViewer()) {
             inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE,
-                            "&aGenerating...",
-                            "&aTime until infinity ingot needed: " + (INFINITY_INTERVAL - progress),
-                            "&aTime until void ingot needed: " + (VOID_INTERVAL - Math.floorMod(progress, VOID_INTERVAL))
+                            "&a发电中...",
+                            "&a无尽锭可支撑的发电时长: " + (INFINITY_INTERVAL - progress),
+                            "&a虚空锭可支撑的发电时长: " + (VOID_INTERVAL - Math.floorMod(progress, VOID_INTERVAL))
                     )
             );
         }
@@ -197,12 +198,12 @@ public final class InfinityReactor extends AbstractContainer implements EnergyNe
         List<ItemStack> items = new ArrayList<>();
 
         ItemStack item = Materials.INFINITE_INGOT.clone();
-        StackUtils.addLore(item, "", ChatColor.GOLD + "Lasts for 1 day");
+        StackUtils.addLore(item, "", ChatColor.GOLD + "持续 1 天");
         items.add(item);
         items.add(null);
 
         item = Materials.VOID_INGOT.clone();
-        StackUtils.addLore(item, "", ChatColor.GOLD + "Lasts for 4 hours");
+        StackUtils.addLore(item, "", ChatColor.GOLD + "持续 4 小时");
         items.add(item);
         items.add(null);
 

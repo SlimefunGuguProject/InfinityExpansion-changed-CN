@@ -12,6 +12,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import lombok.AllArgsConstructor;
 
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -24,7 +25,6 @@ import io.github.mooy1.infinityexpansion.items.Blocks;
 import io.github.mooy1.infinityexpansion.items.blocks.InfinityWorkbench;
 import io.github.mooy1.infinitylib.categories.MultiCategory;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun4.core.categories.FlexCategory;
 import io.github.thebusybiscuit.slimefun4.core.guide.GuideHistory;
@@ -80,11 +80,11 @@ public final class InfinityCategory extends FlexCategory {
             7, 16, 17
     };
     private static final ItemStack BENCH = new CustomItem(Material.NETHER_STAR,
-            "&bCreate the recipe from items in your inventory: ",
-            "&aLeft-Click to move 1 set",
-            "&aRight-Click to move as many sets as possible"
+            "&b从库存中的项目创建配方: ",
+            "&a左键移动1套",
+            "&a右键单击以移动尽可能多的集合"
     );
-    private static final ItemStack INFO = new CustomItem(Material.CYAN_STAINED_GLASS_PANE, "&3Info");
+    private static final ItemStack INFO = new CustomItem(Material.CYAN_STAINED_GLASS_PANE, "&3信息");
     
     private static final Map<UUID, String> history = new HashMap<>();
 
@@ -114,7 +114,7 @@ public final class InfinityCategory extends FlexCategory {
             }
         }
         
-        ChestMenu menu = new ChestMenu("&bInfinity Recipes");
+        ChestMenu menu = new ChestMenu("&b无尽合成配方");
 
         if (entry.history != null) {
             menu.addMenuClickHandler(1, (player1, i, itemStack, clickAction) -> {

@@ -12,13 +12,14 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.categories.Categories;
-import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.RandomizedSet;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 /**
  * A mob data card which will be able to be used in the {@link MobSimulationChamber}
@@ -31,18 +32,18 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
      * @deprecated Use {@code MobDataCard.addDrop(drop, weight)} in a chain instead
      */
     @Deprecated
-    public MobDataCard(String name, MobDataTier tier, ItemStack[] recipe,
+    public MobDataCard(String id, String name, MobDataTier tier, ItemStack[] recipe,
                        ItemStack dropA, int chanceA, ItemStack dropB, int chanceB) {
-        this(name, tier, recipe);
+        this(id, name, tier, recipe);
         addDrop(dropA, chanceA).addDrop(dropB, chanceB);
     }
     
-    public MobDataCard(String name, MobDataTier tier, ItemStack[] recipe) {
+    public MobDataCard(String id, String name, MobDataTier tier, ItemStack[] recipe) {
         super(Categories.MOB_SIMULATION, new SlimefunItemStack(
-                name.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
+                id.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
                 tier.material,
-                "&b" + name + " Data Card",
-                "&7Place in a mob simulation chamber to activate",
+                "&b" + name + " 生物芯片",
+                "&7放在生物模拟室中使用",
                 "",
                 LorePreset.energyPerSecond(tier.energy)
         ), MobDataInfuser.TYPE, recipe);

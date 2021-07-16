@@ -17,7 +17,6 @@ import org.bukkit.inventory.ItemStack;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
 import io.github.mooy1.infinityexpansion.items.materials.Oscillator;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -28,6 +27,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Mines stuff
@@ -40,10 +41,10 @@ public final class Quarry extends AbstractMachine implements RecipeDisplayItem {
     private static final int INTERVAL = InfinityExpansion.inst().getConfig().getInt("quarry-options.ticks-per-output", 1, 100);
 
     private static final ItemStack OSCILLATOR_INFO = new CustomItem(
-            Material.CYAN_STAINED_GLASS_PANE, 
-            "&bOscillator Slot",
-            "&7Place a quarry oscillator to",
-            "&7boost certain material's rates!"
+            Material.CYAN_STAINED_GLASS_PANE,
+            "&b生产加速器槽",
+            "&7放置一个矿机生产加速器",
+            "&7提高某些材料的生产速率!"
     );
     private static final int[] OUTPUT_SLOTS = {
             9, 10, 11, 12, 13, 14, 15, 16, 17,
@@ -139,10 +140,10 @@ public final class Quarry extends AbstractMachine implements RecipeDisplayItem {
     @Nonnull
     @Override
     public String getRecipeSectionLabel(@Nonnull Player p) {
-        return "&7Mines:";
+        return "&7产物:";
     }
     
-    private static final ItemStack MINING = new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aMining...");
+    private static final ItemStack MINING = new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a挖矿中...");
     
     @Override
     protected boolean process(@Nonnull BlockMenu inv, @Nonnull Block b) {

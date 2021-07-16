@@ -10,7 +10,6 @@ import org.bukkit.inventory.ItemStack;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.MobData;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractCrafter;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.recipes.RecipeMap;
 import io.github.mooy1.infinitylib.recipes.ShapedRecipe;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
@@ -19,6 +18,8 @@ import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 public final class MobDataInfuser extends AbstractCrafter implements EnergyNetComponent {
 
@@ -40,7 +41,7 @@ public final class MobDataInfuser extends AbstractCrafter implements EnergyNetCo
     @Nonnull
     @Override
     public String preCraftMessage(@Nonnull Location l, @Nonnull BlockMenu inv) {
-        return ChatColor.RED + "Not enough energy!";
+        return ChatColor.RED + "电力不足!";
     }
 
     @Nonnull

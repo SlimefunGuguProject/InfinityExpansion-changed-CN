@@ -21,7 +21,6 @@ import io.github.mooy1.infinityexpansion.items.Machines;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
 import io.github.mooy1.infinityexpansion.utils.Util;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
@@ -33,6 +32,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Constructs singularities form many items
@@ -165,14 +166,14 @@ public final class SingularityConstructor extends AbstractMachine implements Rec
                 if (menu.hasViewer()) {
                     menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
                             Material.LIME_STAINED_GLASS_PANE,
-                            "&aConstructing " + triplet.output.getDisplayName() + "...",
-                            "&7Complete"
+                            "&a正在生产 " + triplet.output.getDisplayName() + "...",
+                            "&7完成"
                     ));
                 }
             } else if (menu.hasViewer()) {
                 menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
                         Material.LIME_STAINED_GLASS_PANE,
-                        "&aConstructing " + triplet.output.getDisplayName() + "...",
+                        "&a正在生产 " + triplet.output.getDisplayName() + "...",
                         "&7" + progress + " / " + triplet.amount
                 ));
             }
@@ -225,7 +226,7 @@ public final class SingularityConstructor extends AbstractMachine implements Rec
     private static void invalidInput(BlockMenu menu) {
         menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
                 Material.RED_STAINED_GLASS_PANE,
-                "&cInput a valid material to start"
+                "&c请放入正确的材料"
         ));
     }
     

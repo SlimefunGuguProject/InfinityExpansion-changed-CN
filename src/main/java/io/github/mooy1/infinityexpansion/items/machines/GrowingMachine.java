@@ -16,7 +16,6 @@ import org.bukkit.inventory.ItemStack;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
 import io.github.mooy1.infinityexpansion.utils.Util;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -28,13 +27,15 @@ import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
+
 public final class GrowingMachine extends AbstractMachine implements RecipeDisplayItem {
     
     private static final int[] OUTPUT_SLOTS = Util.LARGE_OUTPUT;
     private static final int[] INPUT_SLOTS = {MenuPreset.INPUT + 27};
     private static final int STATUS_SLOT = MenuPreset.INPUT;
-    private static final ItemStack GROWING = new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aGrowing...");
-    private static final ItemStack INPUT_PLANT = new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9Input a plant!");
+    private static final ItemStack GROWING = new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a生长中...");
+    private static final ItemStack INPUT_PLANT = new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9放入一个作物!");
 
     private static final EnumMap<Material, ItemStack[]> NORMAL_RECIPES = new EnumMap<>(Material.class);
     private static final EnumMap<Material, ItemStack[]> TREE_RECIPES = new EnumMap<>(Material.class);

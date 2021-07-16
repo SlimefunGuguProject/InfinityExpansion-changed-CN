@@ -11,7 +11,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.utils.Util;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.recipes.RecipeMap;
 import io.github.mooy1.infinitylib.recipes.RecipeOutput;
 import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
@@ -24,6 +23,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.inventory.ItemUtils;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * An abstract crafter
@@ -129,7 +130,7 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
         if (output == null) { //invalid
 
             inv.replaceExistingItem(STATUS_SLOT, MenuPreset.INVALID_RECIPE);
-            p.sendMessage( ChatColor.RED + "Invalid Recipe!");
+            p.sendMessage( ChatColor.RED + "无效配方!");
 
         } else {
             ItemStack out = output.getOutput().clone();
@@ -138,12 +139,12 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
             if (!inv.fits(out, OUTPUT_SLOT)) { //not enough room
 
                 inv.replaceExistingItem(STATUS_SLOT, MenuPreset.NO_ROOM);
-                p.sendMessage(  ChatColor.GOLD + "Not enough room!");
+                p.sendMessage(  ChatColor.GOLD + "空间不足!");
 
             } else { //enough room
 
                 output.consumeInput();
-                p.sendMessage(  ChatColor.GREEN + "Crafted: " + ItemUtils.getItemName(out));
+                p.sendMessage(  ChatColor.GREEN + "合成的物品: " + ItemUtils.getItemName(out));
                 postCraft(inv.getLocation(), inv, p);
                 inv.pushItem(out, OUTPUT_SLOT);
             }

@@ -16,7 +16,6 @@ import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.Machines;
 import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -28,6 +27,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * harvests void bits from... the void
@@ -93,7 +94,7 @@ public final class VoidHarvester extends AbstractMachine implements RecipeDispla
         setProgress(b, progress);
         if (inv.hasViewer()) { //update status
             inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE,
-                    "&aHarvesting - " + progress * 100 / TIME + "%",
+                    "&a收集中 - " + progress * 100 / TIME + "%",
                     "&7(" + progress + "/" + TIME + ")"
             ));
         }
@@ -156,7 +157,7 @@ public final class VoidHarvester extends AbstractMachine implements RecipeDispla
     @Nonnull
     @Override
     public String getRecipeSectionLabel(@Nonnull Player p) {
-        return "&7Harvests:";
+        return "&7收集:";
     }
 
 }

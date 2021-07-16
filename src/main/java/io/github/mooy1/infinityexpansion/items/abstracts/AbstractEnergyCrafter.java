@@ -37,9 +37,9 @@ public abstract class AbstractEnergyCrafter extends AbstractTickingContainer imp
             if (charge < this.energy) { //not enough energy
                 blockMenu.replaceExistingItem(this.statusSlot, new CustomItem(
                         Material.RED_STAINED_GLASS_PANE,
-                        "&cNot enough energy!",
+                        "&c电力不足!",
                         "",
-                        "&aCharge: " + charge + "/" + this.energy + " J",
+                        "&a当前电力: " + charge + "/" + this.energy + " J",
                         ""
                 ));
             } else {

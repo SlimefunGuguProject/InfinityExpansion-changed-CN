@@ -44,7 +44,7 @@ public final class Util {
 
     @Nonnull
     public static ItemStack getDisplayItem(@Nonnull ItemStack output) {
-        StackUtils.addLore(output, "", "&a-------------------", "&a\u21E8 Click to craft", "&a-------------------");
+        StackUtils.addLore(output, "", "&a-------------------", "&a\u21E8 点击合成", "&a-------------------");
         return output;
     }
 
@@ -60,9 +60,9 @@ public final class Util {
                 } else if (level != 0) {
                     section.set(path, 0);
                     InfinityExpansion.inst().log(Level.WARNING,
-                            "Enchantment level " + level
-                                    + " is out of bounds for " + e.getKey()
-                                    + ", resetting to default!"
+                            "附魔等级 " + level
+                                    + " 超出限制 " + e.getKey()
+                                    + ", 正在恢复为默认值!"
                     );
                 }
             }

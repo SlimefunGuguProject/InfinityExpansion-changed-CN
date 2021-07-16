@@ -17,7 +17,6 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
@@ -32,6 +31,8 @@ import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.RandomizedSet;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 public final class GeoQuarry extends AbstractMachine implements RecipeDisplayItem {
     
@@ -109,7 +110,7 @@ public final class GeoQuarry extends AbstractMachine implements RecipeDisplayIte
     protected boolean process(@Nonnull BlockMenu inv, @Nonnull Block b) {
         if (InfinityExpansion.inst().getGlobalTick() % this.interval != 0) {
             if (inv.hasViewer()) {
-                inv.replaceExistingItem(STATUS, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aDrilling..."));
+                inv.replaceExistingItem(STATUS, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a正在钻探..."));
             }
             return true;
         }
@@ -136,7 +137,7 @@ public final class GeoQuarry extends AbstractMachine implements RecipeDisplayIte
 
         inv.pushItem(output.clone(), OUTPUT_SLOTS);
         if (inv.hasViewer()) {
-            inv.replaceExistingItem(STATUS, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aFound!"));
+            inv.replaceExistingItem(STATUS, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a已找到!"));
         }
         return true;
     }

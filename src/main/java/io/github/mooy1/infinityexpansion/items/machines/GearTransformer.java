@@ -15,7 +15,6 @@ import org.bukkit.inventory.ItemStack;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractEnergyCrafter;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -25,6 +24,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Machine that changes the material of gear and tools
@@ -68,10 +69,10 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
             blockMenuPreset.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : MenuPreset.INPUT_BORDER) {
-            blockMenuPreset.addItem(i, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9Tool Input"), ChestMenuUtils.getEmptyClickHandler());
+            blockMenuPreset.addItem(i, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9放入工具或护甲"), ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : MenuPreset.OUTPUT_BORDER) {
-            blockMenuPreset.addItem(i, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9Material Input"), ChestMenuUtils.getEmptyClickHandler());
+            blockMenuPreset.addItem(i, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9放入材料"), ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : OUTPUT_BORDER) {
             blockMenuPreset.addItem(i, MenuPreset.OUTPUT_ITEM, ChestMenuUtils.getEmptyClickHandler());
@@ -218,13 +219,13 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         if (inputItem == null) { //no input
 
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9Input a tool or piece of gear"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9请放入工具或护甲"));
             return;
 
         }
 
         if (!SF && StackUtils.getID(inputItem) != null) {
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&cSlimefun items may not have their material changed!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.RED_STAINED_GLASS_PANE, "&cSlimefun 的物品无法改变材料!"));
             return;
         }
 
@@ -232,7 +233,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         if (inputToolType == null) { //invalid input
 
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BARRIER, "&cNot a tool or piece of gear!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BARRIER, "&c无效的工具或护甲!"));
             return;
 
         }
@@ -241,7 +242,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         if (inputMaterial == null) { //no material
 
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9Input materials"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BLUE_STAINED_GLASS_PANE, "&9请放入材料"));
             return;
 
         }
@@ -250,7 +251,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         if (pair == null) { //invalid material
 
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BARRIER, "&cInvalid Materials!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BARRIER, "&c材料无效!"));
             return;
 
         }
@@ -271,7 +272,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
         inv.replaceExistingItem(INPUT_SLOT1, null);
         inv.consumeItem(INPUT_SLOT2, pair.getSecondValue());
 
-        inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aTool Transformed!"));
+        inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a材质转换完成!"));
     }
 
 }

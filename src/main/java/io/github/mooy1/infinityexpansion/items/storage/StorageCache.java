@@ -21,7 +21,6 @@ import org.bukkit.persistence.PersistentDataType;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -37,6 +36,8 @@ import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.INTERA
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.OUTPUT_SLOT;
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.STATUS_SLOT;
 
+import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
+
 /**
  * Represents a single storage unit with cached data
  *
@@ -45,9 +46,9 @@ import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.STATUS
 final class StorageCache {
 
     /* Menu strings */
-    private static final String EMPTY_DISPLAY_NAME = ChatColor.WHITE + "Empty";
-    private static final String VOID_EXCESS_TRUE = ChatColors.color("&7Void Excess:&e true");
-    private static final String VOID_EXCESS_FALSE = ChatColors.color("&7Void Excess:&e false");
+    private static final String EMPTY_DISPLAY_NAME = ChatColor.WHITE + "空";
+    private static final String VOID_EXCESS_TRUE = ChatColors.color("&7存储满时清空输入:&e 开");
+    private static final String VOID_EXCESS_FALSE = ChatColors.color("&7存储满时清空输入:&e 关");
 
     /* BlockStorage keys */
     private static final String STORED_AMOUNT = "stored"; // amount key in block data
@@ -55,7 +56,7 @@ final class StorageCache {
     
     /* Menu Items */
     private static final ItemStack EMPTY_ITEM = new CustomItem(Material.BARRIER, meta -> {
-        meta.setDisplayName(ChatColor.WHITE + "Empty");
+        meta.setDisplayName(ChatColor.WHITE + "空");
         meta.getPersistentDataContainer().set(EMPTY_KEY, PersistentDataType.BYTE, (byte) 1);
     });
 
@@ -170,7 +171,7 @@ final class StorageCache {
 
         ItemStack drop = this.storageUnit.getItem().clone();
         drop.setItemMeta(StorageUnit.saveToStack(drop.getItemMeta(), this.menu.getItemInSlot(DISPLAY_SLOT), this.displayName, this.amount));
-        e.getPlayer().sendMessage(ChatColor.GREEN + "Stored items transferred to dropped item");
+        e.getPlayer().sendMessage(ChatColor.GREEN + "物品仍保存在存储单元中");
         e.getBlock().getWorld().dropItemNaturally(l, drop);
     }
 
@@ -291,18 +292,18 @@ final class StorageCache {
 
     private void updateStatus() {
         this.menu.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.CYAN_STAINED_GLASS_PANE, meta -> {
-            meta.setDisplayName(ChatColor.AQUA + "Status");
+            meta.setDisplayName(ChatColor.AQUA + "状态");
             List<String> lore = new ArrayList<>();
             if (this.amount == 0) {
-                lore.add(ChatColors.color("&6Stored: &e0 / " + LorePreset.format(this.storageUnit.max) + " &7(0%)"));
+                lore.add(ChatColors.color("&6已储存: &e0 / " + LorePreset.format(this.storageUnit.max) + " &7(0%)"));
             } else {
-                lore.add(ChatColors.color("&6Stored: &e" + LorePreset.format(this.amount)
+                lore.add(ChatColors.color("&6已储存: &e" + LorePreset.format(this.amount)
                         + " / " + LorePreset.format(this.storageUnit.max)
-                        + " &7(" + LorePreset.format((double) this.amount / this.storageUnit.max) + "%)"
+                        + " &7(" + LorePreset.format((double) this.amount * 100.D / this.storageUnit.max) + "%)"
                 ));
             }
             lore.add(this.voidExcess ? VOID_EXCESS_TRUE : VOID_EXCESS_FALSE);
-            lore.add(ChatColor.GRAY + "(Click to toggle)");
+            lore.add(ChatColor.GRAY + "(点击开关)");
             meta.setLore(lore);
         }), false);
     }

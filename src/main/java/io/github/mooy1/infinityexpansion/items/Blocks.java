@@ -10,10 +10,11 @@ import io.github.mooy1.infinityexpansion.categories.Categories;
 import io.github.mooy1.infinityexpansion.items.blocks.AdvancedAnvil;
 import io.github.mooy1.infinityexpansion.items.blocks.InfinityWorkbench;
 import io.github.mooy1.infinityexpansion.items.blocks.StrainerBase;
-import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 @UtilityClass
 public final class Blocks {
@@ -21,24 +22,24 @@ public final class Blocks {
     public static final SlimefunItemStack STRAINER_BASE = new SlimefunItemStack(
             "STRAINER_BASE",
             Material.SANDSTONE_WALL,
-            "&7Strainer Base"
+            "&7滤网底座"
     );
     public static final SlimefunItemStack ADVANCED_ANVIL = new SlimefunItemStack(
             "ADVANCED_ANVIL",
             Material.SMITHING_TABLE,
-            "&cAdvanced Anvil",
-            "&7Combines tools and gear enchants and sometimes upgrades them",
-            "&bWorks with Slimefun items",
+            "&c高级铁砧",
+            "&7将相同附魔合并升级",
+            "&b可使用粘液科技物品",
             "",
-            LorePreset.energy(100000) + "per use"
+            LorePreset.energy(100000) + "每次使用"
     );
     public static final SlimefunItemStack INFINITY_FORGE = new SlimefunItemStack(
             "INFINITY_FORGE",
             Material.RESPAWN_ANCHOR,
-            "&6Infinity Workbench",
-            "&7Used to craft infinity items",
+            "&6无尽工作台",
+            "&7用于制造无尽物品",
             "",
-            LorePreset.energy(10000000) + "per item"
+            LorePreset.energy(10000000) + "每个物品"
     );
     
     public static void setup(InfinityExpansion plugin) {

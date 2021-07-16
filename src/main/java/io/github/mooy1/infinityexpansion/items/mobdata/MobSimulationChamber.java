@@ -12,8 +12,6 @@ import org.bukkit.inventory.ItemStack;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.utils.Util;
 import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.LorePreset;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
@@ -28,11 +26,14 @@ import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 
+import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
+
 public final class MobSimulationChamber extends AbstractTickingContainer implements EnergyNetComponent {
 
     static final double XP_MULTIPLIER = InfinityExpansion.inst().getConfig().getDouble("mob-simulation-options.xp-multiplier", 0, 1000);
 
-    private static final ItemStack NO_CARD = new CustomItem(Material.BARRIER, "&cInput a Mob Data Card!");
+    private static final ItemStack NO_CARD = new CustomItem(Material.BARRIER, "&c放入生物芯片!");
     private static final int CARD_SLOT = MenuPreset.INPUT + 27;
     private static final int STATUS_SLOT = MenuPreset.INPUT;
     private static final int[] OUTPUT_SLOTS = Util.LARGE_OUTPUT;
@@ -112,7 +113,7 @@ public final class MobSimulationChamber extends AbstractTickingContainer impleme
     }
     
     private static ItemStack makeXpItem(int stored) {
-        return new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aStored xp: " + stored, "", "&a> Click to claim");
+        return new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a已储存经验值: " + stored, "", "&a> 点击领取");
     }
 
     @Override
@@ -147,7 +148,7 @@ public final class MobSimulationChamber extends AbstractTickingContainer impleme
         
         if (inv.hasViewer()) {
             inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE,
-                    "&aSimulating... (" + LorePreset.formatEnergy(energy) + " J/s)")
+                    "&a模拟中... (" + LorePreset.formatEnergy(energy) + " J/s)")
             );
             inv.replaceExistingItem(XP_SLOT, makeXpItem(xp));
         }

@@ -29,255 +29,253 @@ public final class Materials {
     public static final SlimefunItemStack INFINITE_CIRCUIT = new SlimefunItemStack(
             "INFINITE_MACHINE_CIRCUIT",
             Material.DIAMOND,
-            "&bInfinite &6Machine Circuit",
-            "&7Machine Component"
+            "&b无尽 &6机器电路",
+            "&7机器组件"
     );
     public static final SlimefunItemStack INFINITE_CORE = new SlimefunItemStack(
             "INFINITE_MACHINE_CORE",
             Material.DIAMOND_BLOCK,
-            "&bInfinite Machine Core",
-            "&7Machine Component"
+            "&b无尽 &6机器核心",
+            "&7机器组件"
     );
     public static final SlimefunItemStack MAGSTEEL_PLATE = new SlimefunItemStack(
             "MAGSTEEL_PLATE",
             Material.NETHERITE_SCRAP,
-            "&4MagSteel Plate",
-            "&7Machine Component"
+            "&4磁钢板",
+            "&7机器组件"
     );
     public static final SlimefunItemStack MACHINE_PLATE = new SlimefunItemStack(
             "MACHINE_PLATE",
             Material.PAPER,
-            "&fMachine Plate",
-            "&7Machine Component"
+            "&f机器板块",
+            "&7机器组件"
     );
     public static final SlimefunItemStack MACHINE_CIRCUIT = new SlimefunItemStack(
             "MACHINE_CIRCUIT",
             Material.GOLD_INGOT,
-            "&6Machine Circuit",
-            "&7Machine Component"
+            "&6机器电路",
+            "&7机器组件"
     );
 
     public static final SlimefunItemStack MACHINE_CORE = new SlimefunItemStack(
             "MACHINE_CORE",
             Material.IRON_BLOCK,
-            "&fMachine Core",
-            "&7Machine Component"
+            "&f机器核心",
+            "&7机器组件"
     );
     public static final SlimefunItemStack VOID_BIT = new SlimefunItemStack(
             "VOID_BIT",
             Material.IRON_NUGGET,
-            "&8Void Bit",
-            "&7&oIt feels... empty"
+            "&8虚空粒",
+            "&7&o它非常... 渺小"
     );
     public static final SlimefunItemStack VOID_DUST = new SlimefunItemStack(
             "VOID_DUST",
             Material.GUNPOWDER,
-            "&8Void Dust",
-            "&7&oIts starting to take form..."
+            "&8虚空粉尘",
+            "&7&o它有点重量..."
     );
     public static final SlimefunItemStack VOID_INGOT = new SlimefunItemStack(
             "VOID_INGOT",
             Material.NETHERITE_INGOT,
-            "&8Void Ingot",
-            "&7&oThe emptiness of the cosmos",
-            "&7&oin the palm of your hand"
+            "&8虚空锭",
+            "&7&o虚空的力量掌握在你手中"
     );
     public static final SlimefunItemStack COBBLE_1 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_1",
             Material.ANDESITE,
-            "&7Single Compressed Cobblestone",
-            "&89 cobblestone combined"
+            "&7简易压缩的石头",
+            "&89个原石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_2 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_2",
             Material.ANDESITE,
-            "&7Double Compressed Cobblestone",
-            "&881 cobblestone combined"
+            "&7双重压缩的石头",
+            "&881个原石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_3 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_3",
             Material.STONE,
-            "&7Triple Compressed Cobblestone",
-            "&8729 cobblestone combined"
+            "&7三重压缩的石头",
+            "&8729个原石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_4 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_4",
             Material.STONE,
-            "&7Quadruple Compressed Cobblestone",
-            "&86,561 cobblestone combined"
+            "&7四重压缩的石头",
+            "&86561个原石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_5 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_5",
             Material.POLISHED_ANDESITE,
-            "&7Quintuple Compressed Cobblestone",
-            "&859,049 cobblestone combined"
+            "&7五重压缩的石头",
+            "&859049个原石压缩而来"
     );
     public static final SlimefunItemStack MAGSTEEL = new SlimefunItemStack(
             "MAGSTEEL",
             Material.BRICK,
-            "&4MagSteel"
+            "&4磁钢"
     );
     public static final SlimefunItemStack MAGNONIUM = new SlimefunItemStack(
             "MAGNONIUM",
             Material.NETHER_BRICK,
-            "&5Magnonium"
+            "&5镁合金"
     );
     public static final SlimefunItemStack TITANIUM = new SlimefunItemStack(
             "TITANIUM",
             Material.IRON_INGOT,
-            "&7Titanium"
+            "&7钛"
     );
     public static final SlimefunItemStack MYTHRIL = new SlimefunItemStack(
             "MYTHRIL",
             Material.IRON_INGOT,
-            "&bMythril"
+            "&b秘银"
     );
     public static final SlimefunItemStack ADAMANTITE = new SlimefunItemStack(
             "ADAMANTITE",
             Material.BRICK,
-            "&dAdamantite"
+            "&d精金"
     );
     public static final SlimefunItemStack INFINITE_INGOT = new SlimefunItemStack(
             "INFINITE_INGOT",
             Material.IRON_INGOT,
-            "&bInfinity Ingot", // &dI&cn&6f&ei&an&bi&3t&9y &fIngot
-            "&7&oThe fury of the cosmos",
-            "&7&oin the palm of your hand"
+            "&b无尽锭", // &dI&cn&6f&ei&an&bi&3t&9y &fIngot
+            "&7&o宇宙的力量掌握在你手中"
     );
     public static final SlimefunItemStack FORTUNE_SINGULARITY = new SlimefunItemStack(
             "FORTUNE_SINGULARITY",
             Material.NETHER_STAR,
-            "&6Fortune Singularity"
+            "&6时运奇点"
     );
     public static final SlimefunItemStack EARTH_SINGULARITY = new SlimefunItemStack(
             "EARTH_SINGULARITY",
             Material.NETHER_STAR,
-            "&aEarth Singularity"
+            "&a地球奇点"
     );
     public static final SlimefunItemStack METAL_SINGULARITY = new SlimefunItemStack(
             "METAL_SINGULARITY",
             Material.NETHER_STAR,
-            "&8Metal Singularity"
+            "&8金属奇点"
     );
     public static final SlimefunItemStack MAGIC_SINGULARITY = new SlimefunItemStack(
             "MAGIC_SINGULARITY",
             Material.NETHER_STAR,
-            "&dMagic Singularity"
+            "&d魔法奇点"
     );
     public static final SlimefunItemStack ENDER_ESSENCE = new SlimefunItemStack(
             "END_ESSENCE",
             Material.BLAZE_POWDER,
-            "&5Ender Essence",
-            "&8&oFrom the depths of the end..."
+            "&5末地奇点",
+            "&8&o来源于末地深处..."
     );
 
 
     public static final SlimefunItemStack COPPER_SINGULARITY = new SlimefunItemStack(
             "COPPER_SINGULARITY",
             Material.BRICKS,
-            "&6Copper Singularity"
+            "&6铜结构"
     );
     public static final SlimefunItemStack ZINC_SINGULARITY = new SlimefunItemStack(
             "ZINC_SINGULARITY",
             Material.IRON_BLOCK,
-            "&7Zinc Singularity"
+            "&7锌结构"
     );
     public static final SlimefunItemStack TIN_SINGULARITY = new SlimefunItemStack(
             "TIN_SINGULARITY",
             Material.IRON_BLOCK,
-            "&7Tin Singularity"
+            "&7钛结构"
     );
     public static final SlimefunItemStack ALUMINUM_SINGULARITY = new SlimefunItemStack(
             "ALUMINUM_SINGULARITY",
             Material.IRON_BLOCK,
-            "&7Aluminum Singularity"
+            "&7铝结构"
     );
     public static final SlimefunItemStack SILVER_SINGULARITY = new SlimefunItemStack(
             "SILVER_SINGULARITY",
             Material.IRON_BLOCK,
-            "&7Silver Singularity"
+            "&7银结构"
     );
     public static final SlimefunItemStack MAGNESIUM_SINGULARITY = new SlimefunItemStack(
             "MAGNESIUM_SINGULARITY",
             Material.NETHER_BRICKS,
-            "&5Magnesium Singularity"
+            "&5镁结构"
     );
     public static final SlimefunItemStack LEAD_SINGULARITY = new SlimefunItemStack(
             "LEAD_SINGULARITY",
             Material.IRON_BLOCK,
-            "&8Lead Singularity"
+            "&8铅结构"
     );
     public static final SlimefunItemStack GOLD_SINGULARITY = new SlimefunItemStack(
             "GOLD_SINGULARITY",
             Material.GOLD_BLOCK,
-            "&6Gold Singularity"
+            "&6金结构"
     );
     public static final SlimefunItemStack IRON_SINGULARITY = new SlimefunItemStack(
             "IRON_SINGULARITY",
             Material.IRON_BLOCK,
-            "&7Iron Singularity"
+            "&7铁结构"
     );
     public static final SlimefunItemStack DIAMOND_SINGULARITY = new SlimefunItemStack(
             "DIAMOND_SINGULARITY",
             Material.DIAMOND_BLOCK,
-            "&bDiamond Singularity"
+            "&b钻石结构"
     );
     public static final SlimefunItemStack EMERALD_SINGULARITY = new SlimefunItemStack(
             "EMERALD_SINGULARITY",
             Material.EMERALD_BLOCK,
-            "&aEmerald Singularity"
+            "&a绿宝石结构"
     );
     public static final SlimefunItemStack NETHERITE_SINGULARITY = new SlimefunItemStack(
             "NETHERITE_SINGULARITY",
             Material.NETHERITE_BLOCK,
-            "&4Netherite Singularity"
+            "&4下界合金结构"
     );
     public static final SlimefunItemStack COAL_SINGULARITY = new SlimefunItemStack(
             "COAL_SINGULARITY",
             Material.COAL_BLOCK,
-            "&8Coal Singularity"
+            "&8煤炭结构"
     );
     public static final SlimefunItemStack REDSTONE_SINGULARITY = new SlimefunItemStack(
             "REDSTONE_SINGULARITY",
             Material.REDSTONE_BLOCK,
-            "&cRedstone Singularity"
+            "&c红石结构"
     );
     public static final SlimefunItemStack LAPIS_SINGULARITY = new SlimefunItemStack(
             "LAPIS_SINGULARITY",
             Material.LAPIS_BLOCK,
-            "&9Lapis Singularity"
+            "&9青金石结构"
     );
     public static final SlimefunItemStack QUARTZ_SINGULARITY = new SlimefunItemStack(
             "QUARTZ_SINGULARITY",
             Material.QUARTZ_BLOCK,
-            "&fQuartz Singularity"
+            "&f石英结构"
     );
     public static final SlimefunItemStack INFINITY_SINGULARITY = new SlimefunItemStack(
             "INFINITY_SINGULARITY",
             Material.SMOOTH_QUARTZ,
-            "&bInfinity Singularity"
+            "&b无尽结构"
     );
     public static final SlimefunItemStack BASIC_STRAINER = new SlimefunItemStack(
             "BASIC_STRAINER",
             Material.FISHING_ROD,
-            "&9Basic Strainer",
-            "&7Collects materials from flowing water",
+            "&9基础滤网",
+            "&7从水流中收集材料",
             "",
             LoreBuilder.speed(1)
     );
     public static final SlimefunItemStack ADVANCED_STRAINER = new SlimefunItemStack(
             "ADVANCED_STRAINER",
             Material.FISHING_ROD,
-            "&cAdvanced Strainer",
-            "&7Collects materials from flowing water",
+            "&c高级滤网",
+            "&7从水流中收集材料",
             "",
             LoreBuilder.speed(4)
     );
     public static final SlimefunItemStack REINFORCED_STRAINER = new SlimefunItemStack(
             "REINFORCED_STRAINER",
             Material.FISHING_ROD,
-            "&fReinforced Strainer",
-            "&7Collects materials from flowing water",
+            "&f强化合金滤网",
+            "&7从水流中收集材料",
             "",
             LoreBuilder.speed(20)
     );

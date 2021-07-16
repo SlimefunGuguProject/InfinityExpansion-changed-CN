@@ -61,7 +61,7 @@ public final class VeinMinerRune extends SlimefunItem implements Listener, NotPl
     };
     private static final double RANGE = 1.5;
     private static final int MAX = 64;
-    private static final String LORE = ChatColor.AQUA + "Veinminer - Crouch to use";
+    private static final String LORE = ChatColor.AQUA + "已融合矿脉符文 - 按住 SHIFT 使用";
     private static final NamespacedKey key = InfinityExpansion.inst().getKey("vein_miner");
     
     private final CoolDownMap cooldowns = new CoolDownMap(1000);
@@ -111,14 +111,14 @@ public final class VeinMinerRune extends SlimefunItem implements Listener, NotPl
                         setVeinMiner(itemStack, true);
                         l.getWorld().dropItemNaturally(l, itemStack);
 
-                        p.sendMessage(ChatColor.GREEN + "Added Vein Miner to tool!");
+                        p.sendMessage(ChatColor.GREEN + "已将矿脉符文融合至工具中!");
                     } else {
-                        p.sendMessage(ChatColor.RED + "Failed to add vein miner!");
+                        p.sendMessage(ChatColor.RED + "无法融合矿脉符文!");
                     }
                 }, 10L);
                 
             } else {
-                p.sendMessage(ChatColor.RED + "Failed to add vein miner!");
+                p.sendMessage(ChatColor.RED + "无法融合矿脉符文!");
             }
         }
     }
@@ -185,7 +185,7 @@ public final class VeinMinerRune extends SlimefunItem implements Listener, NotPl
         }
             
         if (p.getFoodLevel() == 0) {
-            p.sendMessage(ChatColor.GOLD + "You are too tired to vein-mine!");
+            p.sendMessage(ChatColor.GOLD + "你饿了，无法使用带有矿脉符文的工具!");
             return;
         }
         
@@ -198,7 +198,7 @@ public final class VeinMinerRune extends SlimefunItem implements Listener, NotPl
         if (BlockStorage.hasBlockInfo(l)) return;
         
         if (!this.cooldowns.checkAndReset(p.getUniqueId())) {
-            p.sendMessage(ChatColor.GOLD + "You must wait 1 second before using again!");
+            p.sendMessage(ChatColor.GOLD + "你不能频繁使用带有矿脉符文的工具!");
             return;
         }
         

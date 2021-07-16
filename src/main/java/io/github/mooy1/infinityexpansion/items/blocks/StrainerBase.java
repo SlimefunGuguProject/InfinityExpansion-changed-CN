@@ -20,7 +20,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.mooy1.infinityexpansion.items.materials.Strainer;
 import io.github.mooy1.infinityexpansion.utils.Util;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
@@ -33,6 +32,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Generates items slowly using up strainers, must be waterlogged
@@ -110,7 +111,7 @@ public final class StrainerBase extends AbstractTickingContainer implements Reci
         
     }
     
-    private static final ItemStack POTATO = new CustomItem(Material.POTATO, "&7:&6Potatofish&7:", "&eLucky");
+    private static final ItemStack POTATO = new CustomItem(Material.POTATO, "&7:&6土豆鱼&7:", "&e幸运");
 
     @Nonnull
     @Override
@@ -128,7 +129,7 @@ public final class StrainerBase extends AbstractTickingContainer implements Reci
     @Nonnull
     @Override
     public String getRecipeSectionLabel(@Nonnull Player p) {
-        return "&7Collects:";
+        return "&7需要收集:";
     }
 
     @Override
@@ -147,7 +148,7 @@ public final class StrainerBase extends AbstractTickingContainer implements Reci
         if (speed == 0) {
 
             if (inv.hasViewer()) {
-                inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BARRIER, "&cInput a Strainer!"));
+                inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.BARRIER, "&c放入滤网!"));
             }
 
             return;
@@ -160,7 +161,7 @@ public final class StrainerBase extends AbstractTickingContainer implements Reci
         if (random.nextInt(this.time / speed) != 0) {
 
             if (inv.hasViewer()) {
-                inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aCollecting..."));
+                inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a收集中..."));
             }
 
             return;
@@ -190,7 +191,7 @@ public final class StrainerBase extends AbstractTickingContainer implements Reci
         inv.pushItem(output.clone(), OUTPUT_SLOTS);
 
         if (inv.hasViewer()) {
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&aMaterial Collected!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItem(Material.LIME_STAINED_GLASS_PANE, "&a打捞到材料!"));
         }
 
         //reduce durability

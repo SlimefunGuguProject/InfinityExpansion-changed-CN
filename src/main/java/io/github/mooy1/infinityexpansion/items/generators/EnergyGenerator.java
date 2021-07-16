@@ -4,12 +4,12 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinitylib.presets.LorePreset;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetProvider;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
@@ -68,16 +68,16 @@ public final class EnergyGenerator extends AbstractContainer implements EnergyNe
             if (gen == 0) {
                 inv.replaceExistingItem(4, new CustomItem(
                         Material.GREEN_STAINED_GLASS_PANE,
-                        "&cNot generating",
-                        "&7Stored: &6" + LorePreset.format(getCharge(l)) + " J"
+                        "&c未发电",
+                        "&7已储存: &6" + LorePreset.format(getCharge(l)) + " J"
                 ));
             } else {
                 inv.replaceExistingItem(4, new CustomItem(
                         Material.GREEN_STAINED_GLASS_PANE,
-                        "&aGeneration",
-                        "&7Type: &6" + this.type.getName(),
-                        "&7Generating: &6" + LorePreset.formatEnergy(gen) + " J/s ",
-                        "&7Stored: &6" + LorePreset.format(getCharge(l)) + " J"
+                        "&a发电中",
+                        "&7类型: &6" + this.type.getName(),
+                        "&7发电速度: &6" + LorePreset.formatEnergy(gen) + " J/s ",
+                        "&7已储存: &6" + LorePreset.format(getCharge(l)) + " J"
                 ));
             }
         }
