@@ -144,7 +144,7 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
             } else { //enough room
 
                 output.consumeInput();
-                p.sendMessage(  ChatColor.GREEN + "合成的物品: " + ItemUtils.getItemName(out));
+                p.sendMessage(  ChatColor.GREEN + "已合成物品: " + ItemUtils.getItemName(out));
                 postCraft(inv.getLocation(), inv, p);
                 inv.pushItem(out, OUTPUT_SLOT);
             }
