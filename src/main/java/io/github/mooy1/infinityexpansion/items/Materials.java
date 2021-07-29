@@ -182,7 +182,7 @@ public final class Materials {
     public static final SlimefunItemStack TIN_SINGULARITY = new SlimefunItemStack(
             "TIN_SINGULARITY",
             Material.IRON_BLOCK,
-            "&7钛结构"
+            "&7锡结构"
     );
     public static final SlimefunItemStack ALUMINUM_SINGULARITY = new SlimefunItemStack(
             "ALUMINUM_SINGULARITY",
