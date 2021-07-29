@@ -40,32 +40,32 @@ import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
  * @author Mooy1
  */
 public final class InfinityWorkbench extends AbstractEnergyCrafter {
-    
+
     public static final int[] INPUT_SLOTS = {
-        0, 1, 2, 3, 4, 5,
-        9, 10, 11, 12, 13, 14,
-        18, 19, 20, 21, 22, 23,
-        27, 28, 29, 30, 31, 32,
-        36, 37, 38, 39, 40, 41,
-        45, 46, 47, 48, 49, 50
+            0, 1, 2, 3, 4, 5,
+            9, 10, 11, 12, 13, 14,
+            18, 19, 20, 21, 22, 23,
+            27, 28, 29, 30, 31, 32,
+            36, 37, 38, 39, 40, 41,
+            45, 46, 47, 48, 49, 50
     };
-    
+
     private static final int[] OUTPUT_SLOTS = {MenuPreset.OUTPUT + 27};
     private static final int STATUS_SLOT = MenuPreset.OUTPUT;
     private static final int[] STATUS_BORDER = {6, 8, 15, 17, 24, 25, 26};
     private static final int RECIPE_SLOT = 7;
-    
+
     public static final RecipeMap<SlimefunItemStack> RECIPES = new RecipeMap<>(ShapedRecipe::new);
     public static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
     public static final List<String> IDS = new ArrayList<>();
-    
+
     public static final RecipeType TYPE = new RecipeType(InfinityExpansion.inst().getKey("infinity_forge"), Blocks.INFINITY_FORGE, (stacks, stack) -> {
         SlimefunItemStack item = (SlimefunItemStack) stack;
         RECIPES.put(stacks, item);
         ITEMS.put(item.getItemId(), new Pair<>(item, stacks));
         IDS.add(item.getItemId());
     }, "", "&c请放入正确的无尽配方!");
-    
+
     public InfinityWorkbench(Category category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
         super(category, item, type, recipe, energy, STATUS_SLOT);
     }
@@ -87,7 +87,7 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
         blockMenuPreset.addItem(RECIPE_SLOT, new CustomItem(Material.BOOK, "&6配方"), ChestMenuUtils.getEmptyClickHandler());
         blockMenuPreset.addItem(STATUS_SLOT, MenuPreset.INVALID_INPUT, ChestMenuUtils.getEmptyClickHandler());
     }
-    
+
     @Override
     public void onNewInstance(@Nonnull BlockMenu menu, @Nonnull Block b) {
         menu.addMenuClickHandler(STATUS_SLOT, (p, slot, item, action) -> {
@@ -100,36 +100,36 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
         });
     }
 
-    public void craft(@Nonnull Block b, @Nonnull BlockMenu inv, @Nonnull  Player p) {
+    public void craft(@Nonnull Block b, @Nonnull BlockMenu inv, @Nonnull Player p) {
         int charge = getCharge(b.getLocation());
-         
+
         if (charge < this.energy) { //not enough energy
-            p.sendMessage( new String[] {
+            p.sendMessage(new String[] {
                     ChatColor.RED + "电力不足!",
                     ChatColor.GREEN + "当前电力: " + ChatColor.RED + charge + ChatColor.GREEN + "/" + this.energy + " J"
             });
             return;
         }
-        
+
         RecipeOutput<SlimefunItemStack> output = RECIPES.get(StackUtils.arrayFrom(inv, INPUT_SLOTS));
-        
+
         if (output == null) { //invalid
-            p.sendMessage( ChatColor.RED + "无效配方!");
+            p.sendMessage(ChatColor.RED + "无效配方!");
             return;
         }
-            
+
         if (!inv.fits(output.getOutput(), OUTPUT_SLOTS)) { //not enough room
-            p.sendMessage( ChatColor.GOLD + "空间不足!");
+            p.sendMessage(ChatColor.GOLD + "空间不足!");
             return;
         }
 
         output.consumeInput();
-        p.sendMessage( ChatColor.GREEN + "成功合成: " + ChatColor.WHITE + output.getOutput().getDisplayName());
+        p.sendMessage(ChatColor.GREEN + "成功合成: " + ChatColor.WHITE + output.getOutput().getDisplayName());
 
         inv.pushItem(output.getOutput().clone(), OUTPUT_SLOTS);
         setCharge(b.getLocation(), 0);
     }
-    
+
     @Override
     public void update(@Nonnull BlockMenu inv) {
 
@@ -142,9 +142,9 @@ public final class InfinityWorkbench extends AbstractEnergyCrafter {
         } else { //correct recipe
 
             inv.replaceExistingItem(STATUS_SLOT, Util.getDisplayItem(output.clone()));
-            
+
         }
-        
+
     }
 
 }

@@ -36,11 +36,11 @@ import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
  * @author Mooy1
  */
 public final class VoidHarvester extends AbstractMachine implements RecipeDisplayItem {
-    
+
     public static final RecipeType TYPE = new RecipeType(InfinityExpansion.inst().getKey("void_harvester"), Machines.VOID_HARVESTER);
-    
+
     private static final int[] OUTPUT_SLOTS = {
-        13
+            13
     };
     private static final int STATUS_SLOT = 4;
     private static final int TIME = 1000;
@@ -88,7 +88,7 @@ public final class VoidHarvester extends AbstractMachine implements RecipeDispla
                 return false;
             }
         } else {
-            progress+= this.speed;
+            progress += this.speed;
         }
 
         setProgress(b, progress);
@@ -100,14 +100,14 @@ public final class VoidHarvester extends AbstractMachine implements RecipeDispla
         }
         return true;
     }
-    
+
     @Override
     protected void setupMenu(@Nonnull BlockMenuPreset blockMenuPreset) {
         super.setupMenu(blockMenuPreset);
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0 ; i < 13 ; i++) {
             blockMenuPreset.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
-        for (int i = 14; i < 18; i++) {
+        for (int i = 14 ; i < 18 ; i++) {
             blockMenuPreset.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
 
@@ -129,7 +129,7 @@ public final class VoidHarvester extends AbstractMachine implements RecipeDispla
             setProgress(b, 0);
         }
     }
-    
+
     private static void setProgress(Block b, int progress) {
         BlockStorage.addBlockInfo(b, "progress", String.valueOf(progress));
     }

@@ -34,7 +34,7 @@ import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
  * Thanks to panda for some stuff to work off of
  */
 public final class EnergyGenerator extends AbstractContainer implements EnergyNetProvider {
-    
+
     private final GenerationType type;
     private final int generation;
 
@@ -96,5 +96,5 @@ public final class EnergyGenerator extends AbstractContainer implements EnergyNe
     public EnergyNetComponentType getEnergyComponentType() {
         return EnergyNetComponentType.GENERATOR;
     }
-    
+
 }

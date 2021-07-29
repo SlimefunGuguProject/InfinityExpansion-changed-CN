@@ -33,7 +33,7 @@ import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
  * @author Mooy1
  */
 public final class GearTransformer extends AbstractEnergyCrafter implements RecipeDisplayItem {
-    
+
     private static final boolean SF = InfinityExpansion.inst().getConfig().getBoolean("balance-options.allow-sf-item-transform");
     private static final int[] OUTPUT_SLOTS = {
             MenuPreset.STATUS + 27
@@ -90,7 +90,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
     public void onNewInstance(@Nonnull BlockMenu menu, @Nonnull Block b) {
 
     }
-    
+
     @Nullable
     private static Pair<Material, Integer> getOutput(ItemStack inputMaterial, String inputToolType) {
 
@@ -181,7 +181,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
             "DIAMOND",
             "NETHERITE"
     };
-    
+
     @Nonnull
     @Override
     public List<ItemStack> getDisplayRecipes() {
@@ -265,7 +265,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         //output
         setCharge(inv.getLocation(), 0);
-        
+
         inputItem.setType(pair.getFirstValue());
         inv.pushItem(inputItem, OUTPUT_SLOTS);
 

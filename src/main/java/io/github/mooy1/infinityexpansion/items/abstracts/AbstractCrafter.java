@@ -28,12 +28,11 @@ import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * An abstract crafter
- * 
- * @author Mooy1
  *
+ * @author Mooy1
  */
 public abstract class AbstractCrafter extends AbstractTickingContainer {
-    
+
     protected static final int[] INPUT_SLOTS = MenuPreset.CRAFTING_INPUT;
     private static final int OUTPUT_SLOT = MenuPreset.CRAFTING_OUTPUT;
     private static final int[] BACKGROUND = {5, 6, 7, 8, 41, 42, 43, 44};
@@ -41,7 +40,7 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
     private static final int STATUS_SLOT = 23;
 
     private final RecipeMap<ItemStack> recipes;
-    
+
     public AbstractCrafter(Category category, SlimefunItemStack stack,
                            RecipeMap<ItemStack> recipes, RecipeType type, ItemStack[] recipe) {
         super(category, stack, type, recipe);
@@ -76,7 +75,7 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
         }
         blockMenuPreset.addItem(STATUS_SLOT, MenuPreset.INVALID_INPUT, ChestMenuUtils.getEmptyClickHandler());
     }
-    
+
     public boolean preCraftFail(@Nonnull Location l, @Nonnull BlockMenu inv) {
         return false;
     }
@@ -85,12 +84,12 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
     public ItemStack preCraftItem(@Nonnull Location l, @Nonnull BlockMenu inv) {
         return null;
     }
-    
+
     @Nullable
     public String preCraftMessage(@Nonnull Location l, @Nonnull BlockMenu inv) {
         return null;
     }
-    
+
     public abstract void postCraft(@Nonnull Location l, @Nonnull BlockMenu inv, @Nonnull Player p);
 
     @Override
@@ -114,7 +113,7 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
             }
         }
     }
-    
+
     private void craft(@Nonnull BlockMenu inv, @Nonnull Player p) {
         if (preCraftFail(inv.getLocation(), inv)) {
             inv.replaceExistingItem(STATUS_SLOT, preCraftItem(inv.getLocation(), inv));
@@ -124,13 +123,13 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
             }
             return;
         }
-        
+
         RecipeOutput<ItemStack> output = getOutput(inv);
-        
+
         if (output == null) { //invalid
 
             inv.replaceExistingItem(STATUS_SLOT, MenuPreset.INVALID_RECIPE);
-            p.sendMessage( ChatColor.RED + "无效配方!");
+            p.sendMessage(ChatColor.RED + "无效配方!");
 
         } else {
             ItemStack out = output.getOutput().clone();
@@ -139,18 +138,18 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
             if (!inv.fits(out, OUTPUT_SLOT)) { //not enough room
 
                 inv.replaceExistingItem(STATUS_SLOT, MenuPreset.NO_ROOM);
-                p.sendMessage(  ChatColor.GOLD + "空间不足!");
+                p.sendMessage(ChatColor.GOLD + "空间不足!");
 
             } else { //enough room
 
                 output.consumeInput();
-                p.sendMessage(  ChatColor.GREEN + "已合成物品: " + ItemUtils.getItemName(out));
+                p.sendMessage(ChatColor.GREEN + "已合成物品: " + ItemUtils.getItemName(out));
                 postCraft(inv.getLocation(), inv, p);
                 inv.pushItem(out, OUTPUT_SLOT);
             }
         }
     }
-    
+
     @Nullable
     private RecipeOutput<ItemStack> getOutput(@Nonnull BlockMenu inv) {
         ItemStack[] in = new ItemStack[INPUT_SLOTS.length];
@@ -159,9 +158,9 @@ public abstract class AbstractCrafter extends AbstractTickingContainer {
         }
         return this.recipes.get(in);
     }
-    
+
     protected void modifyOutput(@Nonnull BlockMenu inv, @Nonnull ItemStack output) {
-        
+
     }
 
     @Override

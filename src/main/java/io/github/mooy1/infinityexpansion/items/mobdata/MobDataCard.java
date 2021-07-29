@@ -47,9 +47,9 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
                 "",
                 LorePreset.energyPerSecond(tier.energy)
         ), MobDataInfuser.TYPE, recipe);
-        
+
         this.tier = tier;
-        
+
         CARDS.put(getId(), this);
     }
 
@@ -57,7 +57,7 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
     final RandomizedSet<ItemStack> drops = new RandomizedSet<>();
     @Nonnull
     final MobDataTier tier;
-    
+
     public MobDataCard addDrop(ItemStack drop, float chance) {
         this.drops.add(drop, 1 / chance);
         return this;
@@ -74,7 +74,7 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
     public MobDataCard addDrop(Material drop, int amount, float chance) {
         return addDrop(new ItemStack(drop, amount), chance);
     }
-    
+
     @Nonnull
     @Override
     public List<ItemStack> getDisplayRecipes() {

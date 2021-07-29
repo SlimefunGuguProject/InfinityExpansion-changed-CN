@@ -30,7 +30,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 public final class GrowingMachine extends AbstractMachine implements RecipeDisplayItem {
-    
+
     private static final int[] OUTPUT_SLOTS = Util.LARGE_OUTPUT;
     private static final int[] INPUT_SLOTS = {MenuPreset.INPUT + 27};
     private static final int STATUS_SLOT = MenuPreset.INPUT;
@@ -39,7 +39,7 @@ public final class GrowingMachine extends AbstractMachine implements RecipeDispl
 
     private static final EnumMap<Material, ItemStack[]> NORMAL_RECIPES = new EnumMap<>(Material.class);
     private static final EnumMap<Material, ItemStack[]> TREE_RECIPES = new EnumMap<>(Material.class);
-    
+
     static {
         NORMAL_RECIPES.put(Material.WHEAT_SEEDS, new ItemStack[] {new ItemStack(Material.WHEAT, 2)});
         NORMAL_RECIPES.put(Material.CARROT, new ItemStack[] {new ItemStack(Material.CARROT, 2)});
