@@ -20,6 +20,7 @@ import io.github.mooy1.infinityexpansion.items.Blocks;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractEnergyCrafter;
 import io.github.mooy1.infinityexpansion.utils.Util;
 import io.github.mooy1.infinitylib.items.StackUtils;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.recipes.RecipeMap;
 import io.github.mooy1.infinitylib.recipes.RecipeOutput;
 import io.github.mooy1.infinitylib.recipes.ShapedRecipe;
@@ -31,8 +32,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * A 6x6 crafting table O.o

@@ -11,11 +11,10 @@ import io.github.mooy1.infinityexpansion.items.blocks.InfinityWorkbench;
 import io.github.mooy1.infinityexpansion.items.generators.EnergyGenerator;
 import io.github.mooy1.infinityexpansion.items.generators.GenerationType;
 import io.github.mooy1.infinityexpansion.items.generators.InfinityReactor;
+import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 @UtilityClass
 public final class Generators {

@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.mooy1.infinitylib.items.StackUtils;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetProvider;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
@@ -28,8 +29,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * A reactor that generates huge power but costs infinity ingots and void ingots

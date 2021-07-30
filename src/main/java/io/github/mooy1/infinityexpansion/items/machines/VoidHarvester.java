@@ -16,6 +16,7 @@ import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.Machines;
 import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -27,8 +28,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * harvests void bits from... the void

@@ -6,6 +6,7 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
@@ -15,8 +16,6 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * A slimefun item with a menu and ticker, which will process if it has enough energy

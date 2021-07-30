@@ -18,11 +18,10 @@ import io.github.mooy1.infinityexpansion.items.machines.ResourceSynthesizer;
 import io.github.mooy1.infinityexpansion.items.machines.SingularityConstructor;
 import io.github.mooy1.infinityexpansion.items.machines.StoneworksFactory;
 import io.github.mooy1.infinityexpansion.items.machines.VoidHarvester;
+import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 @UtilityClass
 public final class Machines {

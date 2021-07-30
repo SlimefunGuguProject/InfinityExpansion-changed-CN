@@ -21,6 +21,7 @@ import org.bukkit.persistence.PersistentDataType;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinitylib.items.StackUtils;
+import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -35,8 +36,6 @@ import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.INPUT_
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.INTERACT_SLOT;
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.OUTPUT_SLOT;
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.STATUS_SLOT;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 /**
  * Represents a single storage unit with cached data

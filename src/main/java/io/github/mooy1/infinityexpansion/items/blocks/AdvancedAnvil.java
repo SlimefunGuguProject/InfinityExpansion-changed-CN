@@ -21,6 +21,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.Maps;
+
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractEnergyCrafter;
 import io.github.mooy1.infinityexpansion.utils.Util;
@@ -31,8 +33,6 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Combines slimefun items, exceeds vanilla anvil limits

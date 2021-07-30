@@ -12,6 +12,8 @@ import org.bukkit.inventory.ItemStack;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.utils.Util;
 import io.github.mooy1.infinitylib.items.StackUtils;
+import io.github.mooy1.infinitylib.presets.LorePreset;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
@@ -26,8 +28,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 
-import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 public final class MobSimulationChamber extends AbstractTickingContainer implements EnergyNetComponent {
 

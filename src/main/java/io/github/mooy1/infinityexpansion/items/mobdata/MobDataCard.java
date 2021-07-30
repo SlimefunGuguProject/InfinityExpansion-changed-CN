@@ -12,14 +12,13 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.categories.Categories;
+import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.RandomizedSet;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 /**
  * A mob data card which will be able to be used in the {@link MobSimulationChamber}

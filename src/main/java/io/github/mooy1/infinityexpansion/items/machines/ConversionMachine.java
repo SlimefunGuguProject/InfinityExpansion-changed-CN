@@ -13,6 +13,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.recipes.RecipeMap;
 import io.github.mooy1.infinitylib.recipes.RecipeOutput;
 import io.github.mooy1.infinitylib.recipes.ShapedRecipe;
@@ -27,8 +28,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Machines that convert 1 item to another with energy

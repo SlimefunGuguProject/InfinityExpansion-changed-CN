@@ -5,6 +5,7 @@ import lombok.experimental.UtilityClass;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.categories.Categories;
 import io.github.mooy1.infinityexpansion.items.blocks.AdvancedAnvil;
@@ -13,8 +14,6 @@ import io.github.mooy1.infinityexpansion.items.blocks.StrainerBase;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.LorePreset;
 
 @UtilityClass
 public final class Blocks {

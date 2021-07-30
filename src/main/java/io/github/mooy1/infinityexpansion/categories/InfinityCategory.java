@@ -24,6 +24,7 @@ import io.github.mooy1.infinityexpansion.items.Blocks;
 import io.github.mooy1.infinityexpansion.items.blocks.InfinityWorkbench;
 import io.github.mooy1.infinitylib.categories.MultiCategory;
 import io.github.mooy1.infinitylib.items.StackUtils;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun4.core.categories.FlexCategory;
 import io.github.thebusybiscuit.slimefun4.core.guide.GuideHistory;
@@ -37,8 +38,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
 import me.mrCookieSlime.Slimefun.cscorelib2.inventory.ItemUtils;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * A custom category for displaying 6x6 recipes and their sub-recipes

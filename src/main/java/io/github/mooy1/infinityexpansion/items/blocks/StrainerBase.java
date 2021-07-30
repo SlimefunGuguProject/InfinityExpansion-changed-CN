@@ -20,6 +20,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.mooy1.infinityexpansion.items.materials.Strainer;
 import io.github.mooy1.infinityexpansion.utils.Util;
+import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
@@ -32,8 +33,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
-import net.guizhanss.minecraft.infinityexpansion.presets.MenuPreset;
 
 /**
  * Generates items slowly using up strainers, must be waterlogged
