@@ -3,6 +3,7 @@ package io.github.mooy1.infinityexpansion.items.quarries;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bukkit.Material;
@@ -28,19 +29,24 @@ public final class Oscillator extends SlimefunItem {
         return OSCILLATORS.get(StackUtils.getID(item));
     }
 
-    public Oscillator(Material material) {
-        super(Categories.MAIN_MATERIALS, new SlimefunItemStack(
+    @Nonnull
+    public static SlimefunItemStack create(Material material) {
+        return new SlimefunItemStack(
                 "QUARRY_OSCILLATOR_" + material.name(),
                 material,
                 "&b" + StackUtils.getDisplayName(new ItemStack(material)) + " 生产加速器",
                 "&7放置在矿机中",
                 "&7提高 50% 几率挖到此矿的几率"
-        ), RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+        );
+    }
+
+    public Oscillator(SlimefunItemStack item) {
+        super(Categories.MAIN_MATERIALS, item, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MACHINE_PLATE, SlimefunItems.BLISTERING_INGOT_3, Materials.MACHINE_PLATE,
-                SlimefunItems.BLISTERING_INGOT_3, new ItemStack(material), SlimefunItems.BLISTERING_INGOT_3,
+                SlimefunItems.BLISTERING_INGOT_3, new ItemStack(item.getType()), SlimefunItems.BLISTERING_INGOT_3,
                 Materials.MACHINE_PLATE, SlimefunItems.BLISTERING_INGOT_3, Materials.MACHINE_PLATE
         });
-        OSCILLATORS.put(getId(), material);
+        OSCILLATORS.put(getId(), item.getType());
     }
 
 }

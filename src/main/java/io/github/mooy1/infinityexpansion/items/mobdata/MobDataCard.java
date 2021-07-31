@@ -27,6 +27,17 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
 
     static final Map<String, MobDataCard> CARDS = new HashMap<>();
 
+    public static SlimefunItemStack create(String id, String name, MobDataTier tier) {
+        return new SlimefunItemStack(
+                id.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
+                tier.material,
+                "&b" + name + " 生物芯片",
+                "&7放在生物模拟室中使用",
+                "",
+                LorePreset.energyPerSecond(tier.energy)
+        );
+    }
+
     /**
      * @deprecated Use {@code MobDataCard.addDrop(drop, weight)} in a chain instead
      */
@@ -36,19 +47,16 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
         this(id, name, tier, recipe);
         addDrop(dropA, chanceA).addDrop(dropB, chanceB);
     }
-    
+
     public MobDataCard(String id, String name, MobDataTier tier, ItemStack[] recipe) {
-        super(Categories.MOB_SIMULATION, new SlimefunItemStack(
-                id.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
-                tier.material,
-                "&b" + name + " 生物芯片",
-                "&7放在生物模拟室中使用",
-                "",
-                LorePreset.energyPerSecond(tier.energy)
-        ), MobDataInfuser.TYPE, recipe);
-
+        super(Categories.MOB_SIMULATION, create(id, name, tier), MobDataInfuser.TYPE, recipe);
         this.tier = tier;
+        CARDS.put(getId(), this);
+    }
 
+    public MobDataCard(SlimefunItemStack item, MobDataTier tier, ItemStack[] recipe) {
+        super(Categories.MOB_SIMULATION, item, MobDataInfuser.TYPE, recipe);
+        this.tier = tier;
         CARDS.put(getId(), this);
     }
 

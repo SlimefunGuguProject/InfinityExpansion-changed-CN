@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.mooy1</groupId>
     <artifactId>InfinityExpansion</artifactId>
-    <version>DEV-117-zh_CN-patch-2</version>
+    <version>DEV-118-zh_CN</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>com.github.ybw0014</groupId>
             <artifactId>InfinityLib</artifactId>
-            <version>78248c5</version>
+            <version>fb21a91</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
