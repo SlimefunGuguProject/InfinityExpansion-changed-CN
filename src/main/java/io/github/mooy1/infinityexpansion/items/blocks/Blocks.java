@@ -1,19 +1,17 @@
-package io.github.mooy1.infinityexpansion.items;
+package io.github.mooy1.infinityexpansion.items.blocks;
 
 import lombok.experimental.UtilityClass;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.mooy1.infinitylib.presets.LorePreset;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.categories.Groups;
-import io.github.mooy1.infinityexpansion.items.blocks.AdvancedAnvil;
-import io.github.mooy1.infinityexpansion.items.blocks.InfinityWorkbench;
-import io.github.mooy1.infinityexpansion.items.blocks.StrainerBase;
+import io.github.mooy1.infinityexpansion.items.materials.Materials;
+import io.github.mooy1.infinitylib.machines.MachineLore;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 @UtilityClass
 public final class Blocks {
@@ -30,7 +28,7 @@ public final class Blocks {
             "&7将相同附魔合并升级",
             "&b可使用粘液科技物品",
             "",
-            LorePreset.energy(100000) + "每次使用"
+            MachineLore.energy(100000) + "每次使用"
     );
     public static final SlimefunItemStack INFINITY_FORGE = new SlimefunItemStack(
             "INFINITY_FORGE",
@@ -38,7 +36,7 @@ public final class Blocks {
             "&6无尽工作台",
             "&7用于制造无尽物品",
             "",
-            LorePreset.energy(10000000) + "每个物品"
+            MachineLore.energy(10000000) + "每个物品"
     );
 
     public static void setup(InfinityExpansion plugin) {
