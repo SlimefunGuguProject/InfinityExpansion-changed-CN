@@ -46,27 +46,28 @@ ybw0014 整合的自用资源包:
 https://ybw0014.net/post/guizhancraft-resource-pack
 
 ## 更新日志
-
+#### Version 120
+- Won't warn about LiteXpansion nerfs if they are disabled
 #### Version 119
 - Fixed void harvester speed issue
 - infinity harvester will be about 6% faster
 - fixed display issue with rgb names on storage signs
 - new changelog style
 #### Version 118
-- Added Config option to enable researches,
-- Improved storage unit signs,
+- Added Config option to enable researches, 
+- Improved storage unit signs, 
 - Slight nerf to mob data xp
 #### Version 117
 - Fix errors of Version 116
 #### Version 116
-- Add configuration to all quarry resources,
+- Add configuration to all quarry resources, 
 - added copper (only with 1.17+)
 #### Version 115
 - Fixed issue with storage unit display (From PR)
 #### Version 114
-- Added cobble press and advanced smeltery,
-- Attempt to fix Storage Units,
-- Fix config stuff,
+- Added cobble press and advanced smeltery, 
+- Attempt to fix Storage Units, 
+- Fix config stuff, 
 - if you are on Dev 95 or lower, update to Dev 111 before this.
 #### Version 113
 - Fix future issues on startup
@@ -89,7 +90,7 @@ https://ybw0014.net/post/guizhancraft-resource-pack
 - Fixed small issues with 104.
 #### Version 104
 - Added Quarry oscillators
-- Added witch and villager data card
+- Added witch and villager data card 
 - fixed a bunch of bugs.
 #### Version 103 and below
 - Lots of stuff

@@ -6,12 +6,12 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
-import io.github.mooy1.infinityexpansion.categories.Categories;
+import io.github.mooy1.infinityexpansion.categories.Groups;
 import io.github.mooy1.infinityexpansion.items.storage.StorageForge;
 import io.github.mooy1.infinityexpansion.items.storage.StorageUnit;
-import io.github.mooy1.infinitylib.presets.LorePreset;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.mooy1.infinitylib.machines.MachineLore;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 
 @UtilityClass
 public final class Storage {
@@ -33,35 +33,35 @@ public final class Storage {
             "BASIC_STORAGE",
             Material.OAK_WOOD,
             "&9基础 &8存储单元",
-            "&6容量: &e" + LorePreset.format(BASIC_AMOUNT) + " &e个物品"
+            "&6容量: &e" + MachineLore.format(BASIC_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack ADVANCED_STORAGE = new SlimefunItemStack(
             "ADVANCED_STORAGE",
             Material.DARK_OAK_WOOD,
             "&c高级 &8存储单元",
-            "&6容量: &e" + LorePreset.format(ADVANCED_AMOUNT) + " &e个物品"
+            "&6容量: &e" + MachineLore.format(ADVANCED_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack REINFORCED_STORAGE = new SlimefunItemStack(
             "REINFORCED_STORAGE",
             Material.ACACIA_WOOD,
             "&f超级 &8存储单元",
-            "&6容量: &e" + LorePreset.format(REINFORCED_AMOUNT) + " &e个物品"
+            "&6容量: &e" + MachineLore.format(REINFORCED_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack VOID_STORAGE = new SlimefunItemStack(
             "VOID_STORAGE",
             Material.CRIMSON_HYPHAE,
             "&8虚空 &8存储单元",
-            "&6容量: &e" + LorePreset.format(VOID_AMOUNT) + " &e个物品"
+            "&6容量: &e" + MachineLore.format(VOID_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack INFINITY_STORAGE = new SlimefunItemStack(
             "INFINITY_STORAGE",
             Material.WARPED_HYPHAE,
             "&b无尽 &8存储单元",
-            "&6容量: &e" + LorePreset.format(INFINITY_AMOUNT) + " &e个物品"
+            "&6容量: &e" + MachineLore.format(INFINITY_AMOUNT) + " &e个物品"
     );
 
     public static void setup(InfinityExpansion plugin) {
-        new StorageForge(Categories.STORAGE, STORAGE_FORGE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+        new StorageForge(Groups.STORAGE, STORAGE_FORGE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MAGSTEEL, new ItemStack(Material.ANVIL), Materials.MAGSTEEL,
                 Materials.MAGSTEEL, new ItemStack(Material.CRAFTING_TABLE), Materials.MAGSTEEL,
                 Materials.MAGSTEEL, new ItemStack(Material.BARREL), Materials.MAGSTEEL,
