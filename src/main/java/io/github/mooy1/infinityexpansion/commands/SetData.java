@@ -29,7 +29,7 @@ public final class SetData extends SubCommand {
             return;
         }
 
-        if (strings.length != 3) {
+        if (strings.length != 2) {
             commandSender.sendMessage(ChatColor.RED + "你必须指定键和值!");
             return;
         }
@@ -50,18 +50,18 @@ public final class SetData extends SubCommand {
             return;
         }
 
-        if (strings[1].equals("id")) {
+        if (strings[0].equals("id")) {
             p.sendMessage(ChatColor.RED + "你不能更改方块的 id，这可能会导致内部问题!");
             return;
         }
 
-        if (strings[2].equals("\\remove")) {
+        if (strings[1].equals("\\remove")) {
             p.sendMessage(ChatColor.GREEN + "已移除 " + id + "中 '" + strings[1] + "' 的值");
             BlockStorage.addBlockInfo(target, strings[1], null);
         }
         else {
-            p.sendMessage(ChatColor.GREEN + "已设置 " + id + "中 '" + strings[1] + "' 的值为 '" + strings[2] + "'");
-            BlockStorage.addBlockInfo(target, strings[1], strings[2]);
+            p.sendMessage(ChatColor.GREEN + "已设置 " + id + "中 '" + strings[0] + "' 的值为 '" + strings[1] + "'");
+            BlockStorage.addBlockInfo(target, strings[0], strings[1]);
         }
 
         SlimefunItem unit = SlimefunItem.getById(id);
@@ -84,13 +84,13 @@ public final class SetData extends SubCommand {
             return;
         }
 
-        if (strings.length == 2) {
+        if (strings.length == 1) {
             if (BlockStorage.hasBlockInfo(target)) {
                 list.addAll(BlockStorage.getLocationInfo(target.getLocation()).getKeys());
                 list.remove("id");
             }
         }
-        else if (strings.length == 3 && !strings[1].equals("id")) {
+        else if (strings.length == 2 && !strings[1].equals("id")) {
             String current = BlockStorage.getLocationInfo(target.getLocation(), strings[1]);
             if (current != null) {
                 list.add(current);
