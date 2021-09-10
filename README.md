@@ -50,6 +50,14 @@ ybw0014 整合的自用资源包:
 https://ybw0014.net/post/guizhancraft-resource-pack
 
 ## 更新日志
+### Version 123
+- Fix Storage unit drops
+### Version 122
+- Update to RC-28
+- Fix dust extractors
+- Small menu fixes
+### Version 121
+- Update to RC-27
 #### Version 120
 - Won't warn about LiteXpansion nerfs if they are disabled
 #### Version 119
