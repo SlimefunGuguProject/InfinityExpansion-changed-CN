@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    if: startsWith(github.event.head_commit.message, '[build skip]') == false
+    if: startsWith(github.event.head_commit.message, '[CI skip]') == false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
