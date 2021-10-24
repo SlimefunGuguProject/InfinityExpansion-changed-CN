@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import net.guizhanss.minecraft.chineselib.minecraft.entity.EntityTypes;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -29,7 +30,8 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
 
     static final Map<String, MobDataCard> CARDS = new HashMap<>();
 
-    public static SlimefunItemStack create(String id, String name, MobDataTier tier) {
+    public static SlimefunItemStack create(String id, MobDataTier tier) {
+        String name = EntityTypes.fromEnglish(id).toString();
         return new SlimefunItemStack(
                 id.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
                 tier.material,
@@ -40,8 +42,8 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
         );
     }
 
-    public MobDataCard(String id, String name, MobDataTier tier, ItemStack[] recipe) {
-        super(Groups.MOB_SIMULATION, create(id, name, tier), MobDataInfuser.TYPE, recipe);
+    public MobDataCard(String id, MobDataTier tier, ItemStack[] recipe) {
+        super(Groups.MOB_SIMULATION, create(id, tier), MobDataInfuser.TYPE, recipe);
         this.tier = tier;
         CARDS.put(getId(), this);
     }
