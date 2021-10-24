@@ -31,7 +31,13 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
     static final Map<String, MobDataCard> CARDS = new HashMap<>();
 
     public static SlimefunItemStack create(String id, MobDataTier tier) {
-        String name = EntityTypes.fromEnglish(id).toString();
+        // 血压起来了
+        String name;
+        if (id.equals("Endermen"))
+            name = EntityTypes.ENDERMAN.toString();
+        else
+            name = EntityTypes.fromEnglish(id).toString();
+
         return new SlimefunItemStack(
                 id.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
                 tier.material,
