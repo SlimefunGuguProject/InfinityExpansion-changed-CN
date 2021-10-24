@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.github.ybw0014</groupId>
             <artifactId>ChineseLib</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.3</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
