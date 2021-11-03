@@ -3,14 +3,13 @@ package io.github.mooy1.infinityexpansion.items.mobdata;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import net.guizhanss.minecraft.chineselib.minecraft.entity.EntityTypes;
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.categories.Groups;
@@ -21,6 +20,9 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.RandomizedSet;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+
+import net.guizhanss.minecraft.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
+import net.guizhanss.minecraft.guizhanlib.utils.StringUtil;
 
 /**
  * A mob data card which will be able to be used in the {@link MobSimulationChamber}
@@ -34,12 +36,12 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
         // 血压起来了
         String name;
         if (id.equals("Endermen"))
-            name = EntityTypes.ENDERMAN.toString();
+            name = EntityTypeHelper.getName(EntityType.ENDERMAN);
         else
-            name = EntityTypes.fromEnglish(id).toString();
+            name = EntityTypeHelper.getName(EntityType.valueOf(StringUtil.dehumanize(id)));
 
         return new SlimefunItemStack(
-                id.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
+                StringUtil.dehumanize(id) + "_DATA_CARD",
                 tier.material,
                 "&b" + name + " 生物芯片",
                 "&7放在生物模拟室中使用",
