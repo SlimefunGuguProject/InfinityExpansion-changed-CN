@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import lombok.Setter;
 
+import net.guizhanss.minecraft.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -279,7 +280,7 @@ final class StorageCache {
         else {
             this.meta = copy;
         }
-        setDisplayName(ItemUtils.getItemName(stored));
+        setDisplayName(ItemStackHelper.getDisplayName(stored));
         this.material = stored.getType();
     }
 
@@ -400,7 +401,7 @@ final class StorageCache {
 
     private void setStored(ItemStack input) {
         this.meta = input.hasItemMeta() ? input.getItemMeta() : null;
-        setDisplayName(ItemUtils.getItemName(input));
+        setDisplayName(ItemStackHelper.getDisplayName(input));
         this.material = input.getType();
 
         // add the display key to the display input and set amount 1
