@@ -86,27 +86,27 @@ public final class Gear {
     public static final SlimefunItemStack BLADE = new SlimefunItemStack(
             "INFINITY_BLADE",
             Material.NETHERITE_SWORD,
-            "&b宇宙之刃"
+            "&b寰宇支配之剑"
     );
     public static final SlimefunItemStack PICKAXE = new SlimefunItemStack(
             "INFINITY_PICKAXE",
             Material.NETHERITE_PICKAXE,
-            "&9世界破坏者"
+            "&9世界崩解之镐"
     );
     public static final SlimefunItemStack AXE = new SlimefunItemStack(
             "INFINITY_AXE",
             Material.NETHERITE_AXE,
-            "&4粉碎者"
+            "&4自然荒芜之斧"
     );
     public static final SlimefunItemStack SHOVEL = new SlimefunItemStack(
             "INFINITY_SHOVEL",
             Material.NETHERITE_SHOVEL,
-            "&a拾荒者"
+            "&a星球吞噬之铲"
     );
     public static final SlimefunItemStack BOW = new SlimefunItemStack(
             "INFINITY_BOW",
             Material.BOW,
-            "&6天空之弓"
+            "&6天堂陨落长弓"
     );
     public static final SlimefunItemStack VEIN_MINER_RUNE = new SlimefunItemStack(
             "VEIN_MINER_RUNE",
