@@ -27,8 +27,8 @@ public final class Machines {
     public static final SlimefunItemStack COBBLE_PRESS = new SlimefunItemStack(
             "COBBLE_PRESS",
             Material.SMOOTH_STONE,
-            "&8原石压缩机",
-            "&7高效压缩原石",
+            "&8圆石压缩机",
+            "&7高效压缩圆石",
             "",
             MachineLore.energyPerSecond(120)
     );
@@ -126,7 +126,7 @@ public final class Machines {
             "DUST_EXTRACTOR",
             Material.FURNACE,
             "&8磨粉机",
-            "&7将原石变为矿粉",
+            "&7将圆石变为矿粉",
             "",
             MachineLore.speed(1),
             MachineLore.energyPerSecond(240)
@@ -135,7 +135,7 @@ public final class Machines {
             "INFINITY_DUST_EXTRACTOR",
             Material.FURNACE,
             "&b无尽 &8磨粉机",
-            "&7将原石变为矿粉",
+            "&7将圆石变为矿粉",
             "",
             MachineLore.speed(16),
             MachineLore.energyPerSecond(7200)
@@ -162,7 +162,7 @@ public final class Machines {
             "URANIUM_EXTRACTOR",
             Material.LIME_CONCRETE,
             "&a铀提取器",
-            "&7将原石变为铀",
+            "&7将圆石变为铀",
             "",
             MachineLore.energyPerSecond(240)
     );
@@ -186,7 +186,7 @@ public final class Machines {
     public static final SlimefunItemStack BASIC_COBBLE = new SlimefunItemStack(
             "BASIC_COBBLE_GEN",
             Material.SMOOTH_STONE,
-            "&9基础 &8原石生成器",
+            "&9基础 &8圆石生成器",
             "",
             MachineLore.speed(1),
             MachineLore.energyPerSecond(24)
@@ -194,7 +194,7 @@ public final class Machines {
     public static final SlimefunItemStack ADVANCED_COBBLE = new SlimefunItemStack(
             "ADVANCED_COBBLE_GEN",
             Material.SMOOTH_STONE,
-            "&c高级 &8原石生成器",
+            "&c高级 &8圆石生成器",
             "",
             MachineLore.speed(4),
             MachineLore.energyPerSecond(120)
@@ -202,7 +202,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_COBBLE = new SlimefunItemStack(
             "INFINITY_COBBLE_GEN",
             Material.SMOOTH_STONE,
-            "&c无尽 &8原石生成器",
+            "&c无尽 &8圆石生成器",
             "",
             MachineLore.speed(64),
             MachineLore.energyPerSecond(800)

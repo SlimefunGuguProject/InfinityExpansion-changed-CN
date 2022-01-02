@@ -82,31 +82,31 @@ public final class Materials {
             "COMPRESSED_COBBLESTONE_1",
             Material.ANDESITE,
             "&7简易压缩的石头",
-            "&89个原石压缩而来"
+            "&89个圆石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_2 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_2",
             Material.ANDESITE,
             "&7双重压缩的石头",
-            "&881个原石压缩而来"
+            "&881个圆石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_3 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_3",
             Material.STONE,
             "&7三重压缩的石头",
-            "&8729个原石压缩而来"
+            "&8729个圆石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_4 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_4",
             Material.STONE,
             "&7四重压缩的石头",
-            "&86561个原石压缩而来"
+            "&86561个圆石压缩而来"
     );
     public static final SlimefunItemStack COBBLE_5 = new SlimefunItemStack(
             "COMPRESSED_COBBLESTONE_5",
             Material.POLISHED_ANDESITE,
             "&7五重压缩的石头",
-            "&859049个原石压缩而来"
+            "&859049个圆石压缩而来"
     );
     public static final SlimefunItemStack MAGSTEEL = new SlimefunItemStack(
             "MAGSTEEL",
