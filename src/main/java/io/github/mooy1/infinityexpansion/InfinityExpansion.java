@@ -31,7 +31,7 @@ public final class InfinityExpansion extends AbstractAddon {
 
     public InfinityExpansion(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
         super(loader, description, dataFolder, file,
-                "Mooy1", "InfinityExpansion", "master", "auto-update");
+                "ybw0014", "InfinityExpansion", "master", "auto-update");
     }
 
     public InfinityExpansion() {
@@ -49,9 +49,9 @@ public final class InfinityExpansion extends AbstractAddon {
         if (lx != null && lx.getConfig().getBoolean("options.nerf-other-addons")) {
             Scheduler.run(() -> log(Level.WARNING,
                     "########################################################",
-                    "LiteXpansion nerfs energy generation in this addon.",
-                    "You can disable these nerfs in the LiteXpansion config.",
-                    "Under 'options:' add 'nerf-other-addons: false'",
+                    "LiteXpansion 对本附属插件中的发电机效率进行了削弱",
+                    "你可以在 LiteXpansion 的配置文件中更改修改设置",
+                    "在'options'中设置'nerf-other-addons'为false",
                     "########################################################"
             ));
         }
