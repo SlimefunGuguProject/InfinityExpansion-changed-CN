@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -21,7 +20,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
-import io.github.mooy1.infinitylib.common.Scheduler;
 import io.github.mooy1.infinitylib.machines.MachineLore;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
@@ -236,7 +234,7 @@ public final class StorageCache {
         this.signDisplay[1] = "";
     }
 
-    void destroy(Location l, BlockBreakEvent e, List<ItemStack> drops) {
+    void destroy(BlockBreakEvent e, List<ItemStack> drops) {
 
         // add output slot
         ItemStack output = this.menu.getItemInSlot(OUTPUT_SLOT);
@@ -257,13 +255,7 @@ public final class StorageCache {
     void reloadData() {
         Config config = BlockStorage.getLocationInfo(this.menu.getLocation());
         String amt = config.getString(STORED_AMOUNT);
-        if (amt == null) {
-            this.amount = 0;
-            Scheduler.run(() -> BlockStorage.addBlockInfo(this.menu.getLocation(), STORED_AMOUNT, "0"));
-        }
-        else {
-            this.amount = Integer.parseInt(amt);
-        }
+        this.amount = amt == null ? 0 : Integer.parseInt(amt);
         this.voidExcess = "true".equals(config.getString(VOID_EXCESS));
     }
 
@@ -356,7 +348,7 @@ public final class StorageCache {
             updateStatus();
         }
 
-        // sings
+        // signs
         if (InfinityExpansion.slimefunTickCount() % 20 == 0) {
             Block check = block.getRelative(0, 1, 0);
             if (SlimefunTag.SIGNS.isTagged(check.getType())
