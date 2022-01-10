@@ -1,36 +1,41 @@
-
-# You should enable this to get bug fixes and receive support asap!
+# 启用自动更新（汉化版该选项暂无作用）
 auto-update: true
 
 balance-options:
-  
-  # Increases or decreases the cost of infinity singularities
+
+  # 设置结构消耗材料的倍数
   singularity-cost-multiplier: 1.0
-  
-  # Will allow the gear transformer to change slimefun gear's material. Diamond tools can already be upgraded to netherite, 
-  # but some addon developers do not want there gear to be transformable so change this at your own risk.
+
+  # 允许装备材质转换器更改 Slimefun 中装备的材质。
+  # 钻石装备可升级为下界合金，但部分附属插件的物品可能在升级后无法使用
+  # 请谨慎开启该选项！！
   allow-sf-item-transform: false
 
-  # Enables/Disables Researches which requires players to spend xp to unlock items
+  # 是否启用无尽科技物品的研究
+  # 开启后玩家需要消耗等级来解锁物品（与Slimefun设置一致）
   enable-researches: false
-  
+
+# 生物模拟相关设置
 mob-simulation-options:
 
-  # The number of slimefun ticks it takes to output xp and drops. 1 slimefun tick = .5 seconds by default
+  # 每隔多少 sf tick 输出产物和经验
+  # 在没有更改 Slimefun 设置的情况下，1 sf tick = 0.5 秒
   ticks-per-output: 20
 
-  # Multiplies amount of xp gained from mob simulation
+  # 设置从生物模拟中获取经验的倍率
   xp-multiplier: 1.0
-  
+
+# 矿机相关设置
 quarry-options:
 
-  # The number of slimefun ticks it takes to mine 1 block. 1 slimefun ticks = .6 seconds by default
+  # 每隔多少 sf tick 输出产物
+  # 在没有更改 Slimefun 设置的情况下，1 sf tick = 0.5 秒
   ticks-per-output: 10
 
-  # Allow quarries to mine quartz, netherite, netherrack in any world
+  # 允许在非下界的矿机输出下界产物（石英，下界岩，下界合金）
   output-nether-materials-in-overworld: false
 
-  # Enable/Disable resources from being produced
+  # 允许矿机输出哪些资源
   resources:
 
     coal: true
@@ -38,7 +43,7 @@ quarry-options:
     gold: true
     lapis: true
 
-    # Vanilla Copper (1.17+)
+    # 原版铜 (1.17+)
     copper: true
     quartz: true
     diamond: true
@@ -47,7 +52,7 @@ quarry-options:
     netherite: true
     netherrack: true
   
-# These are the maximum level of enchants that can be obtained by combining 2 of the same enchant of the same level.
+# 设置高级铁砧的附魔等级上限
 advanced-anvil-max-levels:
   sharpness: 9
   bane-of-arthropods: 9
@@ -61,8 +66,9 @@ advanced-anvil-max-levels:
   looting: 6
   unbreaking: 13
 
-# levels of infinity gear. this will not affect existing items. adding more enchants wont have any effect, only change levels. 
-# protection caps out at 20 levels across all 4 pieces of gear. So 10+10+10+10 is still the same as 5+5+5+5.
+# 设置无尽套装的附魔等级，不会影响到已合成的无尽套装
+# 在这里添加其他附魔没有任何效果，你只能更改已有附魔的等级
+# 所有防具的保护等级加起来如果超过20级，则只按照20级来计算
 infinity-enchant-levels:
   blade:
     unbreakable: true
