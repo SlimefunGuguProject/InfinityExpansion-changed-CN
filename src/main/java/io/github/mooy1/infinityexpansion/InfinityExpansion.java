@@ -50,7 +50,7 @@ public final class InfinityExpansion extends AbstractAddon {
             Scheduler.run(() -> log(Level.WARNING,
                     "########################################################",
                     "LiteXpansion 对本附属插件中的发电机效率进行了削弱",
-                    "你可以在 LiteXpansion 的配置文件中更改修改设置",
+                    "你可以在 LiteXpansion 的配置文件中更改设置",
                     "在'options'中设置'nerf-other-addons'为false",
                     "########################################################"
             ));
