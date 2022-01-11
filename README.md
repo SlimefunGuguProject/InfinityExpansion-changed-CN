@@ -4,6 +4,8 @@
 
 ## 下载
 
+> 如果你遇到无尽存储单元被降级的问题，请立即更新到最新版。
+
 点击这里下载 InfinityExpansion: [下载 InfinityExpansion](https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/master)
 
 <p align="center">
