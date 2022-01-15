@@ -117,7 +117,7 @@ public final class Machines {
     public static final SlimefunItemStack EXTREME_FREEZER = new SlimefunItemStack(
             "EXTREME_FREEZER",
             Material.LIGHT_BLUE_CONCRETE,
-            "&b无尽冰柜",
+            "&b极寒冰柜",
             "&7将冰转化为冷却剂",
             "",
             MachineLore.energyPerSecond(90)
