@@ -15,7 +15,7 @@ import io.github.mooy1.infinitylib.commands.SubCommand;
 public final class PrintItem extends SubCommand {
 
     public PrintItem() {
-        super("printitem", "Prints the internal data of an item for debugging purposes", true);
+        super("printitem", "(调试)输出物品的内部数据", true);
     }
 
     @Override
@@ -29,7 +29,7 @@ public final class PrintItem extends SubCommand {
         ItemStack item = p.getInventory().getItemInMainHand();
 
         if (item.getType() == Material.AIR) {
-            p.sendMessage(ChatColor.RED + "You must be holding an item!");
+            p.sendMessage(ChatColor.RED + "你必须手持一个物品!");
             return;
         }
 
