@@ -1,14 +1,62 @@
-# 无尽改版（RC-27）
-改动:
--增加了虚空锭结构：虚空结构 
--增加了新材料：亚稳态光尘和稳定态光结构。光尘可以通过新机器光隙棱镜生产，也可以通过资源生成器，消耗一个虚空奇点和一个青金石/红石/钻石/绿宝石奇点可以生成64个光尘。通过结构构造机可以将64个光尘构造为稳定光结构。 
--一个基础结构和一个光结构可以产生4个相应的基础结构 
--增加了五阶压缩原石（1000个）构造的结构体，它可以和光结构碰撞产生一个无尽锭 
--无尽的铸锭机产物减半的设定消除了
--增加了光隙发电机发电量为2w4，需要用3个虚空太阳能制作。 
--增加了狄拉克发电机是120w，需要20个光隙发电机和4个无尽发电机制作
--无尽科技的植树机现在可以种蘑菇了 
--绝大部分食物、蘑菇块等可以在酵解机变为发酵液，发酵液可以用来生产石油和皮革 
--部分原木可以在无尽分解机里分解为纤维，纤维合成的纤维块又可以在分解机里变成很多纸张 
--64苹果可以合成1个苹果奇点，通过点金石可以点成金苹果奇点，金苹果奇点能过注魔点金石变成魔法苹果奇点，金苹果奇点和魔法苹果奇点也能通过64个金苹果或附魔金苹果合成。 
--苹果奇点可以分解为64个苹果，金苹果奇点可以分解为64个金苹果，魔法苹果奇点可以分解为64个附魔金苹果
+# InfinityExpansion X 无尽科技修改版X
+
+此附属修改了原版无尽科技，修改内容很多，而且对于某些服务器可能存在不兼容的情况，建议安装前先进行备份测试以免发生bug
+此附属的代码基于ybw0014大佬制作和汉化的Version 123 版本源代码，一切兼容以该版本为基础
+
+## 下载
+
+点击这里下载 InfinityExpansion: [下载 InfinityExpansion](https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/master)
+
+<p align="center">
+  <a href="https://github.com/ybw0014/InfinityExpansion-CN/actions/workflows/maven.yml">
+    <img src="https://github.com/ybw0014/InfinityExpansion-CN/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
+  </a>
+
+  <a href="https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/master">
+    <img src="https://builds.guizhanss.net/f/ybw0014/InfinityExpansion-CN/master/badge.svg" alt="Build status"/>
+  </a>
+</p>
+
+## Bug/建议
+
+该版本为非官方修改版本，如使用过程中发现异常或者恶性bug建议停止使用该版本，回调至最新版本的原版无尽科技，或者自行调整源码进行修改，同时也欢迎一切基于此版本代码进行修改并开源的任何改进版本；
+该版本很可能不会发布任何后续更新版本，如有需求建议自行根据需求对源代码进行调整；
+
+
+## 需求
+
+Minecraft 版本: 1.16+ (建议使用Paper)
+
+Slimefun 版本: DEV 966+
+
+[![Build Status](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/badge.svg)](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/)
+
+## 材质包
+
+适用于本附属插件的资源包(需要 Optifine):
+
+https://github.com/Mooy1/InfinityExpansion/releases/tag/v1
+
+ybw0014 整合的资源包:
+
+https://ybw0014.net/post/guizhancraft-resource-pack
+
+## 更新日志
+### Version X（修改版）
+- 对原版一些机器进行了调整，包括但不限于调整矿机效率、增加大量资源合成机配方等；
+- 增加一些新物品，并基于新物品对一些原本的物品进行了配方调整；
+- 增加“亚稳态光尘”这一特殊资源，资源获取方法见游戏内，亚稳态光尘提供了原版结构增殖以及无尽锭的其它产出路径；
+- 增加了新的高级发电机；
+- 简单强化了无尽弓，如有其它调整可在源代码中寻找相关文件进行修改；
+- 无尽套的效果也进行了简单强化，同样你如果有想法也可以继续修改，我本来想加点listener事件但想想还是太麻烦了；
+- 植树机可以种蘑菇了；
+- 增加了生物酵解机，大多数食物都能被转化为酵解生物质，酵解生物质可以继续酵解为原油（本来这个配方想注册在加热压力仓里的但是我太懒了）；
+- 增加了纤维质，可以用来大量造纸或者造皮革；
+- 增加了一个略显繁琐的用于合成金苹果或者附魔金苹果的流程；
+- 预计添加无尽岩浆桶、无尽水桶等道具，但这段时间里因为很多事情耽搁了所以没做；
+- 如果你喜欢或不喜欢这些改动，你可以考虑进行删改；
+- 在某些服务器可能会出现无法运行的bug，可能对最新版本的粘液附属不兼容，服务器安装此附属前注意备份和测试；
+- 未来的计划：无尽水桶、无尽岩浆桶，以及针对某些原版物品或者粘液科技物品的获取方法的拓展，或者对于其它某些附属的有趣功能的简单借鉴融合，当然这些更新短期可能无法实现
+### Version 123（原版）
+- Fix Storage unit drops
+
