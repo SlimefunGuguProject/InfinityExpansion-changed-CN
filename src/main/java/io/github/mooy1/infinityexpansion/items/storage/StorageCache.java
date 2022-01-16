@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -20,14 +21,16 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
+import io.github.mooy1.infinitylib.common.Scheduler;
 import io.github.mooy1.infinitylib.machines.MachineLore;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+
+import net.guizhanss.minecraft.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.DISPLAY_KEY;
 import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.DISPLAY_SLOT;
@@ -42,12 +45,12 @@ import static io.github.mooy1.infinityexpansion.items.storage.StorageUnit.STATUS
  *
  * @author Mooy1
  */
-public final class StorageCache {
+final class StorageCache {
 
     /* Menu strings */
-    private static final String EMPTY_DISPLAY_NAME = ChatColor.WHITE + "Empty";
-    private static final String VOID_EXCESS_TRUE = ChatColors.color("&7Void Excess:&e true");
-    private static final String VOID_EXCESS_FALSE = ChatColors.color("&7Void Excess:&e false");
+    private static final String EMPTY_DISPLAY_NAME = ChatColor.WHITE + "空";
+    private static final String VOID_EXCESS_TRUE = ChatColors.color("&7存储满时清空输入:&e 开");
+    private static final String VOID_EXCESS_FALSE = ChatColors.color("&7存储满时清空输入:&e 关");
 
     /* BlockStorage keys */
     private static final String STORED_AMOUNT = "stored"; // amount key in block data
@@ -55,7 +58,7 @@ public final class StorageCache {
 
     /* Menu Items */
     private static final ItemStack EMPTY_ITEM = new CustomItemStack(Material.BARRIER, meta -> {
-        meta.setDisplayName(ChatColor.WHITE + "Empty");
+        meta.setDisplayName(ChatColor.WHITE + "空");
         meta.getPersistentDataContainer().set(EMPTY_KEY, PersistentDataType.BYTE, (byte) 1);
     });
 
@@ -233,7 +236,7 @@ public final class StorageCache {
         this.signDisplay[1] = "";
     }
 
-    void destroy(BlockBreakEvent e, List<ItemStack> drops) {
+    void destroy(Location l, BlockBreakEvent e, List<ItemStack> drops) {
 
         // add output slot
         ItemStack output = this.menu.getItemInSlot(OUTPUT_SLOT);
@@ -247,14 +250,20 @@ public final class StorageCache {
 
         ItemStack drop = this.storageUnit.getItem().clone();
         drop.setItemMeta(StorageUnit.saveToStack(drop.getItemMeta(), this.menu.getItemInSlot(DISPLAY_SLOT), this.displayName, this.amount));
-        e.getPlayer().sendMessage(ChatColor.GREEN + "Stored items transferred to dropped item");
+        e.getPlayer().sendMessage(ChatColor.GREEN + "物品仍保存在存储单元中");
         drops.add(drop);
     }
 
     void reloadData() {
         Config config = BlockStorage.getLocationInfo(this.menu.getLocation());
         String amt = config.getString(STORED_AMOUNT);
-        this.amount = amt == null ? 0 : Integer.parseInt(amt);
+        if (amt == null) {
+            this.amount = 0;
+            Scheduler.run(() -> BlockStorage.addBlockInfo(this.menu.getLocation(), STORED_AMOUNT, "0"));
+        }
+        else {
+            this.amount = Integer.parseInt(amt);
+        }
         this.voidExcess = "true".equals(config.getString(VOID_EXCESS));
     }
 
@@ -271,7 +280,7 @@ public final class StorageCache {
         else {
             this.meta = copy;
         }
-        setDisplayName(ItemUtils.getItemName(stored));
+        setDisplayName(ItemStackHelper.getDisplayName(stored));
         this.material = stored.getType();
     }
 
@@ -347,7 +356,7 @@ public final class StorageCache {
             updateStatus();
         }
 
-        // signs
+        // sings
         if (InfinityExpansion.slimefunTickCount() % 20 == 0) {
             Block check = block.getRelative(0, 1, 0);
             if (SlimefunTag.SIGNS.isTagged(check.getType())
@@ -368,19 +377,19 @@ public final class StorageCache {
 
     private void updateStatus() {
         this.menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, meta -> {
-            meta.setDisplayName(ChatColor.AQUA + "Status");
+            meta.setDisplayName(ChatColor.AQUA + "状态");
             List<String> lore = new ArrayList<>();
             if (this.amount == 0) {
-                lore.add(ChatColors.color("&6Stored: &e0 / " + MachineLore.format(this.storageUnit.max) + " &7(0%)"));
+                lore.add(ChatColors.color("&6已储存: &e0 / " + MachineLore.format(this.storageUnit.max) + " &7(0%)"));
             }
             else {
-                lore.add(ChatColors.color("&6Stored: &e" + MachineLore.format(this.amount)
+                lore.add(ChatColors.color("&6已储存: &e" + MachineLore.format(this.amount)
                         + " / " + MachineLore.format(this.storageUnit.max)
                         + " &7(" + MachineLore.format((double) this.amount * 100.D / this.storageUnit.max) + "%)"
                 ));
             }
             lore.add(this.voidExcess ? VOID_EXCESS_TRUE : VOID_EXCESS_FALSE);
-            lore.add(ChatColor.GRAY + "(Click to toggle)");
+            lore.add(ChatColor.GRAY + "(点击开关)");
             meta.setLore(lore);
         }), false);
     }
@@ -392,7 +401,7 @@ public final class StorageCache {
 
     private void setStored(ItemStack input) {
         this.meta = input.hasItemMeta() ? input.getItemMeta() : null;
-        setDisplayName(ItemUtils.getItemName(input));
+        setDisplayName(ItemStackHelper.getDisplayName(input));
         this.material = input.getType();
 
         // add the display key to the display input and set amount 1
@@ -470,33 +479,19 @@ public final class StorageCache {
     }
 
     private void depositAll(Player p) {
-        depositAll(p.getInventory().getStorageContents());
-    }
-
-    public void depositAll(ItemStack[] itemStacks) {
-        depositAll(itemStacks, false);
-    }
-
-    public void depositAll(ItemStack[] itemStacks, boolean observeVoiding) {
         if (this.amount < this.storageUnit.max) {
-            for (ItemStack item : itemStacks) {
+            for (ItemStack item : p.getInventory().getStorageContents()) {
                 if (item != null && matches(item)) {
                     if (item.getAmount() + this.amount >= this.storageUnit.max) {
                         // last item
                         item.setAmount(item.getAmount() - (this.storageUnit.max - this.amount));
                         this.amount = this.storageUnit.max;
+                        break;
                     }
                     else {
                         this.amount += item.getAmount();
                         item.setAmount(0);
                     }
-                }
-            }
-        }
-        if (observeVoiding && this.voidExcess) {
-            for (ItemStack item : itemStacks) {
-                if (item != null && matches(item)) {
-                    item.setAmount(0);
                 }
             }
         }

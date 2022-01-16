@@ -40,8 +40,8 @@ public final class StoneworksFactory extends AbstractMachineBlock implements Rec
     private static final int STATUS_SLOT = 9;
     private static final int[] CHOICE_SLOTS = { 11, 13, 15 };
     private static final int[] PROCESS_SLOTS = { 10, 12, 14 };
-    private static final ItemStack COBBLE_GEN = new CustomItemStack(Material.GRAY_CONCRETE, "&8Cobblegen");
-    private static final ItemStack PROCESSING = new CustomItemStack(Material.GRAY_STAINED_GLASS_PANE, "&7Processing");
+    private static final ItemStack COBBLE_GEN = new CustomItemStack(Material.GRAY_CONCRETE, "&8原石生成器");
+    private static final ItemStack PROCESSING = new CustomItemStack(Material.GRAY_STAINED_GLASS_PANE, "&7生产中");
 
     public StoneworksFactory(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
@@ -204,25 +204,25 @@ public final class StoneworksFactory extends AbstractMachineBlock implements Rec
 
     @AllArgsConstructor
     private enum Choice {
-        NONE(new CustomItemStack(Material.BARRIER, "&cNone", "", "&7 > Click to cycle"),
+        NONE(new CustomItemStack(Material.BARRIER, "&c无操作", "", "&7 > 点击切换"),
                 new Material[0],
                 new Material[0]
         ),
-        FURNACE(new CustomItemStack(Material.FURNACE, "&8Smelting", "", "&7 > Click to cycle"),
+        FURNACE(new CustomItemStack(Material.FURNACE, "&8烧制", "", "&f圆石 &8=> &f石头", "&f沙子 &8=> &f玻璃", "", "&7 > 点击切换"),
                 new Material[] { Material.COBBLESTONE, Material.SAND },
                 new Material[] { Material.STONE, Material.GLASS }
         ),
-        CRUSH(new CustomItemStack(Material.DIAMOND_PICKAXE, "&8Crushing", "", "&7 > Click to cycle"),
+        CRUSH(new CustomItemStack(Material.DIAMOND_PICKAXE, "&8粉碎", "", "&f圆石 &8=> &f沙砾", "&f沙砾 &8=> &f沙子", "", "&7 > 点击切换"),
                 new Material[] { Material.COBBLESTONE, Material.GRAVEL },
                 new Material[] { Material.GRAVEL, Material.SAND }
         ),
-        COMPACT(new CustomItemStack(Material.PISTON, "&8Compacting", "", "&7 > Click to cycle"),
+        COMPACT(new CustomItemStack(Material.PISTON, "&8压实", "", "&f石头 &8=> &f石砖", "&f花岗岩 &8=> &f磨制花岗岩", "&f闪长岩 &8=> &f磨制闪长岩", "&f安山岩 &8=> &f磨制安山岩", "", "&7 > 点击切换"),
                 new Material[] { Material.STONE, Material.GRANITE, Material.DIORITE, Material.ANDESITE },
                 new Material[] { Material.STONE_BRICKS, Material.POLISHED_GRANITE, Material.POLISHED_DIORITE, Material.POLISHED_ANDESITE }
         ),
-        TRANSFORM(new CustomItemStack(Material.ANDESITE, "&8Transforming", "", "&7 > Click to cycle"),
-                new Material[] { Material.COBBLESTONE, Material.ANDESITE, Material.DIORITE },
-                new Material[] { Material.ANDESITE, Material.DIORITE, Material.GRANITE }
+        TRANSFORM(new CustomItemStack(Material.ANDESITE, "&8转化", "", "&f圆石 &8=> &f安山岩", "&f安山岩 &8=> &f闪长岩", "&f闪长岩 &8=> &f花岗岩", "", "&7 > 点击切换"),
+                new Material[] { Material.COBBLESTONE, Material.ANDESITE, Material.DIORITE},
+                new Material[] { Material.ANDESITE, Material.DIORITE, Material.GRANITE}
         );
 
         private final ItemStack item;

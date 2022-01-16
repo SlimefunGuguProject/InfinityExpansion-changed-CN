@@ -3,13 +3,13 @@ package io.github.mooy1.infinityexpansion.items.mobdata;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinityexpansion.categories.Groups;
@@ -21,6 +21,9 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.RandomizedSet;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
+import net.guizhanss.minecraft.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
+import net.guizhanss.minecraft.guizhanlib.utils.StringUtil;
+
 /**
  * A mob data card which will be able to be used in the {@link MobSimulationChamber}
  */
@@ -29,19 +32,26 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
 
     static final Map<String, MobDataCard> CARDS = new HashMap<>();
 
-    public static SlimefunItemStack create(String name, MobDataTier tier) {
+    public static SlimefunItemStack create(String id, MobDataTier tier) {
+        // 血压起来了
+        String name;
+        if (id.equals("Endermen"))
+            name = EntityTypeHelper.getName(EntityType.ENDERMAN);
+        else
+            name = EntityTypeHelper.getName(EntityType.valueOf(StringUtil.dehumanize(id)));
+
         return new SlimefunItemStack(
-                name.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CARD",
+                StringUtil.dehumanize(id) + "_DATA_CARD",
                 tier.material,
-                "&b" + name + " Data Card",
-                "&7Place in a mob simulation chamber to activate",
+                "&b" + name + " 生物芯片",
+                "&7放在生物模拟室中使用",
                 "",
                 MachineLore.energyPerSecond(tier.energy)
         );
     }
 
-    public MobDataCard(String name, MobDataTier tier, ItemStack[] recipe) {
-        super(Groups.MOB_SIMULATION, create(name, tier), MobDataInfuser.TYPE, recipe);
+    public MobDataCard(String id, MobDataTier tier, ItemStack[] recipe) {
+        super(Groups.MOB_SIMULATION, create(id, tier), MobDataInfuser.TYPE, recipe);
         this.tier = tier;
         CARDS.put(getId(), this);
     }

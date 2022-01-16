@@ -45,7 +45,11 @@ public final class Researches {
                 Materials.NETHERITE_SINGULARITY,
                 Materials.QUARTZ_SINGULARITY,
                 Machines.SINGULARITY_CONSTRUCTOR,
+				Materials.VOID_SINGULARITY,
+				Materials.LUMINA_SINGULARITY,
+				Materials.COBBLE_HEART,
                 Machines.RESOURCE_SYNTHESIZER
+
         );
         create(3, "infinity_ingot", "Creating Infinity", 40,
                 Materials.EARTH_SINGULARITY, Materials.FORTUNE_SINGULARITY, Materials.MAGIC_SINGULARITY,
@@ -68,7 +72,7 @@ public final class Researches {
         );
         create(8, "compressed_cobble", "Compressing Cobblestone", 15,
                 Materials.COBBLE_1, Materials.COBBLE_2, Materials.COBBLE_3,
-                Materials.COBBLE_4, Materials.COBBLE_5, Machines.COBBLE_PRESS
+                Materials.COBBLE_4, Materials.COBBLE_5, Materials.COBBLE_HEART, Machines.COBBLE_PRESS
         );
         create(9, "starter_machines", "Starter Machines", 15,
                 Machines.BASIC_COBBLE, Machines.BASIC_GROWER,
@@ -83,7 +87,7 @@ public final class Researches {
         );
         create(12, "advanced_power", "Advanced Power", 35,
                 Generators.ADVANCED_PANEL, Generators.GEOTHERMAL, Generators.REINFORCED_HYDRO,
-                Generators.REINFORCED_GEOTHERMAL, Generators.CELESTIAL_PANEL,
+                Generators.REINFORCED_GEOTHERMAL, Generators.CELESTIAL_PANEL, Generators.LUMINA_PANEL,
                 SlimefunExtension.ADVANCED_NETHER_STAR_REACTOR
         );
         create(13, "advanced_machines", "Advanced Machines", 40,
@@ -101,7 +105,7 @@ public final class Researches {
         create(15, "infinity_upgrades", "Infinity Upgrades", 80,
                 Machines.INFINITE_VOID_HARVESTER, Machines.INFINITY_COBBLE, Machines.INFINITY_CONSTRUCTOR,
                 Machines.INFINITY_GROWER, Machines.INFINITY_TREE, Machines.INFINITY_INGOT_FORMER,
-                Generators.INFINITE_PANEL, Generators.INFINITY_REACTOR, Storage.INFINITY_STORAGE,
+                Generators.INFINITE_PANEL, Generators.INFINITY_REACTOR, Storage.INFINITY_STORAGE, Generators.LUMINA_END_PANEL,
                 SlimefunExtension.INFINITY_CAPACITOR, SlimefunExtension.INFINITY_CHARGER,
                 SlimefunExtension.INFINITY_DISENCHANTER, SlimefunExtension.INFINITY_ENCHANTER,
                 Quarries.INFINITY_QUARRY, Machines.INFINITY_DUST_EXTRACTOR

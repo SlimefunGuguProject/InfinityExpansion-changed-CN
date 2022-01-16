@@ -33,8 +33,8 @@ public final class GrowingMachine extends AbstractMachineBlock implements Recipe
     };
     private static final int[] INPUT_SLOTS = { 37 };
     private static final int STATUS_SLOT = 10;
-    private static final ItemStack GROWING = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&aGrowing...");
-    private static final ItemStack INPUT_PLANT = new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9Input a plant!");
+    private static final ItemStack GROWING = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&a生长中...");
+    private static final ItemStack INPUT_PLANT = new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9放入一个作物!");
 
     @Setter
     private EnumMap<Material, ItemStack[]> recipes;

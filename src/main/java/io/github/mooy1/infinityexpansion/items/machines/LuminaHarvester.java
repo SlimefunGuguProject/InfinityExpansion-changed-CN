@@ -23,20 +23,20 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
 /**
- * harvests void bits from... the void
+ * harvests lumina dusts from... the lumina
  *
- * @author Mooy1
+ * @author REC0
  */
-public final class VoidHarvester extends AbstractMachineBlock implements RecipeDisplayItem {
+public final class LuminaHarvester extends AbstractMachineBlock implements RecipeDisplayItem {
 
-    public static final RecipeType TYPE = new RecipeType(InfinityExpansion.createKey("void_harvester"), Machines.VOID_HARVESTER);
+    public static final RecipeType TYPE = new RecipeType(InfinityExpansion.createKey("lumina_harvester"), Machines.LUMINA_HARVESTER);
 
     private static final int[] OUTPUT_SLOTS = { 13 };
-    private static final int TIME = 1024;
+    private static final int TIME = 600;
 
     private final int speed;
 
-    public VoidHarvester(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int speed) {
+    public LuminaHarvester(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int speed) {
         super(category, item, type, recipe);
         this.speed = speed;
     }
@@ -47,7 +47,7 @@ public final class VoidHarvester extends AbstractMachineBlock implements RecipeD
 
         if (progress >= TIME) { //reached full progress
 
-            ItemStack output = Materials.VOID_BIT;
+            ItemStack output = Materials.LUMINA_DUST;
 
             if (inv.fits(output, OUTPUT_SLOTS)) {
 
@@ -121,7 +121,7 @@ public final class VoidHarvester extends AbstractMachineBlock implements RecipeD
         final List<ItemStack> items = new ArrayList<>();
 
         items.add(null);
-        items.add(Materials.VOID_BIT);
+        items.add(Materials.LUMINA_DUST);
 
         return items;
     }

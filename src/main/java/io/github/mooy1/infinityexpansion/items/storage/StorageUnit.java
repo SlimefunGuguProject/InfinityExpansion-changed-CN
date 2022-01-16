@@ -66,15 +66,15 @@ public final class StorageUnit extends MenuBlock {
 
     /* Menu items */
     private static final ItemStack INTERACTION_ITEM = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,
-            "&aQuick Actions",
-            "&bLeft Click: &7Withdraw 1 item",
-            "&bRight Click: &7Withdraw 1 stack",
-            "&bShift Left Click: &7Deposit inventory",
-            "&bShift Right Click: &7Withdraw inventory"
+            "&a快捷操作",
+            "&b左键: &7取出 1 个物品",
+            "&b右键: &7取出 1 组物品",
+            "&bShift + 左键: &7全部放入",
+            "&bShift + 右键: &7全部取出"
     );
     private static final ItemStack LOADING_ITEM = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE,
-            "&bStatus",
-            "&7Loading..."
+            "&b状态",
+            "&7加载中..."
     );
 
     /* Instance constants */
@@ -107,7 +107,7 @@ public final class StorageUnit extends MenuBlock {
                 BlockMenu menu = BlockStorage.getInventory(e.getBlock());
                 StorageCache cache = StorageUnit.this.caches.remove(menu.getLocation());
                 if (cache != null && !cache.isEmpty()) {
-                    cache.destroy(e, drops);
+                    cache.destroy(menu.getLocation(), e, drops);
                 }
                 else {
                     drops.add(getItem().clone());
@@ -186,11 +186,6 @@ public final class StorageUnit extends MenuBlock {
         this.caches.get(b.getLocation()).reloadData();
     }
 
-    @Nullable
-    public StorageCache getCache(Location location) {
-        return this.caches.get(location);
-    }
-
     static void transferToStack(@Nonnull ItemStack source, @Nonnull ItemStack target) {
         Pair<ItemStack, Integer> data = loadFromStack(source);
         if (data != null) {
@@ -202,7 +197,7 @@ public final class StorageUnit extends MenuBlock {
     static ItemMeta saveToStack(ItemMeta meta, ItemStack displayItem, String displayName, int amount) {
         if (meta.hasLore()) {
             List<String> lore = meta.getLore();
-            lore.add(ChatColor.GOLD + "Stored: " + displayName + ChatColor.YELLOW + " x " + amount);
+            lore.add(ChatColor.GOLD + "已储存: " + displayName + ChatColor.YELLOW + " x " + amount);
             meta.setLore(lore);
         }
         meta.getPersistentDataContainer().set(ITEM_KEY, PersistentType.ITEM_STACK_OLD, displayItem);

@@ -127,7 +127,7 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
     }
 
     private static ItemStack makeXpItem(int stored) {
-        return new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&aStored xp: " + stored, "", "&a> Click to claim");
+        return new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&a已储存经验值: " + stored, "", "&a> 点击领取");
     }
 
     @Override
@@ -162,7 +162,7 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
 
         if (inv.hasViewer()) {
             inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,
-                    "&aSimulating... (" + MachineLore.formatEnergy(energy) + " J/s)")
+                    "&a模拟中... (" + MachineLore.formatEnergy(energy) + " J/s)")
             );
             inv.replaceExistingItem(XP_SLOT, makeXpItem(xp));
         }

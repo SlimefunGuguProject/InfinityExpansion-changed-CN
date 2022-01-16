@@ -7,7 +7,6 @@ import java.util.Objects;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -102,40 +101,28 @@ public final class AdvancedAnvil extends AbstractEnergyCrafter {
     private void craft(BlockMenu inv, Block b, Player p) {
         Location l = b.getLocation();
         if (getCharge(l) < this.energy) { //not enough energy
-            p.sendMessage(ChatColor.RED + "Not enough energy!",
-                    ChatColor.GREEN + "Charge: " + ChatColor.RED + getCharge(l) + ChatColor.GREEN + "/" + this.energy + " J");
+            p.sendMessage(ChatColor.RED + "电力不足!",
+                    ChatColor.GREEN + "当前电力: " + ChatColor.RED + getCharge(l) + ChatColor.GREEN + "/" + this.energy + " J");
             return;
         }
 
         ItemStack item1 = inv.getItemInSlot(INPUT_SLOTS[0]);
-        SlimefunItem sfItem1 = SlimefunItem.getByItem(inv.getItemInSlot(INPUT_SLOTS[0]));
         ItemStack item2 = inv.getItemInSlot(INPUT_SLOTS[1]);
-        SlimefunItem sfItem2 = SlimefunItem.getByItem(inv.getItemInSlot(INPUT_SLOTS[1]));
 
         if (item1 == null || item2 == null || (item2.getType() != Material.ENCHANTED_BOOK && item1.getType() != item2.getType())) {
-            p.sendMessage(ChatColor.RED + "Invalid items!");
-            return;
-        }
-
-        if(sfItem2 != null && !sfItem2.isDisenchantable()){
-            p.sendMessage(ChatColor.RED + "Slimefun item is not disenchantable!");
-            return;
-        }
-
-        if(sfItem1 != null && !sfItem1.isEnchantable()){
-            p.sendMessage(ChatColor.RED + "Slimefun item is not enchantable!");
+            p.sendMessage(ChatColor.RED + "物品不存在!");
             return;
         }
 
         ItemStack output = getOutput(item1, item2);
 
         if (output == null) {
-            p.sendMessage(ChatColor.RED + "No upgrades!");
+            p.sendMessage(ChatColor.RED + "无法升级!");
             return;
         }
 
         if (!inv.fits(output, OUTPUT_SLOTS)) {
-            p.sendMessage(ChatColor.GOLD + "Not enough room!");
+            p.sendMessage(ChatColor.GOLD + "空间不足!");
             return;
         }
 
@@ -241,14 +228,14 @@ public final class AdvancedAnvil extends AbstractEnergyCrafter {
         ItemStack item2 = inv.getItemInSlot(INPUT_SLOTS[1]);
 
         if (item1 == null || item2 == null || (item2.getType() != Material.ENCHANTED_BOOK && item1.getType() != item2.getType())) {
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&cInvalid items!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&c无效物品!"));
             return;
         }
 
         ItemStack output = getOutput(item1, item2);
 
         if (output == null) {
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&cNo upgrades!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&c无法升级!"));
             return;
         }
 

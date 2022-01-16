@@ -33,7 +33,7 @@ public final class MobDataInfuser extends CraftingBlock implements EnergyNetComp
     @Override
     protected void craft(Block b, BlockMenu menu, Player p) {
         if (getCharge(menu.getLocation()) < this.energy) {
-            p.sendMessage(ChatColor.RED + "Not enough energy!");
+            p.sendMessage(ChatColor.RED + "电力不足!");
         }
         else {
             super.craft(b, menu, p);

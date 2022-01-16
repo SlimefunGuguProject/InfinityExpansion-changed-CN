@@ -27,22 +27,22 @@ public final class MobData {
     public static final SlimefunItemStack EMPTY_DATA_CARD = new SlimefunItemStack(
             "EMPTY_DATA_CARD",
             Material.CHAINMAIL_CHESTPLATE,
-            "&8Empty Data Card",
-            "&7Infuse with a mob's items to fill"
+            "&8空生物芯片",
+            "&7需要注入生物掉落物"
     );
     public static final SlimefunItemStack INFUSER = new SlimefunItemStack(
             "DATA_INFUSER",
             Material.LODESTONE,
-            "&8Mob Data Infuser",
-            "&7Infused empty data cards with mob items",
+            "&8生物芯片注入器",
+            "&7将生物掉落物注入生物芯片",
             "",
-            MachineLore.energy(INFUSER_ENERGY) + "per use"
+            MachineLore.energy(INFUSER_ENERGY) + "每次使用"
     );
     public static final SlimefunItemStack CHAMBER = new SlimefunItemStack(
             "MOB_SIMULATION_CHAMBER",
             Material.GILDED_BLACKSTONE,
-            "&8Mob Simulation Chamber",
-            "&7Use mob data cards to activate",
+            "&8生物模拟室",
+            "&7使用生物芯片激活",
             "",
             MachineLore.energyBuffer(CHAMBER_BUFFER),
             MachineLore.energyPerSecond(CHAMBER_ENERGY)
@@ -177,7 +177,7 @@ public final class MobData {
                 new ItemStack(Material.END_CRYSTAL, 64), new SlimefunItemStack(Materials.VOID_INGOT, 32), new ItemStack(Material.CHORUS_FLOWER, 64),
                 SlimefunItems.INFUSED_ELYTRA, EMPTY_DATA_CARD, new ItemStack(Material.DRAGON_HEAD, 1),
                 new SlimefunItemStack(SlimefunItems.ENDER_LUMP_3, 64), new SlimefunItemStack(Materials.VOID_INGOT, 32), new ItemStack(Material.DRAGON_BREATH, 64)
-        }).addDrop(Materials.VOID_DUST, 1).addDrop(Materials.ENDER_ESSENCE, 4).addDrop(Material.DRAGON_EGG, 1_000_000).register(plugin);
+        }).addDrop(Materials.VOID_DUST, 1).addDrop(Materials.ENDER_ESSENCE, 4).addDrop(Material.DRAGON_HEAD, 1).register(plugin);
         new MobDataCard(BEE, MobDataTier.NEUTRAL, new ItemStack[] {
                 new ItemStack(Material.HONEYCOMB_BLOCK, 16), new ItemStack(Material.HONEY_BLOCK, 16), new ItemStack(Material.HONEYCOMB_BLOCK, 16),
                 new ItemStack(Material.HONEY_BLOCK, 16), EMPTY_DATA_CARD, new ItemStack(Material.HONEY_BLOCK, 16),
@@ -192,7 +192,7 @@ public final class MobData {
                 new ItemStack(Material.REDSTONE_BLOCK, 64), new ItemStack(Material.GLASS, 64), new ItemStack(Material.SUGAR, 64),
                 new ItemStack(Material.GLOWSTONE, 64), EMPTY_DATA_CARD, new ItemStack(Material.GLOWSTONE, 64),
                 new ItemStack(Material.SUGAR, 64), new ItemStack(Material.GLASS, 64), new ItemStack(Material.REDSTONE_BLOCK, 64)
-        }).addDrop(Material.SUGAR, 1).addDrop(Material.REDSTONE, 1)
+        }).addDrop(Material.SUGAR, 1).addDrop(Material.REDSTONE, 4)
                 .addDrop(Material.GLASS_BOTTLE, 1).addDrop(Material.GLOWSTONE_DUST, 1).register(plugin);
     }
 

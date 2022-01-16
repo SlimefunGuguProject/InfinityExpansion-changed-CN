@@ -165,15 +165,15 @@ public final class SingularityConstructor extends AbstractMachineBlock implement
                 if (menu.hasViewer()) {
                     menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                             Material.LIME_STAINED_GLASS_PANE,
-                            "&aConstructing " + triplet.output.getDisplayName() + "...",
-                            "&7Complete"
+                            "&a正在生产 " + triplet.output.getDisplayName() + "...",
+                            "&7完成"
                     ));
                 }
             }
             else if (menu.hasViewer()) {
                 menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                         Material.LIME_STAINED_GLASS_PANE,
-                        "&aConstructing " + triplet.output.getDisplayName() + "...",
+                        "&a正在生产 " + triplet.output.getDisplayName() + "...",
                         "&7" + progress + " / " + triplet.amount
                 ));
             }
@@ -231,7 +231,7 @@ public final class SingularityConstructor extends AbstractMachineBlock implement
     private static void invalidInput(BlockMenu menu) {
         menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                 Material.RED_STAINED_GLASS_PANE,
-                "&cInput a valid material to start"
+                "&c请放入正确的材料"
         ));
     }
 

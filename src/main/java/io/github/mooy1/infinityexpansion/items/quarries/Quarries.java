@@ -29,8 +29,8 @@ public final class Quarries {
     public static final SlimefunItemStack BASIC_QUARRY = new SlimefunItemStack(
             "BASIC_QUARRY",
             Material.CHISELED_SANDSTONE,
-            "&9Basic Quarry",
-            "&7Automatically mines overworld ores",
+            "&9基础矿机",
+            "&7自动挖主世界矿物",
             "",
             MachineLore.speed(1),
             MachineLore.energyPerSecond(300)
@@ -38,26 +38,26 @@ public final class Quarries {
     public static final SlimefunItemStack ADVANCED_QUARRY = new SlimefunItemStack(
             "ADVANCED_QUARRY",
             Material.CHISELED_RED_SANDSTONE,
-            "&cAdvanced Quarry",
-            "&7Automatically mines overworld and nether ores",
+            "&c高级矿机",
+            "&7自动挖主世界和下界矿物",
             "",
-            MachineLore.speed(2),
+            MachineLore.speed(3),
             MachineLore.energyPerSecond(900)
     );
     public static final SlimefunItemStack VOID_QUARRY = new SlimefunItemStack(
             "VOID_QUARRY",
             Material.CHISELED_NETHER_BRICKS,
-            "&8Void Quarry",
-            "&7Automatically mines overworld and nether ores",
+            "&8虚空矿机",
+            "&7自动挖主世界和下界矿物",
             "",
-            MachineLore.speed(6),
+            MachineLore.speed(9),
             MachineLore.energyPerSecond(3600)
     );
     public static final SlimefunItemStack INFINITY_QUARRY = new SlimefunItemStack(
             "INFINITY_QUARRY",
             Material.CHISELED_POLISHED_BLACKSTONE,
-            "&bInfinity Quarry",
-            "&7Automatically mines overworld and nether ores",
+            "&b无尽矿机",
+            "&7自动挖主世界和下界矿物",
             "",
             MachineLore.speed(64),
             MachineLore.energyPerSecond(36000)
@@ -142,7 +142,7 @@ public final class Quarries {
                 Materials.MACHINE_PLATE, SlimefunItems.ENERGIZED_CAPACITOR, Materials.MACHINE_PLATE,
                 new ItemStack(Material.DIAMOND_PICKAXE), BASIC_QUARRY, new ItemStack(Material.DIAMOND_PICKAXE),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 2, 4, outputs.toArray(new Material[0])).energyPerTick(900).register(plugin);
+        }, 3, 4, outputs.toArray(new Material[0])).energyPerTick(900).register(plugin);
 
         if (coal) {
             outputs.add(Material.COAL);
@@ -152,7 +152,7 @@ public final class Quarries {
                 Materials.VOID_INGOT, SlimefunExtension.VOID_CAPACITOR, Materials.VOID_INGOT,
                 new ItemStack(Material.NETHERITE_PICKAXE), ADVANCED_QUARRY, new ItemStack(Material.NETHERITE_PICKAXE),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 6, 2, outputs.toArray(new Material[0])).energyPerTick(3600).register(plugin);
+        }, 9, 2, outputs.toArray(new Material[0])).energyPerTick(3600).register(plugin);
 
         if (coal) {
             outputs.add(Material.COAL);
