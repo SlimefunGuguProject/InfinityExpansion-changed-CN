@@ -83,11 +83,11 @@ public final class InfinityGroup extends FlexItemGroup {
             7, 16, 17
     };
     private static final ItemStack BENCH = new CustomItemStack(Material.NETHER_STAR,
-            "&bCreate the recipe from items in your inventory: ",
-            "&aLeft-Click to move 1 set",
-            "&aRight-Click to move as many sets as possible"
+            "&b从库存中的项目创建配方: ",
+            "&a左键移动1套",
+            "&a右键单击以移动尽可能多的集合"
     );
-    private static final ItemStack INFO = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, "&3Info");
+    private static final ItemStack INFO = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, "&3信息");
     private static final SlimefunGuideImplementation GUIDE = Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE);
     private static final Map<UUID, String> HISTORY = new HashMap<>();
     private static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
@@ -128,7 +128,7 @@ public final class InfinityGroup extends FlexItemGroup {
             }
         }
 
-        ChestMenu menu = new ChestMenu("&bInfinity Recipes");
+        ChestMenu menu = new ChestMenu("&b无尽合成配方");
 
         if (entry.bench != null) {
             menu.addMenuClickHandler(1, (player1, i, itemStack, clickAction) -> {
@@ -177,9 +177,9 @@ public final class InfinityGroup extends FlexItemGroup {
                         ChatColor.WHITE + ItemUtils.getItemName(sfItem.getItem()),
                         "&4&l" + Slimefun.getLocalization().getMessage(player, "guide.locked"),
                         "",
-                        "&a> Click to unlock",
+                        "&a> 单击解锁",
                         "",
-                        "&7Cost: &b" + research.getCost() + " Level(s)"
+                        "&7需要 &b" + research.getCost() + " 级经验"
                 );
                 menu.addItem(i, resItem, (p, slot, item1, action) -> {
                     research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Groups.INFINITY, 0);
