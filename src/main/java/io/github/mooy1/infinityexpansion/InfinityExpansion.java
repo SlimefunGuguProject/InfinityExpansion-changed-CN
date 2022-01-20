@@ -27,6 +27,8 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
 import io.github.mooy1.infinitylib.metrics.charts.SimplePie;
 
+import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
+
 public final class InfinityExpansion extends AbstractAddon {
 
     public InfinityExpansion(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
@@ -44,6 +46,11 @@ public final class InfinityExpansion extends AbstractAddon {
         Metrics metrics = new Metrics(this, 8991);
         String autoUpdates = String.valueOf(false);
         metrics.addCustomChart(new SimplePie("auto_updates", () -> autoUpdates));
+
+        if (getConfig().getBoolean("auto-update") &&
+                getDescription().getVersion().startsWith("Build")) {
+            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "InfinityExpansion-CN", "master", false).start();
+        }
 
         Plugin lx = getServer().getPluginManager().getPlugin("LiteXpansion");
         if (lx != null && lx.getConfig().getBoolean("options.nerf-other-addons")) {

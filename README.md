@@ -6,6 +6,8 @@
 
 > 如果你遇到无尽存储单元被降级的问题，请立即更新到最新版。
 
+**自动更新**: 汉化版构建#17及以后版本包含*自动更新*功能，默认开启。
+
 点击这里下载 InfinityExpansion: [下载 InfinityExpansion](https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/master)
 
 <p align="center">
@@ -24,14 +26,8 @@
 
 如使用非官方版本，请在此仓库提交issue或pull request。
 
-<p>
-  <a href="https://discord.gg/slimefun">
-    <img src="https://discordapp.com/api/guilds/565557184348422174/widget.png?style=banner3" alt="Discord Invite"/>
-  </a>
-  <a href="https://discord.gg/SqD3gg5SAU">
-    <img src="https://discordapp.com/api/guilds/809178621424041997/widget.png?style=banner3" alt="Discord Invite"/>
-  </a>
-</p>
+[加入 Slimefun 官方Discord频道](https://discord.gg/slimefun)  
+[加入 Slimefun 附属社区频道](https://discord.gg/SqD3gg5SAU)
 
 ## 需求
 
