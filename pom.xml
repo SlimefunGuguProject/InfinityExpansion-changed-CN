@@ -12,9 +12,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <sonar.organization>mooy1</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <repositories>
@@ -81,7 +78,7 @@
         <dependency>
             <groupId>net.guizhanss</groupId>
             <artifactId>GuizhanLib</artifactId>
-            <version>0.3.0</version>
+            <version>0.5.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -131,7 +128,7 @@
                             <shadedPattern>io.github.mooy1.infinityexpansion.infinitylib</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>net.guizhanss.minecraft.guizhanlib</pattern>
+                            <pattern>net.guizhanss.guizhanlib</pattern>
                             <shadedPattern>io.github.mooy1.infinityexpansion.guizhanlib</shadedPattern>
                         </relocation>
                     </relocations>
