@@ -1,6 +1,6 @@
 # InfinityExpansion 无尽科技
 
-**该版本为自用版本，不负责修任何BUG，不负责解决任何问题。请使用[baoad汉化版](https://github.com/baoad/InfinityExpansion)。**
+**该版本为自用版本，不负责修任何BUG，不负责解决任何问题。请使用[baoad汉化版](https://github.com/baoad/InfinityExpansion)。部分物品名称不相同。**
 
 此附属增加了许多的游戏后期物品，比如需要消耗大量资源的"无尽锭"。无尽锭可以用来制作功能强大的装备与机器。
 
