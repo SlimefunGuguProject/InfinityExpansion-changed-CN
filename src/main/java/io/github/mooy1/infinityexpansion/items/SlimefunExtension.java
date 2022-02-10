@@ -71,7 +71,7 @@ public final class SlimefunExtension {
     public static final SlimefunItemStack ADVANCED_GEO_MINER = new SlimefunItemStack(
             "ADVANCED_GEO_MINER",
             HeadTexture.GEO_MINER,
-            "&c高级 &fGEO 矿机",
+            "&c高级&fGEO矿机",
             "&7一个更快的GEO矿机",
             "",
             MachineLore.speed(SlimefunExtension.ADVANCED_GEO_SPEED),
@@ -80,7 +80,7 @@ public final class SlimefunExtension {
     public static final SlimefunItemStack ADVANCED_SMELTERY = new SlimefunItemStack(
             "ADVANCED_SMELTERY",
             Material.FURNACE,
-            "&c高级 &7冶炼炉",
+            "&c高级&7冶炼炉",
             "&7一个更快的冶炼炉",
             "",
             MachineLore.speed(ADVANCED_SMELTERY_SPEED),
@@ -152,7 +152,7 @@ public final class SlimefunExtension {
             "INFINITY_CAPACITOR",
             HeadTexture.CAPACITOR_25,
             "&b无尽电容",
-            "&c&o每个区块不要 ",
+            "&c&o每个区块不要",
             "&c&o使用超过一个",
             "",
             "&8\u21E8 &e\u26A1 " + MachineLore.format(INFINITY_CAPACITY) + " &7J 可储存"

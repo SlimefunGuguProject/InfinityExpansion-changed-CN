@@ -26,13 +26,13 @@ public final class Materials {
     public static final SlimefunItemStack INFINITE_CIRCUIT = new SlimefunItemStack(
             "INFINITE_MACHINE_CIRCUIT",
             Material.DIAMOND,
-            "&b无尽 &6机器电路",
+            "&b无尽&6机器电路",
             "&7机器组件"
     );
     public static final SlimefunItemStack INFINITE_CORE = new SlimefunItemStack(
             "INFINITE_MACHINE_CORE",
             Material.DIAMOND_BLOCK,
-            "&b无尽 &6机器核心",
+            "&b无尽&6机器核心",
             "&7机器组件"
     );
     public static final SlimefunItemStack MAGSTEEL_PLATE = new SlimefunItemStack(

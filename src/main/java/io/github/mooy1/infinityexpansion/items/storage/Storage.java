@@ -31,31 +31,31 @@ public final class Storage {
     public static final SlimefunItemStack BASIC_STORAGE = new SlimefunItemStack(
             "BASIC_STORAGE",
             Material.OAK_WOOD,
-            "&9基础 &8存储单元",
+            "&9基础&8存储单元",
             "&6容量: &e" + MachineLore.format(BASIC_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack ADVANCED_STORAGE = new SlimefunItemStack(
             "ADVANCED_STORAGE",
             Material.DARK_OAK_WOOD,
-            "&c高级 &8存储单元",
+            "&c高级&8存储单元",
             "&6容量: &e" + MachineLore.format(ADVANCED_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack REINFORCED_STORAGE = new SlimefunItemStack(
             "REINFORCED_STORAGE",
             Material.ACACIA_WOOD,
-            "&f超级 &8存储单元",
+            "&f超级&8存储单元",
             "&6容量: &e" + MachineLore.format(REINFORCED_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack VOID_STORAGE = new SlimefunItemStack(
             "VOID_STORAGE",
             Material.CRIMSON_HYPHAE,
-            "&8虚空 &8存储单元",
+            "&8虚空&8存储单元",
             "&6容量: &e" + MachineLore.format(VOID_AMOUNT) + " &e个物品"
     );
     public static final SlimefunItemStack INFINITY_STORAGE = new SlimefunItemStack(
             "INFINITY_STORAGE",
             Material.WARPED_HYPHAE,
-            "&b无尽 &8存储单元",
+            "&b无尽&8存储单元",
             "&6容量: &e" + MachineLore.format(INFINITY_AMOUNT) + " &e个物品"
     );
 

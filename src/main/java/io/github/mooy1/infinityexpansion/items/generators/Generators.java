@@ -51,7 +51,7 @@ public final class Generators {
     public static final SlimefunItemStack REINFORCED_HYDRO = new SlimefunItemStack(
             "REINFORCED_HYDRO_GENERATOR",
             Material.END_STONE_BRICK_WALL,
-            "&f高级 &9水力发电机",
+            "&f高级&9水力发电机",
             "&7使用水流发电",
             "&7使用方法: 使发电机方块成为含水方块",
             "",
@@ -70,7 +70,7 @@ public final class Generators {
     public static final SlimefunItemStack REINFORCED_GEOTHERMAL = new SlimefunItemStack(
             "REINFORCED_GEOTHERMAL_GENERATOR",
             Material.SHROOMLIGHT,
-            "&f高级 &c地热发电机",
+            "&f高级&c地热发电机",
             "&7使用地热发电",
             "",
             MachineLore.energyBuffer(ADVANCED_GEO_ENERGY * 100),

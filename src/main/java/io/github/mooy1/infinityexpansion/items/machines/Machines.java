@@ -43,7 +43,7 @@ public final class Machines {
     public static final SlimefunItemStack BASIC_GROWER = new SlimefunItemStack(
             "BASIC_VIRTUAL_FARM",
             Material.GRASS_BLOCK,
-            "&9基础 &a自动农场",
+            "&9基础&a自动农场",
             "&7自动种植、收获和再种植作物",
             "",
             MachineLore.speed(1),
@@ -52,7 +52,7 @@ public final class Machines {
     public static final SlimefunItemStack ADVANCED_GROWER = new SlimefunItemStack(
             "ADVANCED_VIRTUAL_FARM",
             Material.CRIMSON_NYLIUM,
-            "&c高级 &a自动农场",
+            "&c高级&a自动农场",
             "&7自动种植、收获和再种植作物",
             "",
             MachineLore.speed(5),
@@ -61,7 +61,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_GROWER = new SlimefunItemStack(
             "INFINITY_VIRTUAL_FARM",
             Material.WARPED_NYLIUM,
-            "&b无尽 &a自动农场",
+            "&b无尽&a自动农场",
             "&7自动种植、收获和再种植作物",
             "",
             MachineLore.speed(25),
@@ -70,7 +70,7 @@ public final class Machines {
     public static final SlimefunItemStack BASIC_TREE = new SlimefunItemStack(
             "BASIC_TREE_GROWER",
             Material.STRIPPED_OAK_WOOD,
-            "&9基础 &2自动植树机",
+            "&9基础&2自动植树机",
             "&7自动种植、收获和再种植树木",
             "",
             MachineLore.speed(1),
@@ -79,7 +79,7 @@ public final class Machines {
     public static final SlimefunItemStack ADVANCED_TREE = new SlimefunItemStack(
             "ADVANCED_TREE_GROWER",
             Material.STRIPPED_ACACIA_WOOD,
-            "&c高级 &2自动植树机",
+            "&c高级&2自动植树机",
             "&7自动种植、收获和再种植树木",
             "",
             MachineLore.speed(5),
@@ -88,7 +88,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_TREE = new SlimefunItemStack(
             "INFINITY_TREE_GROWER",
             Material.STRIPPED_WARPED_HYPHAE,
-            "&b无尽 &2自动植树机",
+            "&b无尽&2自动植树机",
             "&7自动种植、收获和再种植树木",
             "",
             MachineLore.speed(25),
@@ -134,7 +134,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_DUST_EXTRACTOR = new SlimefunItemStack(
             "INFINITY_DUST_EXTRACTOR",
             Material.FURNACE,
-            "&b无尽 &8磨粉机",
+            "&b无尽&8磨粉机",
             "&7将圆石变为矿粉",
             "",
             MachineLore.speed(16),
@@ -152,7 +152,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_INGOT_FORMER = new SlimefunItemStack(
             "INFINITY_INGOT_FORMER",
             Material.FURNACE,
-            "&b无尽 &8铸锭机",
+            "&b无尽&8铸锭机",
             "&7将矿粉变为锭",
             "",
             MachineLore.speed(16),
@@ -186,7 +186,7 @@ public final class Machines {
     public static final SlimefunItemStack BASIC_COBBLE = new SlimefunItemStack(
             "BASIC_COBBLE_GEN",
             Material.SMOOTH_STONE,
-            "&9基础 &8圆石生成器",
+            "&9基础&8圆石生成器",
             "",
             MachineLore.speed(1),
             MachineLore.energyPerSecond(24)
@@ -194,7 +194,7 @@ public final class Machines {
     public static final SlimefunItemStack ADVANCED_COBBLE = new SlimefunItemStack(
             "ADVANCED_COBBLE_GEN",
             Material.SMOOTH_STONE,
-            "&c高级 &8圆石生成器",
+            "&c高级&8圆石生成器",
             "",
             MachineLore.speed(4),
             MachineLore.energyPerSecond(120)
@@ -202,7 +202,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_COBBLE = new SlimefunItemStack(
             "INFINITY_COBBLE_GEN",
             Material.SMOOTH_STONE,
-            "&c无尽 &8圆石生成器",
+            "&c无尽&8圆石生成器",
             "",
             MachineLore.speed(64),
             MachineLore.energyPerSecond(800)
@@ -227,7 +227,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_CONSTRUCTOR = new SlimefunItemStack(
             "INFINITY_CONSTRUCTOR",
             Material.CHISELED_QUARTZ_BLOCK,
-            "&b无尽 &f结构转换器",
+            "&b无尽&f结构转换器",
             "&7快速凝聚大量资源",
             "",
             MachineLore.speed(64),
@@ -253,7 +253,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITE_VOID_HARVESTER = new SlimefunItemStack(
             "INFINITE_VOID_HARVESTER",
             Material.CRYING_OBSIDIAN,
-            "&b无尽 &8虚空收集者",
+            "&b无尽&8虚空收集者",
             "&7从虚无中缓慢收集&8虚空粒",
             "",
             MachineLore.speed(64),
