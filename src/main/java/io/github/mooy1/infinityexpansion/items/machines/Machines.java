@@ -109,8 +109,10 @@ public final class Machines {
     public static final SlimefunItemStack GEO_QUARRY = new SlimefunItemStack(
             "GEO_QUARRY",
             Material.QUARTZ_BRICKS,
-            "&fGeo 矿机",
-            "&7利用电力缓慢从生产资源",
+            "&f地理资源矿机",
+            "&7利用电力缓慢获取地理资源",
+            "&7无需地形扫描",
+            "&7不受剩余GEO资源数量影响",
             "",
             MachineLore.energyPerSecond(GEO_QUARRY_ENERGY)
     );
