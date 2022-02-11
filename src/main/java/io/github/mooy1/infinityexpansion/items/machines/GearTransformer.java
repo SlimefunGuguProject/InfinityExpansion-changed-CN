@@ -99,12 +99,12 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
                 37, 38, 39, 41, 42, 43,
                 48, 49, 50
         });
-        blockMenuPreset.drawBackground(new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9Tool Input"), new int[] {
+        blockMenuPreset.drawBackground(new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9在此放入工具"), new int[] {
                 0, 1, 2,
                 9, 11,
                 18, 19, 20
         });
-        blockMenuPreset.drawBackground(new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9Material Input"), new int[] {
+        blockMenuPreset.drawBackground(new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9在此放入材料"), new int[] {
                 6, 7, 8,
                 15, 17,
                 24, 25, 26
