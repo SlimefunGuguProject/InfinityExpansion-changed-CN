@@ -1,6 +1,8 @@
 # InfinityExpansion 无尽科技
 
-**该版本与 [baoad汉化版](https://github.com/baoad/InfinityExpansion) 相比，部分物品的名称不相同，但拥有更完整的汉化。** 由于 [baoad汉化版](https://github.com/baoad/InfinityExpansion) 发布时间更早，所以我仍会推荐使用 [baoad汉化版](https://github.com/baoad/InfinityExpansion) 。
+**该版本已停止更新，请使用 [baoad汉化版](https://github.com/baoad/InfinityExpansion)。已将汉化补充至baoad汉化版。**
+
+关于货运+无尽储存单元刷物品的修复请[点击这里查看测试分支](https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/test/1)，该测试分支需要 https://github.com/starwishsama/Slimefun4/tree/test/cargo_stacking_items 分支的构建才能工作。
 
 ---
 
