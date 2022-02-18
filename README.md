@@ -2,7 +2,8 @@
 
 **该版本已停止更新，请使用 [baoad汉化版](https://github.com/baoad/InfinityExpansion)。已将汉化补充至baoad汉化版。**
 
-关于货运+无尽储存单元刷物品的修复请[点击这里查看测试分支](https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/test/1)，该测试分支需要 https://github.com/starwishsama/Slimefun4/tree/test/cargo_stacking_items 分支的构建才能工作。
+关于货运+无尽储存单元刷物品的修复请[下载baoad汉化版的测试分支](https://builds.guizhanss.net/baoad/InfinityExpansion/fix/)。  
+该测试分支需要汉化版 Slimefun 的测试分支的构建才能工作。详见 https://github.com/StarWishsama/Slimefun4/issues/489
 
 ---
 
