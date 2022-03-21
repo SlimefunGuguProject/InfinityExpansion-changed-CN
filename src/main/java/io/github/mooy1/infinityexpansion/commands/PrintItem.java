@@ -15,7 +15,7 @@ import io.github.mooy1.infinitylib.commands.SubCommand;
 public final class PrintItem extends SubCommand {
 
     public PrintItem() {
-        super("printitem", "(调试)输出物品的内部数据", true);
+        super("printitem", "(调试)输出物品的内部数据", "infinityexpansion.printitem");
     }
 
     @Override

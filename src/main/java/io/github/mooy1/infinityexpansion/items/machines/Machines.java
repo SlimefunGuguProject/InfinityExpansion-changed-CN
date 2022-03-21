@@ -597,8 +597,9 @@ public final class Machines {
                 .addRecipe(new ItemStack(Material.IRON_INGOT, 9), new ItemStack(Material.IRON_BLOCK))
                 .addRecipe(new ItemStack(Material.NETHERITE_INGOT, 9), new ItemStack(Material.NETHERITE_BLOCK))
                 .addRecipe(new ItemStack(Material.REDSTONE, 9), new ItemStack(Material.REDSTONE_BLOCK))
-                .addRecipe(new ItemStack(Material.QUARTZ, 9), new ItemStack(Material.QUARTZ_BLOCK))
+                .addRecipe(new ItemStack(Material.QUARTZ, 4), new ItemStack(Material.QUARTZ_BLOCK))
                 .addRecipe(new ItemStack(Material.LAPIS_LAZULI, 9), new ItemStack(Material.LAPIS_BLOCK))
+                .addRecipe(new ItemStack(Material.COAL, 9), new ItemStack(Material.COAL_BLOCK))
 				.addRecipe(new ItemStack(Material.PAPER, 8), new SlimefunItemStack(Materials.FIBRE_BLOCK, 1))
                 .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.OAK_LOG, 1))
 				.addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.SPRUCE_LOG, 1))
@@ -607,12 +608,12 @@ public final class Machines {
 				.addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.ACACIA_LOG, 1))
 				.addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.JUNGLE_LOG, 1))
 				.addRecipe(new SlimefunItemStack(Materials.FIBRE, 3), new ItemStack(Material.MUSHROOM_STEM, 1))
-				.addRecipe(new ItemStack(Material.LEATHER, 6), new SlimefunItemStack(Materials.FEATHER_MASS, 1))				
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_4, 9), Materials.COBBLE_5)
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_3, 9), Materials.COBBLE_4)
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_2, 9), Materials.COBBLE_3)
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_1, 9), Materials.COBBLE_2)
-                .addRecipe(new ItemStack(Material.COBBLESTONE, 9), Materials.COBBLE_1)
+				.addRecipe(new ItemStack(Material.LEATHER, 6), new SlimefunItemStack(Materials.FEATHER_MASS, 1))
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_4, 8), Materials.COBBLE_5)
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_3, 8), Materials.COBBLE_4)
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_2, 8), Materials.COBBLE_3)
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_1, 8), Materials.COBBLE_2)
+                .addRecipe(new ItemStack(Material.COBBLESTONE, 8), Materials.COBBLE_1)
 				.addRecipe(new ItemStack(Material.APPLE, 64), Materials.APPLE_MASS)
 				.addRecipe(new ItemStack(Material.GOLDEN_APPLE, 64), Materials.GOLDEN_APPLE_MASS)
 				.addRecipe(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 64), Materials.ENCHANTED_APPLE_MASS)
@@ -666,7 +667,7 @@ public final class Machines {
 				.addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.EGG, 6))
 				.addRecipe(new SlimefunItemStack(SlimefunItems.OIL_BUCKET, 1), new SlimefunItemStack(Materials.BIO_MASS, 8))
 				.ticksPerOutput(1).energyPerTick(60).register(plugin);
-				
+
 
 
 
