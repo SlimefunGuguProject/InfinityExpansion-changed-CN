@@ -5,31 +5,14 @@
 
 ## 下载
 
-点击这里下载 InfinityExpansion: [下载 InfinityExpansion](https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/master)
+点击下方图片下载魔改版:
 
-<p align="center">
-  <a href="https://github.com/ybw0014/InfinityExpansion-CN/actions/workflows/maven.yml">
-    <img src="https://github.com/ybw0014/InfinityExpansion-CN/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
-  </a>
-
-  <a href="https://builds.guizhanss.net/ybw0014/InfinityExpansion-CN/master">
-    <img src="https://builds.guizhanss.net/f/ybw0014/InfinityExpansion-CN/master/badge.svg" alt="Build status"/>
-  </a>
-</p>
+[![Build Status](https://builds.guizhanss.net/f/haiman233/InfinityExpansion-changed-CN/master/badge.svg)](https://builds.guizhanss.net/SlimefunGuguProject/InfinityExpansion-changed-CN/master)
 
 ## Bug/建议
 
 该版本为非官方修改版本，如使用过程中发现异常或者恶性bug建议停止使用该版本，回调至最新版本的原版无尽科技，或者自行调整源码进行修改，同时也欢迎一切基于此版本代码进行修改并开源的任何改进版本；
 该版本很可能不会发布任何后续更新版本，如有需求建议自行根据需求对源代码进行调整；
-
-
-## 需求
-
-Minecraft 版本: 1.16+ (建议使用Paper)
-
-Slimefun 版本: DEV 966+
-
-[![Build Status](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/badge.svg)](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/)
 
 ## 材质包
 
