@@ -30,11 +30,11 @@ public final class InfinityExpansion extends AbstractAddon {
 
     public InfinityExpansion(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
         super(loader, description, dataFolder, file,
-                "Mooy1", "InfinityExpansion", "master", "auto-update");
+                "SlimefunGuguProject", "InfinityExpansion-changed-CN", "master", "auto-update");
     }
 
     public InfinityExpansion() {
-        super("ybw0014", "InfinityExpansion-CN", "master", "auto-update");
+        super("SlimefunGuguProject", "InfinityExpansion-changed-CN", "master", "auto-update");
     }
 
     @Override
@@ -47,9 +47,9 @@ public final class InfinityExpansion extends AbstractAddon {
         if (lx != null && lx.getConfig().getBoolean("options.nerf-other-addons")) {
             Scheduler.run(() -> log(Level.WARNING,
                     "########################################################",
-                    "LiteXpansion nerfs energy generation in this addon.",
-                    "You can disable these nerfs in the LiteXpansion config.",
-                    "Under 'options:' add 'nerf-other-addons: false'",
+                    "LiteXpansion (工业) 会削弱本附属内的发电机效率.",
+                    "你可以在 LiteXpansion 配置文件中禁用削弱,",
+                    "在 'options:' 中设置 'nerf-other-addons: false'",
                     "########################################################"
             ));
         }
