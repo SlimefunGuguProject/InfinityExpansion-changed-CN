@@ -83,9 +83,9 @@ public final class InfinityGroup extends FlexItemGroup {
             7, 16, 17
     };
     private static final ItemStack BENCH = new CustomItemStack(Material.NETHER_STAR,
-            "&b从库存中的项目创建配方: ",
-            "&a左键移动1套",
-            "&a右键单击以移动尽可能多的集合"
+            "&b使用物品栏中的物品摆放配方: ",
+            "&a左键点击放入1次合成所用的物品",
+            "&a右键点击放入尽可能多的物品"
     );
     private static final ItemStack INFO = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, "&3信息");
     private static final SlimefunGuideImplementation GUIDE = Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE);
