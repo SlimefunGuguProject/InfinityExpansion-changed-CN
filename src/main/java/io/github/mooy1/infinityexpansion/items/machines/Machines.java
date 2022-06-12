@@ -220,7 +220,7 @@ public final class Machines {
     public static final SlimefunItemStack SINGULARITY_CONSTRUCTOR = new SlimefunItemStack(
             "SINGULARITY_CONSTRUCTOR",
             Material.QUARTZ_BRICKS,
-            "&f结构转换器",
+            "&f奇点构造机",
             "&7凝聚大量资源",
             "",
             MachineLore.speed(1),
@@ -229,7 +229,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_CONSTRUCTOR = new SlimefunItemStack(
             "INFINITY_CONSTRUCTOR",
             Material.CHISELED_QUARTZ_BLOCK,
-            "&b无尽&f结构转换器",
+            "&b无尽&f奇点构造机",
             "&7快速凝聚大量资源",
             "",
             MachineLore.speed(64),

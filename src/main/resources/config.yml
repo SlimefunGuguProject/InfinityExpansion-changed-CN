@@ -3,7 +3,7 @@ auto-update: true
 
 balance-options:
 
-  # 设置结构消耗材料的倍数
+  # 设置奇点消耗材料的倍数
   singularity-cost-multiplier: 1.0
 
   # 允许装备材质转换器更改 Slimefun 中装备的材质。
@@ -18,8 +18,8 @@ balance-options:
 # 生物模拟相关设置
 mob-simulation-options:
 
-  # 每隔多少 sf tick 输出产物和经验
-  # 在没有更改 Slimefun 设置的情况下，1 sf tick = 0.5 秒
+  # 每隔多少粘液刻输出产物和经验
+  # 在没有更改 Slimefun 设置的情况下，1 粘液刻 = 0.5 秒
   ticks-per-output: 20
 
   # 设置从生物模拟中获取经验的倍率
@@ -36,8 +36,8 @@ quarry-options:
     quartz: .5
     emerald: .5
 
-  # 每隔多少 sf tick 输出产物
-    #  # 在没有更改 Slimefun 设置的情况下，1 sf tick = 0.5 秒
+  # 每隔多少粘液刻输出产物
+    #  # 在没有更改 Slimefun 设置的情况下，1 粘液刻 = 0.5 秒
   ticks-per-output: 10
 
   # 允许在非下界的矿机输出下界产物（石英，下界岩，下界合金）
@@ -50,7 +50,6 @@ quarry-options:
     iron: true
     gold: true
     lapis: true
-
     # 原版铜 (1.17+)
     copper: true
     quartz: true
