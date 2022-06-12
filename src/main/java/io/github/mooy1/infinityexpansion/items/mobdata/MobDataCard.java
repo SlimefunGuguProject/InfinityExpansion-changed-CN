@@ -43,8 +43,8 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
         return new SlimefunItemStack(
                 StringUtil.dehumanize(id) + "_DATA_CARD",
                 tier.material,
-                "&b" + name + " 生物芯片",
-                "&7放在生物模拟室中使用",
+                "&e" + name + "&b生物芯片",
+                "&7插入生物模拟室中使用",
                 "",
                 MachineLore.energyPerSecond(tier.energy)
         );
