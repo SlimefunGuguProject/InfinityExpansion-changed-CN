@@ -34,7 +34,7 @@ public final class Gear {
     public static final SlimefunItemStack ENDER_FLAME = new SlimefunItemStack(
             "ENDER_FLAME",
             Material.ENCHANTED_BOOK,
-            "&c末影火焰"
+            "&c末影之焰"
     );
     public static final SlimefunItemStack CROWN = new SlimefunItemStack(
             "INFINITY_CROWN",
@@ -42,7 +42,7 @@ public final class Gear {
             "&b无尽头盔",
             "&7夜视 I",
             "&7潮涌能量 I",
-            "&7鞘翅撞地免疫"
+            "&7鞘翅动能免疫"
     );
     public static final SlimefunItemStack CHESTPLATE = new SlimefunItemStack(
             "INFINITY_CHESTPLATE",
@@ -51,7 +51,7 @@ public final class Gear {
             "&7力量 II",
             "&7生命提升 I",
             "&7火焰抗性 I",
-            "&7蜜蜂保护"
+            "&7蜜蜂毒针保护"
     );
     public static final SlimefunItemStack LEGGINGS = new SlimefunItemStack(
             "INFINITY_LEGGINGS",
@@ -60,14 +60,14 @@ public final class Gear {
             "&7急迫 III",
             "&7生命恢复 I",
             "&7饱和 I",
-            "&7免疫辐射"
+            "&7抗辐射"
     );
     public static final SlimefunItemStack BOOTS = new SlimefunItemStack(
             "INFINITY_BOOTS",
             Material.NETHERITE_BOOTS,
             "&b无尽靴子",
             "&7速度 III",
-            "&7海豚恩惠 I"
+            "&7海豚的恩惠 I"
     );
     public static final SlimefunItemStack INFINITY_MATRIX = new SlimefunItemStack(
             "INFINITY_MATRIX",
@@ -113,7 +113,7 @@ public final class Gear {
             Material.DIAMOND,
             "&b矿脉符文",
             "&7升级工具以开采某些材料",
-            "&7将此符文与工具混合"
+            "&7将此符文与工具融合"
     );
 
     public static void setup(InfinityExpansion plugin) {
