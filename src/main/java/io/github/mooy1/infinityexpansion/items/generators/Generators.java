@@ -33,7 +33,7 @@ public final class Generators {
             "INFINITY_REACTOR",
             Material.BEACON,
             "&b无尽锭发电机",
-            "&7使用无尽锭和虚空锭组合发电",
+            "&7利用无尽锭和虚空锭组合发电",
             "",
             MachineLore.energyBuffer(INFINITY_REACTOR_ENERGY * 1000),
             MachineLore.energyPerSecond(INFINITY_REACTOR_ENERGY)
@@ -42,7 +42,7 @@ public final class Generators {
             "HYDRO_GENERATOR",
             Material.PRISMARINE_WALL,
             "&9水力发电机",
-            "&7使用水流发电",
+            "&7利用水流发电",
             "&7使用方法: 使发电机方块成为含水方块",
             "",
             MachineLore.energyBuffer(HYDRO_ENERGY * 100),
@@ -52,7 +52,7 @@ public final class Generators {
             "REINFORCED_HYDRO_GENERATOR",
             Material.END_STONE_BRICK_WALL,
             "&f高级&9水力发电机",
-            "&7使用水流发电",
+            "&7利用水流发电",
             "&7使用方法: 使发电机方块成为含水方块",
             "",
             MachineLore.energyBuffer(ADVANCED_HYDRO_ENERGY * 100),
@@ -62,7 +62,7 @@ public final class Generators {
             "GEOTHERMAL_GENERATOR",
             Material.MAGMA_BLOCK,
             "&c地热发电机",
-            "&7使用地热发电",
+            "&7利用地热发电",
             "",
             MachineLore.energyBuffer(GEO_ENERGY * 100),
             MachineLore.energyPerSecond(GEO_ENERGY)
@@ -71,7 +71,7 @@ public final class Generators {
             "REINFORCED_GEOTHERMAL_GENERATOR",
             Material.SHROOMLIGHT,
             "&f高级&c地热发电机",
-            "&7使用地热发电",
+            "&7利用地热发电",
             "",
             MachineLore.energyBuffer(ADVANCED_GEO_ENERGY * 100),
             MachineLore.energyPerSecond(ADVANCED_GEO_ENERGY)
@@ -80,7 +80,7 @@ public final class Generators {
             "BASIC_PANEL",
             Material.BLUE_GLAZED_TERRACOTTA,
             "&9基础太阳能发电机",
-            "&7使用太阳能发电",
+            "&7利用太阳能发电",
             "",
             MachineLore.energyBuffer(BASIC_SOLAR_ENERGY * 100),
             MachineLore.energyPerSecond(BASIC_SOLAR_ENERGY)
@@ -89,7 +89,7 @@ public final class Generators {
             "ADVANCED_PANEL",
             Material.RED_GLAZED_TERRACOTTA,
             "&c高级太阳能发电机",
-            "&7使用太阳能发电",
+            "&7利用太阳能发电",
             "",
             MachineLore.energyBuffer(ADVANCED_SOLAR_ENERGY * 100),
             MachineLore.energyPerSecond(ADVANCED_SOLAR_ENERGY)
@@ -98,7 +98,7 @@ public final class Generators {
             "CELESTIAL_PANEL",
             Material.YELLOW_GLAZED_TERRACOTTA,
             "&e超级太阳能发电机",
-            "&7使用太阳能发电",
+            "&7利用太阳能发电",
             "",
             MachineLore.energyBuffer(CELESTIAL_ENERGY * 100),
             MachineLore.energyPerSecond(CELESTIAL_ENERGY)
@@ -107,7 +107,7 @@ public final class Generators {
             "VOID_PANEL",
             Material.LIGHT_GRAY_GLAZED_TERRACOTTA,
             "&8虚空发电机",
-            "&7使用暗能量发电",
+            "&7利用暗能量发电",
             "",
             MachineLore.energyBuffer(VOID_ENERGY * 100),
             MachineLore.energyPerSecond(VOID_ENERGY)
@@ -116,7 +116,7 @@ public final class Generators {
             "INFINITE_PANEL",
             Material.LIGHT_BLUE_GLAZED_TERRACOTTA,
             "&b无尽发电机",
-            "&7使用宇宙能量发电",
+            "&7利用宇宙能量发电",
             "",
             MachineLore.energyBuffer(INFINITY_ENERGY * 100),
             MachineLore.energyPerSecond(INFINITY_ENERGY)
