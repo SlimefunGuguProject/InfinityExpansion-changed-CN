@@ -27,7 +27,7 @@ public final class Researches {
                 Gear.AXE, Gear.BLADE, Gear.BOW, Gear.PICKAXE, Gear.SHOVEL, Gear.SHIELD,
                 Gear.CROWN, Gear.CHESTPLATE, Gear.LEGGINGS, Gear.BOOTS, Gear.INFINITY_MATRIX
         );
-        create(2, "singularities", "创建结构", 35,
+        create(2, "singularities", "奇点！", 35,
                 Materials.ALUMINUM_SINGULARITY,
                 Materials.SILVER_SINGULARITY,
                 Materials.COPPER_SINGULARITY,
@@ -47,7 +47,7 @@ public final class Researches {
                 Machines.SINGULARITY_CONSTRUCTOR,
                 Machines.RESOURCE_SYNTHESIZER
         );
-        create(3, "infinity_ingot", "创造无尽", 40,
+        create(3, "infinity_ingot", "无尽锭的制作方式", 40,
                 Materials.EARTH_SINGULARITY, Materials.FORTUNE_SINGULARITY, Materials.MAGIC_SINGULARITY,
                 Materials.METAL_SINGULARITY, Materials.INFINITE_INGOT, Blocks.INFINITY_FORGE
         );
@@ -110,10 +110,10 @@ public final class Researches {
                 Generators.VOID_PANEL, SlimefunExtension.VOID_CAPACITOR, Storage.VOID_STORAGE,
                 Machines.POWERED_BEDROCK, Quarries.VOID_QUARRY
         );
-        create(17, "advanced_alloys", "合金", 30,
+        create(17, "advanced_alloys", "无尽合金", 30,
                 Materials.TITANIUM, Materials.ADAMANTITE, Materials.MAGNONIUM, Materials.MYTHRIL
         );
-        create(18, "big_storage", "大型存储", 20,
+        create(18, "big_storage", "大型存储容器", 20,
                 Storage.STORAGE_FORGE, Storage.BASIC_STORAGE, Storage.ADVANCED_STORAGE, Storage.REINFORCED_STORAGE
         );
         create(19, "infinity_materials", "无尽材料", 40,
