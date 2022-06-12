@@ -99,8 +99,8 @@ public final class Machines {
             "POWERED_BEDROCK",
             Material.NETHERITE_BLOCK,
             "&4充能基岩",
-            "&7当被红石充能时会变成基岩",
-            "&7失去充能后会被破坏",
+            "&7通电后变成基岩",
+            "&7失去充能后可被破坏",
             "",
             MachineLore.energyPerSecond(BEDROCK_ENERGY)
     );
@@ -112,7 +112,7 @@ public final class Machines {
             "&f地理资源矿机",
             "&7利用电力缓慢获取地理资源",
             "&7无需地形扫描",
-            "&7不受剩余GEO资源数量影响",
+            "&7不受剩余地理资源数量影响",
             "",
             MachineLore.energyPerSecond(GEO_QUARRY_ENERGY)
     );
@@ -121,6 +121,7 @@ public final class Machines {
             Material.LIGHT_BLUE_CONCRETE,
             "&b极寒冰柜",
             "&7将冰转化为冷却剂",
+            "&7将岩浆块转化为下界冰冷却剂",
             "",
             MachineLore.energyPerSecond(90)
     );
@@ -256,7 +257,7 @@ public final class Machines {
             "INFINITE_VOID_HARVESTER",
             Material.CRYING_OBSIDIAN,
             "&b无尽&8虚空收集者",
-            "&7从虚无中缓慢收集&8虚空粒",
+            "&7从虚无中收集&8虚空粒",
             "",
             MachineLore.speed(64),
             MachineLore.energyPerSecond(12000)
