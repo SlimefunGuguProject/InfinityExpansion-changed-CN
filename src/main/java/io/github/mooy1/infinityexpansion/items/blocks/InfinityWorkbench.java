@@ -62,7 +62,7 @@ public final class InfinityWorkbench extends io.github.mooy1.infinitylib.machine
     @Override
     protected void setup(BlockMenuPreset preset) {
         super.setup(preset);
-        preset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6Recipes"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6查看配方"), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Override

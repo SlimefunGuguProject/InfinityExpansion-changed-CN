@@ -100,7 +100,7 @@ public final class GeoQuarry extends AbstractMachineBlock implements RecipeDispl
 
         inv.pushItem(output.clone(), OUTPUT_SLOTS);
         if (inv.hasViewer()) {
-            inv.replaceExistingItem(STATUS, new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&a已找到!"));
+            inv.replaceExistingItem(STATUS, new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&a已获取!"));
         }
         return true;
     }
