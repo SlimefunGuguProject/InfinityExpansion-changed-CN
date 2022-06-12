@@ -28,8 +28,16 @@ mob-simulation-options:
 # 矿机相关设置
 quarry-options:
 
+  # 每次生成矿物时, 生产加速器激活的概率 (范围: 0~1)
+  oscillators:
+    lapis: .5
+    diamond: .5
+    redstone: .5
+    quartz: .5
+    emerald: .5
+
   # 每隔多少 sf tick 输出产物
-  # 在没有更改 Slimefun 设置的情况下，1 sf tick = 0.5 秒
+    #  # 在没有更改 Slimefun 设置的情况下，1 sf tick = 0.5 秒
   ticks-per-output: 10
 
   # 允许在非下界的矿机输出下界产物（石英，下界岩，下界合金）

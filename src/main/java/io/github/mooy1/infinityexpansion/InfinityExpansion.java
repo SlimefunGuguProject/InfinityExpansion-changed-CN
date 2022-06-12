@@ -58,7 +58,7 @@ public final class InfinityExpansion extends AbstractAddon {
                     "########################################################",
                     "LiteXpansion 对本附属插件中的发电机效率进行了削弱",
                     "你可以在 LiteXpansion 的配置文件中更改设置",
-                    "在'options'中设置'nerf-other-addons'为false",
+                    "在 'options' 中设置 'nerf-other-addons' 为false",
                     "########################################################"
             ));
         }

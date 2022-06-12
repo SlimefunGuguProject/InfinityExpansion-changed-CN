@@ -19,7 +19,7 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 public final class SetData extends SubCommand {
 
     public SetData() {
-        super("setdata", "设置你指向的 Slimefun 方块的数据", true);
+        super("setdata", "设置你指向的 Slimefun 方块的数据", "infinityexpansion.setdata");
     }
 
     @Override
