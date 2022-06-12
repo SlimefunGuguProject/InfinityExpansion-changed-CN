@@ -230,7 +230,7 @@ public final class Materials {
     public static final SlimefunItemStack COAL_SINGULARITY = new SlimefunItemStack(
             "COAL_SINGULARITY",
             Material.COAL_BLOCK,
-            "&8煤炭结构"
+            "&8煤炭奇点"
     );
     public static final SlimefunItemStack REDSTONE_SINGULARITY = new SlimefunItemStack(
             "REDSTONE_SINGULARITY",
