@@ -3,6 +3,7 @@ package io.github.mooy1.infinityexpansion;
 import java.io.File;
 import java.util.logging.Level;
 
+import net.guizhanss.guizhanlib.slimefun.addon.WikiSetup;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPluginLoader;
@@ -79,6 +80,8 @@ public final class InfinityExpansion extends AbstractAddon {
         Generators.setup(this);
         SlimefunExtension.setup(this);
 
+        WikiSetup.setupJson(this);
+
         if (getConfig().getBoolean("balance-options.enable-researches")) {
             Researches.setup();
         }
@@ -86,6 +89,10 @@ public final class InfinityExpansion extends AbstractAddon {
 
     @Override
     public void disable() {
+    }
+
+    public String getWikiURL() {
+        return "https://slimefun-addons-wiki.guizhanss.cn/infinity-expansion/{0}";
     }
 
 }
