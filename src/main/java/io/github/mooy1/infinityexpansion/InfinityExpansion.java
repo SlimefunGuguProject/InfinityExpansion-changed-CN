@@ -49,7 +49,7 @@ public final class InfinityExpansion extends AbstractAddon {
 
         if (getConfig().getBoolean("auto-update") &&
                 getDescription().getVersion().startsWith("Build")) {
-            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "InfinityExpansion-CN", "master", false).start();
+            new GuizhanBuildsUpdater(this, getFile(), "SlimefunGuguProject", "InfinityExpansion", "master", false, "zh-CN").start();
         }
 
         Plugin lx = getServer().getPluginManager().getPlugin("LiteXpansion");
@@ -86,7 +86,6 @@ public final class InfinityExpansion extends AbstractAddon {
 
     @Override
     public void disable() {
-
     }
 
 }
