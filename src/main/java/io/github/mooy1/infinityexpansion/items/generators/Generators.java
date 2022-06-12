@@ -32,7 +32,7 @@ public final class Generators {
     public static final SlimefunItemStack INFINITY_REACTOR = new SlimefunItemStack(
             "INFINITY_REACTOR",
             Material.BEACON,
-            "&b无尽锭发电机",
+            "&b无尽反应堆",
             "&7利用无尽锭和虚空锭组合发电",
             "",
             MachineLore.energyBuffer(INFINITY_REACTOR_ENERGY * 1000),
@@ -43,7 +43,7 @@ public final class Generators {
             Material.PRISMARINE_WALL,
             "&9水力发电机",
             "&7利用水流发电",
-            "&7使用方法: 使发电机方块成为含水方块",
+            "&7使用方法: 使发电机成为含水方块",
             "",
             MachineLore.energyBuffer(HYDRO_ENERGY * 100),
             MachineLore.energyPerSecond(HYDRO_ENERGY)
@@ -53,7 +53,7 @@ public final class Generators {
             Material.END_STONE_BRICK_WALL,
             "&f高级&9水力发电机",
             "&7利用水流发电",
-            "&7使用方法: 使发电机方块成为含水方块",
+            "&7使用方法: 使发电机成为含水方块",
             "",
             MachineLore.energyBuffer(ADVANCED_HYDRO_ENERGY * 100),
             MachineLore.energyPerSecond(ADVANCED_HYDRO_ENERGY)
