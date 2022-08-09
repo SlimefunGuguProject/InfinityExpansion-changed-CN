@@ -12,6 +12,7 @@ import io.github.mooy1.infinityexpansion.categories.Groups;
 import io.github.mooy1.infinityexpansion.commands.GiveRecipe;
 import io.github.mooy1.infinityexpansion.commands.PrintItem;
 import io.github.mooy1.infinityexpansion.commands.SetData;
+import io.github.mooy1.infinityexpansion.commands.UpgradeItem;
 import io.github.mooy1.infinityexpansion.items.Researches;
 import io.github.mooy1.infinityexpansion.items.SlimefunExtension;
 import io.github.mooy1.infinityexpansion.items.blocks.Blocks;
@@ -49,7 +50,7 @@ public final class InfinityExpansion extends AbstractAddon {
         metrics.addCustomChart(new SimplePie("auto_updates", () -> autoUpdates));
 
         if (getConfig().getBoolean("auto-update") &&
-                getDescription().getVersion().startsWith("Build")) {
+            getDescription().getVersion().startsWith("Build")) {
             new GuizhanBuildsUpdater(this, getFile(), "SlimefunGuguProject", "InfinityExpansion", "master", false, "zh-CN").start();
         }
 
@@ -67,7 +68,8 @@ public final class InfinityExpansion extends AbstractAddon {
         getAddonCommand()
                 .addSub(new GiveRecipe())
                 .addSub(new SetData())
-                .addSub(new PrintItem());
+                .addSub(new PrintItem())
+                .addSub(new UpgradeItem());
 
         Groups.setup(this);
         MobData.setup(this);

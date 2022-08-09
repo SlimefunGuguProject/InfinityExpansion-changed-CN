@@ -30,7 +30,7 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
 
     static final double XP_MULTIPLIER = InfinityExpansion.config().getDouble("mob-simulation-options.xp-multiplier", 0, 1000);
 
-    private static final ItemStack NO_CARD = new CustomItemStack(Material.BARRIER, "&cInput a Mob Data Card!");
+    private static final ItemStack NO_CARD = new CustomItemStack(Material.BARRIER, "&c请放入生物芯片!");
     private static final int CARD_SLOT = 37;
     private static final int STATUS_SLOT = 10;
     private static final int[] OUTPUT_SLOTS = {

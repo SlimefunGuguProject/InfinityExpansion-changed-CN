@@ -40,7 +40,7 @@ import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 public final class StrainerBase extends TickingMenuBlock implements RecipeDisplayItem {
 
 
-    private static final ItemStack POTATO = new CustomItemStack(Material.POTATO, "&7:&6Potatofish&7:", "&eLucky");
+    private static final ItemStack POTATO = new CustomItemStack(Material.POTATO, "&7:&6土豆鱼&7:", "&e幸运");
     private static final int STATUS_SLOT = 10;
     private static final int[] OUTPUT_SLOTS = {
             13, 14, 15, 16,

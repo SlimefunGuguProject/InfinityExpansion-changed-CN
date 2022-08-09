@@ -191,25 +191,73 @@ public final class StoneworksFactory extends AbstractMachineBlock implements Rec
 
     @AllArgsConstructor
     private enum Choice {
-        NONE(new CustomItemStack(Material.BARRIER, "&c无操作", "", "&7 > 点击切换"),
-                new Material[0],
-                new Material[0]
+        NONE(
+            new CustomItemStack(
+                Material.BARRIER,
+                "&c无操作",
+                "",
+                "&7 > 点击切换"
+            ),
+            new Material[0],
+            new Material[0]
         ),
-        FURNACE(new CustomItemStack(Material.FURNACE, "&8烧制", "", "&f圆石 &8=> &f石头", "&f沙子 &8=> &f玻璃", "", "&7 > 点击切换"),
-                new Material[] { Material.COBBLESTONE, Material.STONE, Material.SAND, Material.STONE_BRICKS },
-                new Material[] { Material.STONE, Material.SMOOTH_STONE, Material.GLASS, Material.CRACKED_STONE_BRICKS }
+        FURNACE(
+            new CustomItemStack(
+                Material.FURNACE,
+                "&8烧制",
+                "",
+                "&f圆石 &8=> &f石头",
+                "&f石头 &8=> &f平滑石头",
+                "&f沙子 &8=> &f玻璃",
+                "&f石砖 &8=> &f裂纹石砖",
+                "",
+                "&7 > 点击切换"
+            ),
+            new Material[] { Material.COBBLESTONE, Material.STONE, Material.SAND, Material.STONE_BRICKS },
+            new Material[] { Material.STONE, Material.SMOOTH_STONE, Material.GLASS, Material.CRACKED_STONE_BRICKS }
         ),
-        CRUSH(new CustomItemStack(Material.DIAMOND_PICKAXE, "&8粉碎", "", "&f圆石 &8=> &f沙砾", "&f沙砾 &8=> &f沙子", "", "&7 > 点击切换"),
-                new Material[] { Material.COBBLESTONE, Material.GRAVEL },
-                new Material[] { Material.GRAVEL, Material.SAND }
+        CRUSH(
+            new CustomItemStack(
+                Material.DIAMOND_PICKAXE,
+                "&8粉碎",
+                "",
+                "&f圆石 &8=> &f沙砾",
+                "&f沙砾 &8=> &f沙子",
+                "",
+                "&7 > 点击切换"
+            ),
+            new Material[] { Material.COBBLESTONE, Material.GRAVEL },
+            new Material[] { Material.GRAVEL, Material.SAND }
         ),
-        COMPACT(new CustomItemStack(Material.PISTON, "&8压实", "", "&f石头 &8=> &f石砖", "&f花岗岩 &8=> &f磨制花岗岩", "&f闪长岩 &8=> &f磨制闪长岩", "&f安山岩 &8=> &f磨制安山岩", "", "&7 > 点击切换"),
-                new Material[] { Material.STONE, Material.GRANITE, Material.DIORITE, Material.ANDESITE, Material.SAND },
-                new Material[] { Material.STONE_BRICKS, Material.POLISHED_GRANITE, Material.POLISHED_DIORITE, Material.POLISHED_ANDESITE, Material.SANDSTONE }
+        COMPACT(
+            new CustomItemStack(
+                Material.PISTON,
+                "&8压实",
+                "",
+                "&f石头 &8=> &f石砖",
+                "&f花岗岩 &8=> &f磨制花岗岩",
+                "&f闪长岩 &8=> &f磨制闪长岩",
+                "&f安山岩 &8=> &f磨制安山岩",
+                "&f沙子 &8=> &f沙石",
+                "",
+                "&7 > 点击切换"
+            ),
+            new Material[] { Material.STONE, Material.GRANITE, Material.DIORITE, Material.ANDESITE, Material.SAND },
+            new Material[] { Material.STONE_BRICKS, Material.POLISHED_GRANITE, Material.POLISHED_DIORITE, Material.POLISHED_ANDESITE, Material.SANDSTONE }
         ),
-        TRANSFORM(new CustomItemStack(Material.ANDESITE, "&8转化", "", "&f圆石 &8=> &f安山岩", "&f安山岩 &8=> &f闪长岩", "&f闪长岩 &8=> &f花岗岩", "", "&7 > 点击切换"),
-                new Material[] { Material.COBBLESTONE, Material.ANDESITE, Material.DIORITE},
-                new Material[] { Material.ANDESITE, Material.DIORITE, Material.GRANITE}
+        TRANSFORM(
+            new CustomItemStack(
+                Material.ANDESITE,
+                "&8转化",
+                "",
+                "&f圆石 &8=> &f安山岩",
+                "&f安山岩 &8=> &f闪长岩",
+                "&f闪长岩 &8=> &f花岗岩",
+                "",
+                "&7 > 点击切换"
+            ),
+            new Material[] { Material.COBBLESTONE, Material.ANDESITE, Material.DIORITE},
+            new Material[] { Material.ANDESITE, Material.DIORITE, Material.GRANITE}
         );
 
         private final ItemStack item;

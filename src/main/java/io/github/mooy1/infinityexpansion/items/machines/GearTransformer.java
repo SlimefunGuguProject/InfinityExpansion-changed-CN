@@ -211,7 +211,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
         }
 
         if (!SF && StackUtils.getId(inputItem) != null) {
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&cSlimefun 的物品无法改变材料!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&c粘液科技的物品无法改变材料!"));
             return;
         }
 
@@ -219,7 +219,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         if (inputToolType == null) { //invalid input
 
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&c无效的工具或护甲!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&c无效的装备!"));
             return;
 
         }
@@ -237,7 +237,7 @@ public final class GearTransformer extends AbstractEnergyCrafter implements Reci
 
         if (pair == null) { //invalid material
 
-            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&c材料无效!"));
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.BARRIER, "&c无效的材料!"));
             return;
 
         }

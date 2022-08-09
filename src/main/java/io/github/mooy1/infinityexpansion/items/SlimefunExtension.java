@@ -152,7 +152,7 @@ public final class SlimefunExtension {
             "INFINITY_CAPACITOR",
             HeadTexture.CAPACITOR_25,
             "&b无尽电容",
-            "&c&o每个区块不要",
+            "&c&o每个能源网络不要",
             "&c&o使用超过一个",
             "",
             "&8\u21E8 &e\u26A1 " + MachineLore.format(INFINITY_CAPACITY) + " &7J 可储存"

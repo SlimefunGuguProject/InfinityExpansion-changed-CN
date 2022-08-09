@@ -118,12 +118,12 @@ public final class AdvancedAnvil extends AbstractEnergyCrafter {
         }
 
         if(sfItem2 != null && !sfItem2.isDisenchantable()){
-            p.sendMessage(ChatColor.RED + "Slimefun item is not disenchantable!");
+            p.sendMessage(ChatColor.RED + "该粘液物品无法祛魔!");
             return;
         }
 
         if(sfItem1 != null && !sfItem1.isEnchantable()){
-            p.sendMessage(ChatColor.RED + "Slimefun item is not enchantable!");
+            p.sendMessage(ChatColor.RED + "该粘液物品无法附魔!");
             return;
         }
 

@@ -43,7 +43,7 @@ public enum GenerationType {
             return 0;
         }
     },
-    LUNAR("月能") {
+    LUNAR("虚空") {
         @Override
         protected int generate(@Nonnull World world, @Nonnull Block block, int def) {
             switch (world.getEnvironment()) {

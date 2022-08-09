@@ -99,8 +99,8 @@ public final class Machines {
             "POWERED_BEDROCK",
             Material.NETHERITE_BLOCK,
             "&4充能基岩",
-            "&7当被红石充能时会变成基岩",
-            "&7失去充能后会被破坏",
+            "&7通电后变成基岩",
+            "&7失去充能后可被破坏",
             "",
             MachineLore.energyPerSecond(BEDROCK_ENERGY)
     );
@@ -112,7 +112,7 @@ public final class Machines {
             "&f地理资源矿机",
             "&7利用电力缓慢获取地理资源",
             "&7无需地形扫描",
-            "&7不受剩余GEO资源数量影响",
+            "&7不受剩余地理资源数量影响",
             "",
             MachineLore.energyPerSecond(GEO_QUARRY_ENERGY)
     );
@@ -121,6 +121,7 @@ public final class Machines {
             Material.LIGHT_BLUE_CONCRETE,
             "&b极寒冰柜",
             "&7将冰转化为冷却剂",
+            "&7将岩浆块转化为下界冰冷却剂",
             "",
             MachineLore.energyPerSecond(90)
     );
@@ -220,7 +221,7 @@ public final class Machines {
     public static final SlimefunItemStack SINGULARITY_CONSTRUCTOR = new SlimefunItemStack(
             "SINGULARITY_CONSTRUCTOR",
             Material.QUARTZ_BRICKS,
-            "&f结构转换器",
+            "&f奇点构造机",
             "&7凝聚大量资源",
             "",
             MachineLore.speed(1),
@@ -229,7 +230,7 @@ public final class Machines {
     public static final SlimefunItemStack INFINITY_CONSTRUCTOR = new SlimefunItemStack(
             "INFINITY_CONSTRUCTOR",
             Material.CHISELED_QUARTZ_BLOCK,
-            "&b无尽&f结构转换器",
+            "&b无尽&f奇点构造机",
             "&7快速凝聚大量资源",
             "",
             MachineLore.speed(64),
@@ -256,10 +257,19 @@ public final class Machines {
             "INFINITE_VOID_HARVESTER",
             Material.CRYING_OBSIDIAN,
             "&b无尽&8虚空收集者",
-            "&7从虚无中缓慢收集&8虚空粒",
+            "&7从虚无中收集&8虚空粒",
             "",
             MachineLore.speed(64),
             MachineLore.energyPerSecond(12000)
+    );
+    public static final SlimefunItemStack CONCRETE_MOLDING_MACHINE = new SlimefunItemStack(
+        "CONCRETE_MOLDING_MACHINE",
+        Material.FURNACE,
+        "&8混凝土浇筑机",
+        "&7全自动浇筑混凝土",
+        "",
+        MachineLore.speed(8),
+        MachineLore.energyPerSecond(80)
     );
 
     public static void setup(InfinityExpansion plugin) {
@@ -562,6 +572,28 @@ public final class Machines {
                 Materials.VOID_INGOT, SlimefunExtension.ADVANCED_GEO_MINER, Materials.VOID_INGOT,
                 Materials.MACHINE_PLATE, Materials.VOID_INGOT, Materials.MACHINE_PLATE,
         }).ticksPerOutput(GEO_QUARRY_INTERVAL).energyPerTick(GEO_QUARRY_ENERGY).register(plugin);
+
+        new MachineBlock(Groups.ADVANCED_MACHINES, CONCRETE_MOLDING_MACHINE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+            Materials.VOID_INGOT, Materials.VOID_DUST, Materials.VOID_INGOT,
+            Materials.VOID_INGOT, SlimefunItems.FLUID_PUMP, Materials.VOID_INGOT,
+            SlimefunItems.AUTO_DRIER, SlimefunItems.BIG_CAPACITOR, SlimefunItems.AUTO_DRIER
+        }).addRecipe(new ItemStack(Material.WHITE_CONCRETE, 8), new ItemStack(Material.WHITE_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.ORANGE_CONCRETE, 8), new ItemStack(Material.ORANGE_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.MAGENTA_CONCRETE, 8), new ItemStack(Material.MAGENTA_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.LIGHT_BLUE_CONCRETE, 8), new ItemStack(Material.LIGHT_BLUE_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.YELLOW_CONCRETE, 8), new ItemStack(Material.YELLOW_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.LIME_CONCRETE, 8), new ItemStack(Material.LIME_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.PINK_CONCRETE, 8), new ItemStack(Material.PINK_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.GRAY_CONCRETE, 8), new ItemStack(Material.GRAY_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.LIGHT_GRAY_CONCRETE, 8), new ItemStack(Material.LIGHT_GRAY_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.CYAN_CONCRETE, 8), new ItemStack(Material.CYAN_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.PURPLE_CONCRETE, 8), new ItemStack(Material.PURPLE_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.BLUE_CONCRETE, 8), new ItemStack(Material.BLUE_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.BROWN_CONCRETE, 8), new ItemStack(Material.BROWN_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.GREEN_CONCRETE, 8), new ItemStack(Material.GREEN_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.RED_CONCRETE, 8), new ItemStack(Material.RED_CONCRETE_POWDER, 8))
+            .addRecipe(new ItemStack(Material.BLACK_CONCRETE, 8), new ItemStack(Material.BLACK_CONCRETE_POWDER, 8))
+            .ticksPerOutput(1).energyPerTick(80).register(plugin);
     }
 
     private static final class RandomizedItemStack extends ItemStack {
