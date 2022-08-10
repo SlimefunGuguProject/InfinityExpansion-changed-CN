@@ -155,5 +155,4 @@ public final class Quarry extends AbstractMachineBlock implements RecipeDisplayI
     public String getRecipeSectionLabel(@Nonnull Player p) {
         return "&7产物:";
     }
-
 }
