@@ -36,15 +36,15 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
 
     public static SlimefunItemStack create(String id, MobDataTier tier) {
         // 血压起来了
+        String rawId = StringUtil.dehumanize(id);
         if (id.equalsIgnoreCase("Endermen")) {
             id = "Enderman";
         }
-        id = StringUtil.dehumanize(id);
 
-        String name = EntityTypeHelper.getName(id);
+        String name = EntityTypeHelper.getName(StringUtil.dehumanize(id));
 
         return new SlimefunItemStack(
-                id + "_DATA_CARD",
+                rawId + "_DATA_CARD",
                 tier.material,
                 "&e" + name + "&b生物芯片",
                 "&7插入生物模拟室中使用",
