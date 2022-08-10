@@ -3,7 +3,9 @@ author: Mooy1
 description: more slimefun content
 main: io.github.mooy1.infinityexpansion.InfinityExpansion
 website: https://github.com/Mooy1/InfinityExpansion
-depend: [Slimefun]
+depend:
+  - Slimefun
+  - GuizhanLibPlugin
 softdepend: [LiteXpansion]
 version: ${project.version}
 api-version: 1.16

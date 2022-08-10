@@ -3,7 +3,8 @@ package io.github.mooy1.infinityexpansion;
 import java.io.File;
 import java.util.logging.Level;
 
-import net.guizhanss.guizhanlib.slimefun.addon.WikiSetup;
+import javax.annotation.Nonnull;
+
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPluginLoader;
@@ -29,7 +30,8 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
 import io.github.mooy1.infinitylib.metrics.charts.SimplePie;
 
-import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanBuildsUpdaterWrapper;
+import net.guizhanss.slimefun4.utils.WikiUtils;
 
 public final class InfinityExpansion extends AbstractAddon {
 
@@ -46,12 +48,12 @@ public final class InfinityExpansion extends AbstractAddon {
     @Override
     protected void enable() {
         Metrics metrics = new Metrics(this, 8991);
-        String autoUpdates = String.valueOf(false);
+        boolean enableAutoUpdate = getConfig().getBoolean("auto-update");
+        String autoUpdates = String.valueOf(enableAutoUpdate);
         metrics.addCustomChart(new SimplePie("auto_updates", () -> autoUpdates));
 
-        if (getConfig().getBoolean("auto-update") &&
-            getDescription().getVersion().startsWith("Build")) {
-            new GuizhanBuildsUpdater(this, getFile(), "SlimefunGuguProject", "InfinityExpansion", "master", false, "zh-CN").start();
+        if (enableAutoUpdate && getDescription().getVersion().startsWith("Build")) {
+            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "SlimefunGuguProject", "InfinityExpansion", "master", false);
         }
 
         Plugin lx = getServer().getPluginManager().getPlugin("LiteXpansion");
@@ -82,7 +84,7 @@ public final class InfinityExpansion extends AbstractAddon {
         Generators.setup(this);
         SlimefunExtension.setup(this);
 
-        WikiSetup.setupJson(this);
+        WikiUtils.setupJson(this);
 
         if (getConfig().getBoolean("balance-options.enable-researches")) {
             Researches.setup();
@@ -93,6 +95,7 @@ public final class InfinityExpansion extends AbstractAddon {
     public void disable() {
     }
 
+    @Nonnull
     public String getWikiURL() {
         return "https://slimefun-addons-wiki.guizhanss.cn/infinity-expansion/{0}";
     }
