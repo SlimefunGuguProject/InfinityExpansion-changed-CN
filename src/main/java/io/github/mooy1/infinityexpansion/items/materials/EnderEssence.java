@@ -9,7 +9,6 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
@@ -19,7 +18,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
  *
  * @author Mooy1
  */
-public final class EnderEssence extends SlimefunItem implements NotPlaceable, GEOResource {
+public final class EnderEssence extends SimpleMaterial implements NotPlaceable, GEOResource {
 
     private final NamespacedKey key;
 

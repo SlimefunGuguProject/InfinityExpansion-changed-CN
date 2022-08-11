@@ -32,16 +32,19 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
 
     static final Map<String, MobDataCard> CARDS = new HashMap<>();
 
+    private static final String WIKI_PAGE = "Mob-Simulation";
+
     public static SlimefunItemStack create(String id, MobDataTier tier) {
         // 血压起来了
-        String name;
-        if (id.equals("Endermen"))
-            name = EntityTypeHelper.getName(EntityType.ENDERMAN);
-        else
-            name = EntityTypeHelper.getName(EntityType.valueOf(StringUtil.dehumanize(id)));
+        String rawId = StringUtil.dehumanize(id);
+        if (id.equalsIgnoreCase("Endermen")) {
+            id = "Enderman";
+        }
+
+        String name = EntityTypeHelper.getName(StringUtil.dehumanize(id));
 
         return new SlimefunItemStack(
-                StringUtil.dehumanize(id) + "_DATA_CARD",
+                rawId + "_DATA_CARD",
                 tier.material,
                 "&e" + name + "&b生物芯片",
                 "&7插入生物模拟室中使用",
@@ -93,4 +96,8 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
         return items;
     }
 
+    @Override
+    public void postRegister() {
+        addWikiPage(WIKI_PAGE);
+    }
 }

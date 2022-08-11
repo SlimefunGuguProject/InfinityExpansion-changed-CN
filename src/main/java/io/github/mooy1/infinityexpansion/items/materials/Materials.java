@@ -408,7 +408,7 @@ public final class Materials {
     }
 
     private static void register(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
-        new SlimefunItem(category, item, recipeType, recipe).register(InfinityExpansion.instance());
+        new SimpleMaterial(category, item, recipeType, recipe).register(InfinityExpansion.instance());
     }
 
 }

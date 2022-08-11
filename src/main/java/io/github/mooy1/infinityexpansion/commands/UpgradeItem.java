@@ -42,7 +42,7 @@ public final class UpgradeItem extends SubCommand {
         Player p = (Player) commandSender;
 
         // 使用频率限制
-        if (cooldown.has(p.getUniqueId())) {
+        if (!cooldown.check(p.getUniqueId())) {
             p.sendMessage(ChatColor.RED + "该指令使用过于频繁，请稍后再试!");
             return;
         }

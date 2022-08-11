@@ -77,9 +77,9 @@
 
         <dependency>
             <groupId>net.guizhanss</groupId>
-            <artifactId>GuizhanLib</artifactId>
-            <version>0.9.7</version>
-            <scope>compile</scope>
+            <artifactId>GuizhanLibPlugin</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -115,10 +115,6 @@
                         <relocation>
                             <pattern>io.github.mooy1.infinitylib</pattern>
                             <shadedPattern>io.github.mooy1.infinityexpansion.infinitylib</shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>net.guizhanss.guizhanlib</pattern>
-                            <shadedPattern>io.github.mooy1.infinityexpansion.guizhanlib</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

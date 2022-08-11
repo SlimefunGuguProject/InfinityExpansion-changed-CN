@@ -181,5 +181,4 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
             inv.replaceExistingItem(STATUS_SLOT, NO_ROOM_ITEM);
         }
     }
-
 }
