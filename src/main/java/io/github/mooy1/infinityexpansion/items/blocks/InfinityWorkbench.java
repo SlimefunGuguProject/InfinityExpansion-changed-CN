@@ -36,7 +36,7 @@ public final class InfinityWorkbench extends io.github.mooy1.infinitylib.machine
     private static final int RECIPE_SLOT = 7;
     public static final MachineRecipeType TYPE = new MachineRecipeType("infinity_forge",
             new CustomItemStack(Blocks.INFINITY_FORGE, Blocks.INFINITY_FORGE.getDisplayName(),
-                    "", "&c请放入正确的无尽配方!"));
+                    "", "&c配方显示不完整，请从无尽工作台查看正确的配方!"));
 
     private final int energy;
 
