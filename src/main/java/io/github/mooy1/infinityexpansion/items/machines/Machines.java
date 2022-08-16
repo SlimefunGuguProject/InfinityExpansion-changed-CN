@@ -236,6 +236,17 @@ public final class Machines {
             MachineLore.speed(64),
             MachineLore.energyPerSecond(1200)
     );
+    // 魔改: 生物酵解机
+    public static final SlimefunItemStack BIO_DIGESTION = new SlimefunItemStack(
+            "BIO_DIGESTION",
+            Material.MYCELIUM,
+            "&f生物酵解机",
+            "&7将常见的各种肉类或农产品酵解转化",
+            "&7可将生物质二次发酵转化为原油",
+            "",
+            MachineLore.speed(1),
+            MachineLore.energyPerSecond(60)
+    );
     public static final SlimefunItemStack STONEWORKS_FACTORY = new SlimefunItemStack(
             "STONEWORKS_FACTORY",
             Material.BLAST_FURNACE,
@@ -262,14 +273,24 @@ public final class Machines {
             MachineLore.speed(64),
             MachineLore.energyPerSecond(12000)
     );
+    // 魔改：光隙棱镜
+    public static final SlimefunItemStack LUMINA_HARVESTER = new SlimefunItemStack(
+            "LUMINA_HARVESTER",
+            Material.GLOWSTONE,
+            "&8光隙棱镜",
+            "&7从时光的间隙中捕获&8光能",
+            "",
+            MachineLore.speed(1),
+            MachineLore.energyPerSecond(3000)
+    );
     public static final SlimefunItemStack CONCRETE_MOLDING_MACHINE = new SlimefunItemStack(
-        "CONCRETE_MOLDING_MACHINE",
-        Material.FURNACE,
-        "&8混凝土浇筑机",
-        "&7全自动浇筑混凝土",
-        "",
-        MachineLore.speed(8),
-        MachineLore.energyPerSecond(80)
+            "CONCRETE_MOLDING_MACHINE",
+            Material.FURNACE,
+            "&8混凝土浇筑机",
+            "&7全自动浇筑混凝土",
+            "",
+            MachineLore.speed(8),
+            MachineLore.energyPerSecond(80)
     );
 
     public static void setup(InfinityExpansion plugin) {
@@ -286,6 +307,12 @@ public final class Machines {
                 Materials.MAGNONIUM, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.MAGNONIUM,
                 Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE
         }, 64).energyPerTick(12000).register(plugin);
+        // 魔改：光隙棱镜
+        new LuminaHarvester(Groups.ADVANCED_MACHINES, LUMINA_HARVESTER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                Materials.LUMINA_GLASS, Materials.MACHINE_CORE, Materials.LUMINA_GLASS,
+                Materials.MACHINE_PLATE, VOID_HARVESTER, Materials.MACHINE_PLATE,
+                Materials.LUMINA_GLASS, Materials.MACHINE_CORE, Materials.LUMINA_GLASS
+        }, 1).energyPerTick(3000).register(plugin);
         new StoneworksFactory(Groups.ADVANCED_MACHINES, STONEWORKS_FACTORY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MAGSTEEL_PLATE, BASIC_COBBLE, Materials.MAGSTEEL_PLATE,
                 SlimefunItems.ELECTRIC_FURNACE_3, Materials.MACHINE_CIRCUIT, SlimefunItems.ELECTRIC_ORE_GRINDER,
@@ -311,12 +338,41 @@ public final class Machines {
                 Materials.MACHINE_PLATE, SlimefunItems.REINFORCED_FURNACE, Materials.MACHINE_PLATE,
                 Materials.MACHINE_PLATE, Materials.MACHINE_CORE, Materials.MACHINE_PLATE
         }).recipes(new SlimefunItemStack[] {
-                Materials.IRON_SINGULARITY, Materials.COAL_SINGULARITY, new SlimefunItemStack(SlimefunItems.REINFORCED_ALLOY_INGOT, 32),
-                Materials.IRON_SINGULARITY, Materials.REDSTONE_SINGULARITY, new SlimefunItemStack(SlimefunItems.REDSTONE_ALLOY, 32),
-                Materials.DIAMOND_SINGULARITY, Materials.COAL_SINGULARITY, new SlimefunItemStack(SlimefunItems.CARBONADO, 16),
-                Materials.GOLD_SINGULARITY, Materials.EMERALD_SINGULARITY, new SlimefunItemStack(SlimefunItems.BLISTERING_INGOT_3, 16),
+                Materials.IRON_SINGULARITY, Materials.COAL_SINGULARITY, new SlimefunItemStack(SlimefunItems.REINFORCED_ALLOY_INGOT, 64), // 魔改，32
+                Materials.IRON_SINGULARITY, Materials.REDSTONE_SINGULARITY, new SlimefunItemStack(SlimefunItems.REDSTONE_ALLOY, 64), // 魔改，32
+                Materials.DIAMOND_SINGULARITY, Materials.COAL_SINGULARITY, new SlimefunItemStack(SlimefunItems.CARBONADO, 64), // 魔改，16
+                Materials.GOLD_SINGULARITY, Materials.EMERALD_SINGULARITY, new SlimefunItemStack(SlimefunItems.BLISTERING_INGOT_3, 64), // 魔改，16
                 Materials.COPPER_SINGULARITY, Materials.ZINC_SINGULARITY, new SlimefunItemStack(SlimefunItems.ELECTRO_MAGNET, 64),
-                Materials.IRON_SINGULARITY, Materials.QUARTZ_SINGULARITY, new SlimefunItemStack(SlimefunItems.SOLAR_PANEL, 64)
+                Materials.IRON_SINGULARITY, Materials.QUARTZ_SINGULARITY, new SlimefunItemStack(SlimefunItems.SOLAR_PANEL, 64),
+                // 大量魔改
+                Materials.IRON_SINGULARITY, Materials.MAGNESIUM_SINGULARITY, new SlimefunItemStack(Materials.MAGSTEEL_PLATE, 16),
+                Materials.IRON_SINGULARITY, Materials.GOLDEN_MASS, new SlimefunItemStack(Materials.GOLD_SINGULARITY, 1),
+                Materials.APPLE_MASS, Materials.GOLDEN_MASS, new SlimefunItemStack(Materials.GOLDEN_APPLE_MASS, 1),
+                Materials.GOLDEN_APPLE_MASS, Materials.ENCHANTED_MASS, new SlimefunItemStack(Materials.ENCHANTED_APPLE_MASS, 1),
+                Materials.QUARTZ_SINGULARITY, Materials.QUARTZ_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_DUST, 4),  //新增
+                Materials.VOID_SINGULARITY, Materials.REDSTONE_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_DUST, 64),
+                Materials.VOID_SINGULARITY, Materials.DIAMOND_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_DUST, 64),
+                Materials.VOID_SINGULARITY, Materials.EMERALD_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_DUST, 64),
+                Materials.VOID_SINGULARITY, Materials.LAPIS_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_DUST, 64),
+                Materials.VOID_SINGULARITY, Materials.VOID_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_SINGULARITY, 1),
+                Materials.LUMINA_SINGULARITY, Materials.COAL_SINGULARITY, new SlimefunItemStack(Materials.COAL_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.NETHERITE_SINGULARITY, new SlimefunItemStack(Materials.NETHERITE_SINGULARITY, 2),
+                Materials.LUMINA_SINGULARITY, Materials.IRON_SINGULARITY, new SlimefunItemStack(Materials.IRON_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.COPPER_SINGULARITY, new SlimefunItemStack(Materials.COPPER_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.ZINC_SINGULARITY, new SlimefunItemStack(Materials.ZINC_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.TIN_SINGULARITY, new SlimefunItemStack(Materials.TIN_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.ALUMINUM_SINGULARITY, new SlimefunItemStack(Materials.ALUMINUM_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.SILVER_SINGULARITY, new SlimefunItemStack(Materials.SILVER_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.MAGNESIUM_SINGULARITY, new SlimefunItemStack(Materials.MAGNESIUM_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.LEAD_SINGULARITY, new SlimefunItemStack(Materials.LEAD_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.QUARTZ_SINGULARITY, new SlimefunItemStack(Materials.QUARTZ_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.GOLD_SINGULARITY, new SlimefunItemStack(Materials.GOLD_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.REDSTONE_SINGULARITY, new SlimefunItemStack(Materials.REDSTONE_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.DIAMOND_SINGULARITY, new SlimefunItemStack(Materials.DIAMOND_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.EMERALD_SINGULARITY, new SlimefunItemStack(Materials.EMERALD_SINGULARITY, 3),
+                Materials.LUMINA_SINGULARITY, Materials.LAPIS_SINGULARITY, new SlimefunItemStack(Materials.LAPIS_SINGULARITY, 3),
+                Materials.COBBLE_HEART, Materials.LUMINA_SINGULARITY, new SlimefunItemStack(Materials.INFINITE_INGOT, 1),
+                Materials.VOID_SINGULARITY, Materials.INFINITY_SINGULARITY, new SlimefunItemStack(Materials.LUMINA_SINGULARITY, 64),
         }).energyPerTick(1_000_000).register(plugin);
 
         new PoweredBedrock(Groups.INFINITY_CHEAT, POWERED_BEDROCK, InfinityWorkbench.TYPE, new ItemStack[] {
@@ -369,12 +425,12 @@ public final class Machines {
                 new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS),
                 Materials.MAGSTEEL, new ItemStack(Material.DIAMOND_HOE), Materials.MAGSTEEL,
                 Materials.MACHINE_CIRCUIT, new ItemStack(Material.GRASS_BLOCK), Materials.MACHINE_CIRCUIT
-        }).recipes(crops).ticksPerOutput(300).energyPerTick(18).register(plugin);
+        }).recipes(crops).ticksPerOutput(150).energyPerTick(18).register(plugin); // 魔改，ticksPerOutput 300
         new GrowingMachine(Groups.ADVANCED_MACHINES, ADVANCED_GROWER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 SlimefunItems.HARDENED_GLASS, SlimefunItems.HARDENED_GLASS, SlimefunItems.HARDENED_GLASS,
                 Materials.MAGNONIUM, BASIC_GROWER, Materials.MAGNONIUM,
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }).recipes(crops).ticksPerOutput(60).energyPerTick(90).register(plugin);
+        }).recipes(crops).ticksPerOutput(30).energyPerTick(90).register(plugin);  // 魔改，ticksPerOutput 60
         new GrowingMachine(Groups.INFINITY_CHEAT, INFINITY_GROWER, InfinityWorkbench.TYPE, new ItemStack[] {
                 new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS),
                 new ItemStack(Material.GLASS), null, null, null, null, new ItemStack(Material.GLASS),
@@ -382,7 +438,7 @@ public final class Machines {
                 new ItemStack(Material.GLASS), new ItemStack(Material.GRASS_BLOCK), new ItemStack(Material.GRASS_BLOCK), new ItemStack(Material.GRASS_BLOCK), new ItemStack(Material.GRASS_BLOCK), new ItemStack(Material.GLASS),
                 Materials.MACHINE_PLATE, SlimefunItems.CROP_GROWTH_ACCELERATOR_2, ADVANCED_GROWER, ADVANCED_GROWER, SlimefunItems.CROP_GROWTH_ACCELERATOR_2, Materials.MACHINE_PLATE,
                 Materials.MACHINE_PLATE, Materials.INFINITE_CIRCUIT, Materials.INFINITE_CORE, Materials.INFINITE_CORE, Materials.INFINITE_CIRCUIT, Materials.MACHINE_PLATE
-        }).recipes(crops).ticksPerOutput(12).energyPerTick(900).register(plugin);
+        }).recipes(crops).ticksPerOutput(6).energyPerTick(600).register(plugin); // 魔改，12，900
 
         EnumMap<Material, ItemStack[]> trees = new EnumMap<>(Material.class);
 
@@ -409,6 +465,13 @@ public final class Machines {
         });
         trees.put(Material.CRIMSON_FUNGUS, new ItemStack[] {
                 new ItemStack(Material.CRIMSON_HYPHAE, 8), new ItemStack(Material.CRIMSON_STEM, 6), new ItemStack(Material.WEEPING_VINES)
+        });
+        // 魔改：添加蘑菇
+        trees.put(Material.BROWN_MUSHROOM, new ItemStack[] {
+                new ItemStack(Material.BROWN_MUSHROOM, 8), new ItemStack(Material.BROWN_MUSHROOM_BLOCK, 6), new ItemStack(Material.MUSHROOM_STEM, 4)
+        });
+        trees.put(Material.RED_MUSHROOM, new ItemStack[] {
+                new ItemStack(Material.RED_MUSHROOM, 8), new ItemStack(Material.RED_MUSHROOM_BLOCK, 6), new ItemStack(Material.MUSHROOM_STEM, 4)
         });
 
         new GrowingMachine(Groups.BASIC_MACHINES, BASIC_TREE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
@@ -486,32 +549,35 @@ public final class Machines {
                 .addRecipe(sixtyFourDust, new ItemStack(Material.GRANITE, 64))
                 .ticksPerOutput(1).energyPerTick(7200).register(plugin);
 
+        // 魔改：数量 8 64
         new MachineBlock(Groups.ADVANCED_MACHINES, COBBLE_PRESS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MACHINE_PLATE, Materials.COBBLE_3, Materials.MACHINE_PLATE,
                 SlimefunItems.ELECTRIC_PRESS_2, SlimefunItems.ELECTRIC_PRESS_2, SlimefunItems.ELECTRIC_PRESS_2,
                 Materials.MACHINE_PLATE, Materials.COBBLE_3, Materials.MACHINE_PLATE
-        }).addRecipe(new SlimefunItemStack(Materials.COBBLE_1, 8), new ItemStack(Material.COBBLESTONE, 64))
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_2, 8), new SlimefunItemStack(Materials.COBBLE_1, 64))
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_3, 8), new SlimefunItemStack(Materials.COBBLE_2, 64))
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_4, 8), new SlimefunItemStack(Materials.COBBLE_3, 64))
-                .addRecipe(new SlimefunItemStack(Materials.COBBLE_5, 8), new SlimefunItemStack(Materials.COBBLE_4, 64))
+        }).addRecipe(new SlimefunItemStack(Materials.COBBLE_1, 1), new ItemStack(Material.COBBLESTONE, 8))
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_2, 1), new SlimefunItemStack(Materials.COBBLE_1, 8))
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_3, 1), new SlimefunItemStack(Materials.COBBLE_2, 8))
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_4, 1), new SlimefunItemStack(Materials.COBBLE_3, 8))
+                .addRecipe(new SlimefunItemStack(Materials.COBBLE_5, 1), new SlimefunItemStack(Materials.COBBLE_4, 8))
                 .ticksPerOutput(1).energyPerTick(120).register(plugin);
 
+        // 魔改：50%损耗
         new MachineBlock(Groups.ADVANCED_MACHINES, INGOT_FORMER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 SlimefunItems.ELECTRIC_INGOT_FACTORY_2, SlimefunItems.ELECTRIC_INGOT_FACTORY_2, SlimefunItems.ELECTRIC_INGOT_FACTORY_2,
                 SlimefunItems.ELECTRIC_INGOT_FACTORY_2, SlimefunItems.ELECTRIC_INGOT_FACTORY_2, SlimefunItems.ELECTRIC_INGOT_FACTORY_2,
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT,
-        }).addRecipe(new SlimefunItemStack(SlimefunItems.COPPER_INGOT, 4), new SlimefunItemStack(SlimefunItems.COPPER_DUST, 8))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.ZINC_INGOT, 4), new SlimefunItemStack(SlimefunItems.ZINC_DUST, 8))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.TIN_INGOT, 4), new SlimefunItemStack(SlimefunItems.TIN_DUST, 8))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT, 4), new SlimefunItemStack(SlimefunItems.ALUMINUM_DUST, 8))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.LEAD_INGOT, 4), new SlimefunItemStack(SlimefunItems.LEAD_DUST, 8))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.SILVER_INGOT, 4), new SlimefunItemStack(SlimefunItems.SILVER_DUST, 8))
+        }).addRecipe(new SlimefunItemStack(SlimefunItems.COPPER_INGOT, 8), new SlimefunItemStack(SlimefunItems.COPPER_DUST, 8))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.ZINC_INGOT, 8), new SlimefunItemStack(SlimefunItems.ZINC_DUST, 8))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.TIN_INGOT, 8), new SlimefunItemStack(SlimefunItems.TIN_DUST, 8))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT, 8), new SlimefunItemStack(SlimefunItems.ALUMINUM_DUST, 8))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.LEAD_INGOT, 8), new SlimefunItemStack(SlimefunItems.LEAD_DUST, 8))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.SILVER_INGOT, 8), new SlimefunItemStack(SlimefunItems.SILVER_DUST, 8))
                 .addRecipe(new SlimefunItemStack(SlimefunItems.GOLD_24K, 1), new SlimefunItemStack(SlimefunItems.GOLD_DUST, 8))
-                .addRecipe(new ItemStack(Material.IRON_INGOT, 4), new SlimefunItemStack(SlimefunItems.IRON_DUST, 8))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT, 4), new SlimefunItemStack(SlimefunItems.MAGNESIUM_DUST, 8))
+                .addRecipe(new ItemStack(Material.IRON_INGOT, 8), new SlimefunItemStack(SlimefunItems.IRON_DUST, 8))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT, 8), new SlimefunItemStack(SlimefunItems.MAGNESIUM_DUST, 8))
                 .ticksPerOutput(1).energyPerTick(240).register(plugin);
 
+        // 魔改：50%损耗
         new MachineBlock(Groups.INFINITY_CHEAT, INFINITY_INGOT_FORMER, InfinityWorkbench.TYPE, new ItemStack[] {
                 Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT,
                 Materials.VOID_INGOT, Materials.INFINITE_INGOT, Materials.INFINITE_CIRCUIT, Materials.INFINITE_CIRCUIT, Materials.INFINITE_INGOT, Materials.VOID_INGOT,
@@ -519,15 +585,15 @@ public final class Machines {
                 Materials.VOID_INGOT, Materials.INFINITE_INGOT, INGOT_FORMER, INGOT_FORMER, Materials.INFINITE_INGOT, Materials.VOID_INGOT,
                 Materials.VOID_INGOT, Materials.INFINITE_INGOT, INGOT_FORMER, INGOT_FORMER, Materials.INFINITE_INGOT, Materials.VOID_INGOT,
                 Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.VOID_INGOT,
-        }).addRecipe(new SlimefunItemStack(SlimefunItems.COPPER_INGOT, 32), new SlimefunItemStack(SlimefunItems.COPPER_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.ZINC_INGOT, 32), new SlimefunItemStack(SlimefunItems.ZINC_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.TIN_INGOT, 32), new SlimefunItemStack(SlimefunItems.TIN_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT, 32), new SlimefunItemStack(SlimefunItems.ALUMINUM_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.LEAD_INGOT, 32), new SlimefunItemStack(SlimefunItems.LEAD_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.SILVER_INGOT, 32), new SlimefunItemStack(SlimefunItems.SILVER_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.GOLD_24K, 10), new SlimefunItemStack(SlimefunItems.GOLD_DUST, 64))
-                .addRecipe(new ItemStack(Material.IRON_INGOT, 32), new SlimefunItemStack(SlimefunItems.IRON_DUST, 64))
-                .addRecipe(new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT, 32), new SlimefunItemStack(SlimefunItems.MAGNESIUM_DUST, 64))
+        }).addRecipe(new SlimefunItemStack(SlimefunItems.COPPER_INGOT, 64), new SlimefunItemStack(SlimefunItems.COPPER_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.ZINC_INGOT, 64), new SlimefunItemStack(SlimefunItems.ZINC_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.TIN_INGOT, 64), new SlimefunItemStack(SlimefunItems.TIN_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT, 64), new SlimefunItemStack(SlimefunItems.ALUMINUM_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.LEAD_INGOT, 64), new SlimefunItemStack(SlimefunItems.LEAD_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.SILVER_INGOT, 64), new SlimefunItemStack(SlimefunItems.SILVER_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.GOLD_24K, 8), new SlimefunItemStack(SlimefunItems.GOLD_DUST, 64))
+                .addRecipe(new ItemStack(Material.IRON_INGOT, 64), new SlimefunItemStack(SlimefunItems.IRON_DUST, 64))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT, 64), new SlimefunItemStack(SlimefunItems.MAGNESIUM_DUST, 64))
                 .ticksPerOutput(1).energyPerTick(7200).register(plugin);
 
         new MachineBlock(Groups.ADVANCED_MACHINES, URANIUM_EXTRACTOR, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
@@ -554,11 +620,73 @@ public final class Machines {
                 .addRecipe(new ItemStack(Material.QUARTZ, 4), new ItemStack(Material.QUARTZ_BLOCK))
                 .addRecipe(new ItemStack(Material.LAPIS_LAZULI, 9), new ItemStack(Material.LAPIS_BLOCK))
                 .addRecipe(new ItemStack(Material.COAL, 9), new ItemStack(Material.COAL_BLOCK))
+                .addRecipe(new ItemStack(Material.PAPER, 8), new SlimefunItemStack(Materials.FIBRE_BLOCK, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.OAK_LOG, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.SPRUCE_LOG, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.DARK_OAK_LOG, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.BIRCH_LOG, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.ACACIA_LOG, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 6), new ItemStack(Material.JUNGLE_LOG, 1))
+                .addRecipe(new SlimefunItemStack(Materials.FIBRE, 3), new ItemStack(Material.MUSHROOM_STEM, 1))
+                .addRecipe(new ItemStack(Material.LEATHER, 6), new SlimefunItemStack(Materials.FEATHER_MASS, 1))
                 .addRecipe(new SlimefunItemStack(Materials.COBBLE_4, 8), Materials.COBBLE_5)
                 .addRecipe(new SlimefunItemStack(Materials.COBBLE_3, 8), Materials.COBBLE_4)
                 .addRecipe(new SlimefunItemStack(Materials.COBBLE_2, 8), Materials.COBBLE_3)
                 .addRecipe(new SlimefunItemStack(Materials.COBBLE_1, 8), Materials.COBBLE_2)
                 .addRecipe(new ItemStack(Material.COBBLESTONE, 8), Materials.COBBLE_1)
+                .addRecipe(new ItemStack(Material.APPLE, 64), Materials.APPLE_MASS)
+                .addRecipe(new ItemStack(Material.GOLDEN_APPLE, 64), Materials.GOLDEN_APPLE_MASS)
+                .addRecipe(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 64), Materials.ENCHANTED_APPLE_MASS)
+                .ticksPerOutput(1).energyPerTick(60).register(plugin);
+
+        // 魔改：酵解机
+        new MachineBlock(Groups.ADVANCED_MACHINES, BIO_DIGESTION, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BLISTERING_INGOT_3,
+                new ItemStack(Material.MYCELIUM), new ItemStack(Material.BREWING_STAND), new ItemStack(Material.MYCELIUM),
+                Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT,
+        }).addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.APPLE, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.POTATO, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BAKED_POTATO, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BEETROOT, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BREAD, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.CARROT, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BEEF, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.COOKED_BEEF, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.CHICKEN, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.COOKED_CHICKEN, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.MUTTON, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.COOKED_MUTTON, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.MELON_SLICE, 8))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.GLOW_BERRIES, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.SWEET_BERRIES, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.DRIED_KELP, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.KELP, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.DRIED_KELP_BLOCK, 1))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BROWN_MUSHROOM, 15))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BROWN_MUSHROOM_BLOCK, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.RED_MUSHROOM, 15))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.RED_MUSHROOM_BLOCK, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.COD, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.SALMON, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.ROTTEN_FLESH, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new SlimefunItemStack(Materials.FIBRE, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new SlimefunItemStack(Materials.FIBRE_BLOCK, 1))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.TROPICAL_FISH, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.RABBIT, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.COOKED_RABBIT, 6))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.GOLDEN_APPLE, 3))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 1))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.HONEY_BOTTLE, 4))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.HONEY_BLOCK, 1))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.SUGAR, 12))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.SUGAR_CANE, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BAMBOO, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.BAMBOO_SAPLING, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.CACTUS, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.WHEAT, 9))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.HAY_BLOCK, 1))
+                .addRecipe(new SlimefunItemStack(Materials.BIO_MASS, 1), new ItemStack(Material.EGG, 6))
+                .addRecipe(new SlimefunItemStack(SlimefunItems.OIL_BUCKET, 1), new SlimefunItemStack(Materials.BIO_MASS, 8))
                 .ticksPerOutput(1).energyPerTick(60).register(plugin);
 
         new GearTransformer(Groups.ADVANCED_MACHINES, GEAR_TRANSFORMER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {

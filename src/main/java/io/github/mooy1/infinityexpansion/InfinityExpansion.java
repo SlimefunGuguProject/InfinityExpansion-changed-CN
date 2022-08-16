@@ -53,7 +53,7 @@ public final class InfinityExpansion extends AbstractAddon {
         metrics.addCustomChart(new SimplePie("auto_updates", () -> autoUpdates));
 
         if (enableAutoUpdate && getDescription().getVersion().startsWith("Build")) {
-            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "SlimefunGuguProject", "InfinityExpansion", "master", false);
+            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "SlimefunGuguProject", "InfinityExpansion-changed-CN", "master", false);
         }
 
         Plugin lx = getServer().getPluginManager().getPlugin("LiteXpansion");

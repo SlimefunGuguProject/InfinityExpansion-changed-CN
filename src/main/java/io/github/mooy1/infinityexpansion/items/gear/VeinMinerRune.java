@@ -59,12 +59,12 @@ public final class VeinMinerRune extends SlimefunItem implements Listener, NotPl
             "MAGMA", "OBSIDIAN", "DIORITE", "ANDESITE", "GRANITE", "_LEAVES",
             "GLASS", "DIRT", "GRASS", "DEBRIS", "GLOWSTONE"
     };
-    private static final double RANGE = 1.5;
-    private static final int MAX = 64;
+    private static final double RANGE = 2.0; // 魔改，1.5
+    private static final int MAX = 128; // 魔改，64
     private static final String LORE = ChatColor.AQUA + "已融合矿脉符文 - 按住 SHIFT 使用";
     private static final NamespacedKey key = InfinityExpansion.createKey("vein_miner");
 
-    private final CoolDowns cooldowns = new CoolDowns(1000);
+    private final CoolDowns cooldowns = new CoolDowns(300); // 魔改，1000
     private Block processing;
 
     public VeinMinerRune(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe) {

@@ -63,9 +63,9 @@ public final class SlimefunExtension {
     private static final int INFINITY_CHARGER_ENERGY = 60000;
 
     private static final int ADVANCED_SMELTERY_ENERGY = 240;
-    private static final int ADVANCED_SMELTERY_SPEED = 24;
+    private static final int ADVANCED_SMELTERY_SPEED = 36; // 魔改，24
 
-    private static final int STAR_ENERGY = 1800;
+    private static final int STAR_ENERGY = 3000; // 魔改，1800
     private static final int STAR_BUFFER = 90000;
 
     public static final SlimefunItemStack ADVANCED_GEO_MINER = new SlimefunItemStack(

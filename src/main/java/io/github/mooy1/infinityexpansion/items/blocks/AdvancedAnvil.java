@@ -107,23 +107,12 @@ public final class AdvancedAnvil extends AbstractEnergyCrafter {
             return;
         }
 
+        // 魔改：无视粘液祛魔/附魔限制
         ItemStack item1 = inv.getItemInSlot(INPUT_SLOTS[0]);
-        SlimefunItem sfItem1 = SlimefunItem.getByItem(inv.getItemInSlot(INPUT_SLOTS[0]));
         ItemStack item2 = inv.getItemInSlot(INPUT_SLOTS[1]);
-        SlimefunItem sfItem2 = SlimefunItem.getByItem(inv.getItemInSlot(INPUT_SLOTS[1]));
 
         if (item1 == null || item2 == null || (item2.getType() != Material.ENCHANTED_BOOK && item1.getType() != item2.getType())) {
-            p.sendMessage(ChatColor.RED + "物品不存在!");
-            return;
-        }
-
-        if(sfItem2 != null && !sfItem2.isDisenchantable()){
-            p.sendMessage(ChatColor.RED + "该粘液物品无法祛魔!");
-            return;
-        }
-
-        if(sfItem1 != null && !sfItem1.isEnchantable()){
-            p.sendMessage(ChatColor.RED + "该粘液物品无法附魔!");
+            p.sendMessage(ChatColor.RED + "物品无效!");
             return;
         }
 

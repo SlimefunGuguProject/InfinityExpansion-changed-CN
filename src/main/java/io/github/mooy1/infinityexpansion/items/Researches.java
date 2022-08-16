@@ -45,6 +45,8 @@ public final class Researches {
                 Materials.NETHERITE_SINGULARITY,
                 Materials.QUARTZ_SINGULARITY,
                 Machines.SINGULARITY_CONSTRUCTOR,
+                Materials.VOID_SINGULARITY, // 魔改
+                Materials.LUMINA_SINGULARITY, // 魔改
                 Machines.RESOURCE_SYNTHESIZER
         );
         create(3, "infinity_ingot", "无尽锭的制作方式", 40,
@@ -68,7 +70,8 @@ public final class Researches {
         );
         create(8, "compressed_cobble", "压缩圆石", 15,
                 Materials.COBBLE_1, Materials.COBBLE_2, Materials.COBBLE_3,
-                Materials.COBBLE_4, Materials.COBBLE_5, Machines.COBBLE_PRESS
+                Materials.COBBLE_4, Materials.COBBLE_5, Machines.COBBLE_PRESS,
+                Materials.COBBLE_HEART // 魔改
         );
         create(9, "starter_machines", "初始机器", 15,
                 Machines.BASIC_COBBLE, Machines.BASIC_GROWER,
@@ -84,7 +87,8 @@ public final class Researches {
         create(12, "advanced_power", "进阶电力", 35,
                 Generators.ADVANCED_PANEL, Generators.GEOTHERMAL, Generators.REINFORCED_HYDRO,
                 Generators.REINFORCED_GEOTHERMAL, Generators.CELESTIAL_PANEL,
-                SlimefunExtension.ADVANCED_NETHER_STAR_REACTOR
+                SlimefunExtension.ADVANCED_NETHER_STAR_REACTOR,
+                Generators.LUMINA_PANEL // 魔改
         );
         create(13, "advanced_machines", "进阶机器", 40,
                 Machines.DUST_EXTRACTOR, Machines.EXTREME_FREEZER, Machines.GEO_QUARRY,
@@ -104,7 +108,8 @@ public final class Researches {
                 Generators.INFINITE_PANEL, Generators.INFINITY_REACTOR, Storage.INFINITY_STORAGE,
                 SlimefunExtension.INFINITY_CAPACITOR, SlimefunExtension.INFINITY_CHARGER,
                 SlimefunExtension.INFINITY_DISENCHANTER, SlimefunExtension.INFINITY_ENCHANTER,
-                Quarries.INFINITY_QUARRY, Machines.INFINITY_DUST_EXTRACTOR
+                Quarries.INFINITY_QUARRY, Machines.INFINITY_DUST_EXTRACTOR,
+                Generators.LUMINA_END_PANEL // 魔改
         );
         create(16, "void_upgrades", "虚空升级", 45,
                 Generators.VOID_PANEL, SlimefunExtension.VOID_CAPACITOR, Storage.VOID_STORAGE,

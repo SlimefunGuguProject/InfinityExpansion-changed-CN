@@ -108,6 +108,67 @@ public final class Materials {
             "&7五重压缩圆石",
             "&859049个圆石压缩而来"
     );
+    // 魔改：开始
+    public static final SlimefunItemStack BIO_MASS = new SlimefunItemStack(
+            "BIO_MASS",
+            Material.SLIME_BALL,
+            "&b酵解生物质",
+            "&7&o富含多种有机成分，不可食用...",
+            "&7&o通过二次发酵可获得原油",
+            "&7&o也可和原油、纤维质在冶炼炉里制造人造革"
+    );
+    public static final SlimefunItemStack FIBRE = new SlimefunItemStack(
+            "FIBRE",
+            Material.PAPER,
+            "&b纤维质",
+            "&7&o味同嚼蜡..."
+    );
+    public static final SlimefunItemStack FIBRE_BLOCK = new SlimefunItemStack(
+            "FIBRE_BLOCK",
+            Material.WHITE_WOOL,
+            "&b纤维块",
+            "&7&o投入分解机，然后你就获得了一堆纸"
+    );
+    public static final SlimefunItemStack FEATHER_MASS = new SlimefunItemStack(
+            "FEATHER_MASS",
+            Material.BROWN_CONCRETE,
+            "&b人造革块",
+            "&7&o散发着皮革气味的大块物质，需要用分解机进行分割"
+    );
+    public static final SlimefunItemStack APPLE_MASS = new SlimefunItemStack(
+            "APPLE_MASS",
+            Material.APPLE,
+            "&b苹果奇点",
+            "&7&o苹果+苹果+苹果+...= ?",
+            "&7&o好像咬不动...可恶啊..."
+    );
+    public static final SlimefunItemStack GOLDEN_APPLE_MASS = new SlimefunItemStack(
+            "GOLDEN_APPLE_MASS",
+            Material.GOLDEN_APPLE,
+            "&b黄金苹果奇点",
+            "&7&o罪恶的黄金果",
+            "&7&o还是咬不动..."
+    );
+    public static final SlimefunItemStack ENCHANTED_APPLE_MASS = new SlimefunItemStack(
+            "ENCHANTED_APPLE_MASS",
+            Material.ENCHANTED_GOLDEN_APPLE,
+            "&b魔法苹果奇点",
+            "&7&o魔力灌注后的金苹果会是青金石味的吗？",
+            "&7&o真想咬一口..."
+    );
+    public static final SlimefunItemStack GOLDEN_MASS = new SlimefunItemStack(
+            "GOLDEN_MASS",
+            Material.DEEPSLATE_GOLD_ORE,
+            "&b点金石",
+            "&7&o和苹果奇点对撞，会发生某种神奇的事情..."
+    );
+    public static final SlimefunItemStack ENCHANTED_MASS = new SlimefunItemStack(
+            "ENCHANTED_MASS",
+            Material.GILDED_BLACKSTONE,
+            "&b注魔点金石",
+            "&7&o向黄金果实注入无穷魔力..."
+    );
+    // 魔改：结束
     public static final SlimefunItemStack MAGSTEEL = new SlimefunItemStack(
             "MAGSTEEL",
             Material.BRICK,
@@ -252,6 +313,37 @@ public final class Materials {
             Material.SMOOTH_QUARTZ,
             "&b无尽奇点"
     );
+    // 魔改：开始
+    public static final SlimefunItemStack VOID_SINGULARITY = new SlimefunItemStack(
+            "VOID_SINGULARITY",
+            Material.ANCIENT_DEBRIS,
+            "&b虚空奇点"
+    );
+    public static final SlimefunItemStack COBBLE_HEART = new SlimefunItemStack(
+            "COBBLE_HEART",
+            Material.DIAMOND,
+            "&b极致之心",
+            "&7&o或许是一座极致的里程碑..."
+    );
+    public static final SlimefunItemStack LUMINA_SINGULARITY = new SlimefunItemStack(
+            "LUMINA_SINGULARITY",
+            Material.GLOWSTONE,
+            "&b稳定态光结构",
+            "&7&o创造的可能性闪烁于此..."
+    );
+    public static final SlimefunItemStack LUMINA_DUST = new SlimefunItemStack(
+            "LUMINA_DUST",
+            Material.GLOWSTONE_DUST,
+            "&b亚稳态光尘",
+            "&7&o凝聚在时空与能量间的某种可能性..."
+    );
+    public static final SlimefunItemStack LUMINA_GLASS = new SlimefunItemStack(
+            "LUMINA_GLASS",
+            Material.END_CRYSTAL,
+            "&b光量子玻晶",
+            "&7&o一闪一闪亮晶晶..."
+    );
+    // 魔改：结束
     public static final SlimefunItemStack BASIC_STRAINER = new SlimefunItemStack(
             "BASIC_STRAINER",
             Material.FISHING_ROD,
@@ -314,6 +406,29 @@ public final class Materials {
                 VOID_DUST, VOID_DUST, VOID_DUST,
                 VOID_DUST, VOID_DUST, VOID_DUST
         });
+        // 魔改：开始
+        registerEnhanced(LUMINA_GLASS, new ItemStack[] {
+                QUARTZ_SINGULARITY, LUMINA_DUST, QUARTZ_SINGULARITY,
+                LUMINA_DUST, VOID_INGOT, LUMINA_DUST,
+                QUARTZ_SINGULARITY, LUMINA_DUST, QUARTZ_SINGULARITY
+        });
+        registerEnhanced(GOLDEN_MASS, new ItemStack[] {
+            SlimefunItems.GOLD_24K, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.GOLD_24K,
+            SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.LAPIS_BLOCK), SlimefunItems.BLISTERING_INGOT_3,
+            SlimefunItems.GOLD_24K, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.GOLD_24K
+        });
+        registerEnhanced(ENCHANTED_MASS, new ItemStack[] {
+            new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.LAPIS_BLOCK),
+            new ItemStack(Material.NETHER_STAR), GOLDEN_MASS, new ItemStack(Material.NETHER_STAR),
+            new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.LAPIS_BLOCK)
+        });
+        registerEnhanced(FIBRE_BLOCK, new ItemStack[] {
+            FIBRE, FIBRE, FIBRE,
+            FIBRE, FIBRE, FIBRE,
+            null, null, null
+        });
+        registerSmeltery(FEATHER_MASS, SlimefunItems.OIL_BUCKET, BIO_MASS, FIBRE);
+        // 魔改：结束
         registerSmeltery(INFINITE_INGOT, EARTH_SINGULARITY, MYTHRIL, FORTUNE_SINGULARITY, MAGIC_SINGULARITY, VOID_INGOT, METAL_SINGULARITY);
         registerSmeltery(FORTUNE_SINGULARITY, GOLD_SINGULARITY, DIAMOND_SINGULARITY, EMERALD_SINGULARITY, NETHERITE_SINGULARITY, ADAMANTITE);
         registerSmeltery(MAGIC_SINGULARITY, REDSTONE_SINGULARITY, LAPIS_SINGULARITY, QUARTZ_SINGULARITY, MAGNESIUM_SINGULARITY, MAGNONIUM);
@@ -393,6 +508,14 @@ public final class Materials {
         new Singularity(LAPIS_SINGULARITY, Material.LAPIS_LAZULI, 1500).register(plugin);
         new Singularity(QUARTZ_SINGULARITY, Material.QUARTZ, 1500).register(plugin);
         new Singularity(INFINITY_SINGULARITY, INFINITE_INGOT, 100).register(plugin);
+        // 魔改：开始
+        new Singularity(VOID_SINGULARITY, VOID_INGOT, 128).register(plugin);
+        new Singularity(LUMINA_SINGULARITY, LUMINA_DUST, 64).register(plugin);
+        new Singularity(COBBLE_HEART, COBBLE_5, 1024).register(plugin);
+        new Singularity(APPLE_MASS, Material.APPLE, 64).register(plugin);
+        new Singularity(GOLDEN_APPLE_MASS, Material.GOLDEN_APPLE, 64).register(plugin);
+        new Singularity(ENCHANTED_APPLE_MASS, Material.ENCHANTED_GOLDEN_APPLE, 64).register(plugin);
+        // 魔改：结束
     }
 
     private static void registerEnhanced(SlimefunItemStack item, ItemStack[] recipe) {

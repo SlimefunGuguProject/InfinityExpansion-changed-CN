@@ -112,6 +112,26 @@ public final class Generators {
             MachineLore.energyBuffer(VOID_ENERGY * 100),
             MachineLore.energyPerSecond(VOID_ENERGY)
     );
+    // 魔改：光隙发电机
+    public static final SlimefunItemStack LUMINA_PANEL = new SlimefunItemStack(
+            "LUMINA_PANEL",
+            Material.REDSTONE_LAMP,
+            "&8光隙发电机",
+            "&7光隙明灭之所在，能量随之迸发...",
+            "",
+            MachineLore.energyBuffer(VOID_ENERGY * 300),
+            MachineLore.energyPerSecond(VOID_ENERGY * 4)
+    );
+    // 魔改：湮光发电机
+    public static final SlimefunItemStack LUMINA_END_PANEL = new SlimefunItemStack(
+            "LUMINA_END_PANEL",
+            Material.BEACON,
+            "&8湮光发电机",
+            "&7狄拉克之海潮起潮落，而终极的能量之门向你敞开...",
+            "",
+            MachineLore.energyBuffer(INFINITY_ENERGY * 1000),
+            MachineLore.energyPerSecond(INFINITY_ENERGY * 10)
+    );
     public static final SlimefunItemStack INFINITE_PANEL = new SlimefunItemStack(
             "INFINITE_PANEL",
             Material.LIGHT_BLUE_GLAZED_TERRACOTTA,
@@ -131,6 +151,23 @@ public final class Generators {
                 Materials.INFINITE_INGOT, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.INFINITE_INGOT,
                 Materials.INFINITE_INGOT, Materials.INFINITE_CIRCUIT, Materials.INFINITE_CORE, Materials.INFINITE_CORE, Materials.INFINITE_CIRCUIT, Materials.INFINITE_INGOT
         }, INFINITY_REACTOR_ENERGY).register(plugin);
+
+        // 魔改：光隙发电机
+        new EnergyGenerator(Groups.ADVANCED_MACHINES, LUMINA_PANEL, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                VOID_PANEL, VOID_PANEL, VOID_PANEL,
+                Materials.LUMINA_GLASS, Materials.LUMINA_GLASS, Materials.LUMINA_GLASS,
+                Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY
+        }, VOID_ENERGY * 4, GenerationType.LUMINA).register(plugin);
+
+        // 魔改：湮光发电机
+        new EnergyGenerator(Groups.INFINITY_CHEAT, LUMINA_END_PANEL, InfinityWorkbench.TYPE, new ItemStack[] {
+                LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL,
+                LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL, LUMINA_PANEL,
+                INFINITE_PANEL, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, INFINITE_PANEL,
+                INFINITE_PANEL, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, Materials.LUMINA_SINGULARITY, INFINITE_PANEL,
+                Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT,
+                Materials.COBBLE_HEART, Materials.COBBLE_HEART, Materials.COBBLE_HEART, Materials.COBBLE_HEART, Materials.COBBLE_HEART, Materials.COBBLE_HEART
+        }, INFINITY_ENERGY * 10, GenerationType.LUMINA_END).register(plugin);
 
         new EnergyGenerator(Groups.BASIC_MACHINES, HYDRO, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MAGSTEEL, Materials.MACHINE_CIRCUIT, Materials.MAGSTEEL,

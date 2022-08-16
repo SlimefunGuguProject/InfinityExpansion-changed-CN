@@ -67,6 +67,18 @@ public enum GenerationType {
         protected int generate(@Nonnull World world, @Nonnull Block block, int def) {
             return def;
         }
+    },
+    LUMINA("光隙") {
+        @Override
+        protected int generate(@Nonnull World world, @Nonnull Block block, int def) {
+            return def;
+        }
+    },
+    LUMINA_END("无限光") {
+        @Override
+        protected int generate(@Nonnull World world, @Nonnull Block block, int def) {
+            return def;
+        }
     };
 
     @Getter

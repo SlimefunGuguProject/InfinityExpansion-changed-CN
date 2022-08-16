@@ -35,6 +35,17 @@ public final class InfinityBow extends ExplosiveBow implements NotPlaceable, Sou
         return (e, target) -> {
             explosive.onHit(e, target);
 
+            // 魔改: 10点伤害打底，3倍伤害
+            if (e.getDamage() > 0) {
+                if (e.getDamage() < 10) {
+                    e.setDamage(30);
+                } else {
+                    e.setDamage(e.getDamage() * 3);
+                }
+            } else {
+                return;
+            }
+
             if (target instanceof Player) {
                 Player p = (Player) target;
 
@@ -50,7 +61,11 @@ public final class InfinityBow extends ExplosiveBow implements NotPlaceable, Sou
 
             target.getWorld().playEffect(target.getLocation(), Effect.STEP_SOUND, Material.ICE);
             target.getWorld().playEffect(target.getEyeLocation(), Effect.STEP_SOUND, Material.ICE);
-            target.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 2, 10));
+
+            // 魔改: 增加命中目标获得的药水效果
+            target.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 20 * 30, 1));
+            target.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 6, 10));
+            target.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20 * 6, 2));
             target.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 20 * 2, -10));
         };
     }

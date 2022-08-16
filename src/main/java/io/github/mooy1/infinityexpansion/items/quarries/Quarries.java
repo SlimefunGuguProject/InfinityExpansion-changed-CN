@@ -41,7 +41,7 @@ public final class Quarries {
             "&c高级矿机",
             "&7自动挖主世界和下界矿物",
             "",
-            MachineLore.speed(2),
+            MachineLore.speed(3), // 魔改，2
             MachineLore.energyPerSecond(900)
     );
     public static final SlimefunItemStack VOID_QUARRY = new SlimefunItemStack(
@@ -50,7 +50,7 @@ public final class Quarries {
             "&8虚空矿机",
             "&7自动挖主世界和下界矿物",
             "",
-            MachineLore.speed(6),
+            MachineLore.speed(9), // 魔改，6
             MachineLore.energyPerSecond(3600)
     );
     public static final SlimefunItemStack INFINITY_QUARRY = new SlimefunItemStack(
@@ -147,7 +147,8 @@ public final class Quarries {
                 Materials.MACHINE_PLATE, SlimefunItems.ENERGIZED_CAPACITOR, Materials.MACHINE_PLATE,
                 new ItemStack(Material.DIAMOND_PICKAXE), BASIC_QUARRY, new ItemStack(Material.DIAMOND_PICKAXE),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 2, 4, outputs.toArray(new Material[0])).energyPerTick(900).register(plugin);
+        }, 3, 4, outputs.toArray(new Material[0])).energyPerTick(900).register(plugin);
+        // 魔改：速度2
 
         if (coal) {
             outputs.add(Material.COAL);
@@ -157,7 +158,8 @@ public final class Quarries {
                 Materials.VOID_INGOT, SlimefunExtension.VOID_CAPACITOR, Materials.VOID_INGOT,
                 new ItemStack(Material.NETHERITE_PICKAXE), ADVANCED_QUARRY, new ItemStack(Material.NETHERITE_PICKAXE),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 6, 2, outputs.toArray(new Material[0])).energyPerTick(3600).register(plugin);
+        }, 9, 2, outputs.toArray(new Material[0])).energyPerTick(3600).register(plugin);
+        // 魔改：速度6
 
         if (coal) {
             outputs.add(Material.COAL);
